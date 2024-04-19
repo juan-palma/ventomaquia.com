@@ -5,7 +5,7 @@ VENTOMAQUIA
 ### Ver el sitio web:
 https://ventomaquia.com
 
-Que es VENTOMAQUIA y como podemos ser una gran herramienta para tu negocio.
+Que es VENTOMAQUIA y como podemos ser una gran herramienta para tu negocio en el Marketing Digital.
 
 Un toque personal
 -----------------
