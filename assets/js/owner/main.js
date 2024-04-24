@@ -15,6 +15,9 @@ function iniciar() {
 				scrub: 1,
 				start: "top top",
 				end: "66% top",
+				anticipatePin:1,
+				invalidateOnRefresh:true,
+          		// fastScrollEnd: true
 			}
 		});
 
