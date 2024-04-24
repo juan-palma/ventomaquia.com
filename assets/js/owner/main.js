@@ -117,7 +117,7 @@ function iniciar() {
 		};
 	}
 
-	window.addEventListener('resize', debounce(updateAnimations, 250));
+	//window.addEventListener('resize', debounce(updateAnimations, 250));
 
 	// window.addEventListener('orientationchange', debounce(function() {
 		
