@@ -325,7 +325,7 @@ div#ventanaPOP {
 	}
 		#pantalla1, #pantalla2, #pantalla3 {
 			width: 100%;
-			height: 100vh;
+			height: 100dvh;
 			position: relative;
 			will-change: transform, opacity;
 		}
@@ -345,7 +345,6 @@ div#ventanaPOP {
 		#pantalla3{
 			background-color: blueviolet;
 			z-index: 2;
-			/* transform: translateY(-200%); */
 		}
 			#pantalla3 .frase{
 				transform: translateX(-100vw);
