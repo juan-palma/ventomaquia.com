@@ -1,6 +1,25 @@
 
+/*::::::::::::::::::::::::::::::
+	Codigo de Juan Palma
+::::::::::::::::::::::::::::::*/
+const idagl = {};
+idagl.elementos = {};
+const el = idagl.elementos;
+
+
+
 function iniciar() {
-	
+
+	//activar estilos o efectos para mobile css
+	//habilitar funciones para moviles:
+	if ((el.mobile = /Mobile/i.test(navigator.userAgent))) {
+		if ((el.touch = Modernizr.touchevents)) {
+			document.getElementById("pantalla1").getElementsByTagName('button')[0].classList.add("mobileAnimado");
+		}
+	}
+
+
+	//Animaciones GSAP
 	gsap.registerPlugin(ScrollTrigger);
 
 	let pantallas, pantallasTL, p1Tw, p3TW, p3Frase;

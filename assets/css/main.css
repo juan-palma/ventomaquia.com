@@ -426,6 +426,9 @@ div#ventanaPOP {
 					#pantalla1 .intro button:hover{
 						animation: pulsar 1.8s ease-in-out 0ms infinite;
 					}
+					#pantalla1 .intro button.mobileAnimado{
+						animation: pulsar 1.8s ease-in-out 0ms infinite;
+					}
 				#pantalla1 .graficas {
 					position: relative;
 					width: 100%;
