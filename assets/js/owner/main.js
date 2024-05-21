@@ -5,8 +5,6 @@ function iniciar() {
 
 	let pantallas, pantallasTL, p1Tw, p3TW, p3Frase;
 	function animaciones() {
-		console.log('señal');
-
 		pantallas = gsap.utils.toArray(".pantallas");
 		pantallasTL = gsap.timeline({
 			scrollTrigger: {
@@ -45,35 +43,6 @@ function iniciar() {
 		pantallasTL.add(p3TW);
 
 		pantallasTL.to({}, { duration: .25 });
-		
-
-
-		// pantallasTL = gsap.timeline({
-		// 	scrollTrigger: {
-		// 		trigger: ".pantallaBox",
-		// 		pin: true,
-		// 		scrub: 1,
-		// 		start: "top top",
-		// 		end: "66% top",
-		// 	}
-		// });
-	
-		// p3Frase = gsap.to("#pantalla3 .frase", {x:"0vw", ease:"none", paused:true});
-		
-		// pantallasTL.addLabel("start").to(pantallas[0], { 
-		// 	yPercent: "-100",
-		// 	duration: (index) => 0.5 / (index + 1),
-		// 	stagger: (index) => 0.48 * (index),
-		// 	ease:"none",
-		// }).addLabel("lateral").from(pantallas[2], {
-		// 	xPercent: "100",
-		// 	duration: (index) => 0.5 / (index + 1),
-		// 	stagger: (index) => 0.48 * (index),
-		// 	ease:"none",
-		// 	onUpdate: function() {
-		// 		p3Frase.progress(this.progress());
-		// 	},
-		// });
 	}
 	animaciones();
 
@@ -118,15 +87,8 @@ function iniciar() {
 	}
 
 	//window.addEventListener('resize', debounce(updateAnimations, 250));
+	window.addEventListener('orientationchange', debounce(updateAnimations, 250));
 
-	// window.addEventListener('orientationchange', debounce(function() {
-		
-	// 	// Restablece o reinicia las animaciones
-	// }, 250));
-
-	// window.addEventListener('resize', () => {
-	// 	console.log('señal directo');
-	// });
 }
 
 
@@ -144,6 +106,14 @@ function openMailer(element) {
 };
 
 
+
+
+
+
+
+// window.addEventListener('orientationchange', debounce(function() {
+
+// }, 250));
 
 
 // iniciar la solicitud de los modulos y la ejecucion inicial del sistema.
