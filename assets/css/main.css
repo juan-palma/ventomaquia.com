@@ -674,7 +674,7 @@ div#ventanaPOP {
 			height: 80vh;
 		}
 		#pantalla1 .intro {
-			width: 92%;
+			width: 100%;
 			grid-gap: 20px;
 			padding: 0vw 6vw;
 		}
