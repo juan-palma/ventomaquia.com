@@ -347,7 +347,7 @@ div#ventanaPOP {
 		}
 			#pantalla1 .fondo {
 				width: 100%;
-				height: 100dvh;
+				height: 100vh;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -664,7 +664,7 @@ div#ventanaPOP {
 		grid-gap: 3dvh;
 	}
 		#pantalla1 .fondo {
-			height: 80dvh;
+			height: 80vh;
 		}
 		#pantalla1 .intro {
 			width: 92%;
