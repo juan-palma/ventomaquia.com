@@ -408,6 +408,9 @@ div#ventanaPOP {
 						display: flex;
 						justify-content: center;
 						align-items: center;
+						line-height: 0;
+						word-spacing: 0;
+						letter-spacing: 0;
 					}
 					@keyframes pulsar {
 						0% {
@@ -691,7 +694,7 @@ div#ventanaPOP {
 				font-size: 90%;
 			}
 			#pantalla1 .intro button {
-				width: 42px;
+				width: 36px;
 			}
 }
 
