@@ -668,6 +668,7 @@ div#ventanaPOP {
 
 	#pantalla1 .boxInfo {
 		grid-gap: 3dvh;
+		align-items: center;
 	}
 		#pantalla1 .fondo {
 			height: 80vh;
@@ -689,12 +690,13 @@ div#ventanaPOP {
 			}
 			#pantalla1 .graficas {
 				flex-wrap: wrap;
+				grid-gap: 14px;
 			}
 			#pantalla1 .graficas .grafica p {
 				font-size: 90%;
 			}
 			#pantalla1 .intro button {
-				width: 36px;
+				width: 26px;
 			}
 }
 
