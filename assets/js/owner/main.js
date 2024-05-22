@@ -39,20 +39,25 @@ function iniciar() {
 		});
 
 		p1Tw = gsap.to(pantallas[0], { 
-			yPercent: "-100",
+			// yPercent: "-100",
+			y: () => `+=${pantallas[0].offsetHeight*-1}`,
 			ease:"none",
 		});
 		pantallasTL.add(p1Tw);
+
+		pantallas[1].style.transform = `translateY(-${pantallas[0].offsetHeight}px)`;
 
 		p3Frase = gsap.to("#pantalla3 .frase", {x:"0vw", ease:"none", paused:true});
 		p3TW = gsap.fromTo(
 			pantallas[2],
 			{
-				yPercent: "-200",
-				xPercent: "100",
+				// yPercent: "-200",
+				// xPercent: "100",
+				y: () => `${ (pantallas[1].offsetHeight + pantallas[0].offsetHeight) * -1 }`,
+				x: () => `${pantallas[2].offsetWidth}`,
 			},
 			{
-				xPercent: "0",
+				x: "0",
 				ease:"none",
 				onUpdate: function() {
 					p3Frase.progress(this.progress());
@@ -88,6 +93,10 @@ function iniciar() {
 		ScrollTrigger.refresh();
 	}
 
+	function updatePantallaStyle() {
+		document.getElementById('pantalla2').style.transform = `translateY(-${document.getElementById('pantalla1').offsetHeight}px)`;
+	}
+
 
 	// codigo para actualizar animaciones GSAP.
 	function debounce(func, wait, immediate) {
@@ -106,6 +115,7 @@ function iniciar() {
 	}
 
 	//window.addEventListener('resize', debounce(updateAnimations, 250));
+	window.addEventListener('resize', debounce(updatePantallaStyle, 250));
 	window.addEventListener('orientationchange', debounce(updateAnimations, 250));
 
 }
