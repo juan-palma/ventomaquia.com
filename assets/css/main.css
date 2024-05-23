@@ -384,7 +384,7 @@ div#ventanaPOP {
 				}
 					#pantalla1 .intro h1 {
 						color: var(--colorPrincipal);
-						font-size: clamp(20px, 1vw + 2rem, 84px);
+						font-size: clamp(20px, 1vw + 2rem, 44px);
 						line-height: 1;
 					}
 					#pantalla1 .lista ul {
@@ -445,7 +445,7 @@ div#ventanaPOP {
 						text-align: center;
 					}
 						#pantalla1 .graficas .grafica .titulo {
-							font-size: clamp(28px, 5vw + 1rem, 162px);
+							font-size: clamp(28px, 5vw + 1rem, 82px);
 							font-family: 'Playfair Display';
 							font-weight: 900;
 						}
