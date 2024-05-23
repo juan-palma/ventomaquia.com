@@ -334,10 +334,6 @@ div#ventanaPOP {
 			position: relative;
 			will-change: transform, opacity;
 		}
-		#pantalla2, #pantalla3 {
-			/* display: none; */
-		}
-
 		#pantalla1{
 			background-color: #000000;
 			z-index: 1;
