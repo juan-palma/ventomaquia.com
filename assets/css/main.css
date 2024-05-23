@@ -474,7 +474,7 @@ div#ventanaPOP {
 			.pantallas .frase {
 				padding-left: 7vw;
 				color: white;
-				font-size: clamp(28px, 5vw + 1rem, 122px);
+				font-size: clamp(28px, 4.2vw + 1rem, 122px);
 				font-weight: 900;
 				font-family: 'Playfair Display';
 			}
