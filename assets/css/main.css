@@ -22,7 +22,7 @@
 :root{
 	--colorBackDark: #000000;
 	--colorBackColor: #393735;
-	--colorPrincipal: #4200df;
+	--colorPrincipal: #5d29ff;
 	--colorSecundario: #00e7ff;
 	--colorTexto: var(--colorBackColor);
 	--margenGlobal: 6vw;
@@ -454,11 +454,13 @@ div#ventanaPOP {
 		#pantalla2{
 			background-color: var(--colorPrincipal);
 			z-index: 0;
+			position: absolute;
 			/* transform: translateY(-100%); */
 		}
 		#pantalla3{
 			background-color: #000;
 			z-index: 2;
+			position: absolute;
 			/* transform: translateY(-200%); */
 		}
 			#pantalla3 .frase{
@@ -480,10 +482,13 @@ div#ventanaPOP {
 			}
 
 	.contenido {
-		width: 100%;
-		height: 200vh;
+		width: 100vw;
+		max-width: 100vw;
 		position: relative;
 		z-index: 3;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
 	}
 
 

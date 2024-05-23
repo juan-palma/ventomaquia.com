@@ -31,10 +31,10 @@ function iniciar() {
 				pin: true,
 				scrub: 1,
 				start: "top top",
-				end: "66% top",
+				end: "100% top",
 				anticipatePin:1,
 				invalidateOnRefresh:true,
-          		// fastScrollEnd: true
+          		fastScrollEnd: true
 			}
 		});
 
@@ -53,7 +53,8 @@ function iniciar() {
 			{
 				// yPercent: "-200",
 				// xPercent: "100",
-				y: () => `${ (pantallas[1].offsetHeight + pantallas[0].offsetHeight) * -1 }`,
+				// y: () => `${ (pantallas[1].offsetHeight + pantallas[0].offsetHeight) * -1 }`,
+				y: () => `${ (pantallas[0].offsetHeight) * -1 }`,
 				x: () => `${pantallas[2].offsetWidth}`,
 			},
 			{
