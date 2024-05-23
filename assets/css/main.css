@@ -361,12 +361,15 @@ div#ventanaPOP {
 					object-fit: cover;
 					object-position: center;
 				}
+			#pantalla1 .boxWrap{
+				padding: 68px 0px;
+			}
 			#pantalla1 .boxInfo {
 				position: relative;
 				width: 100%;
 				max-width: 1100px;
 				height: 100%;
-				padding: min(6vw, 56px) 8vw;
+				/* padding: min(6vw, 56px) 8vw; */
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -742,6 +745,9 @@ div#ventanaPOP {
 		--margenGlobal: 8vw;
 	}
 
+	#pantalla1 .boxWrap {
+		padding: 44px 0px;
+	}
 	#pantalla1 .boxInfo {
 		grid-gap: 3dvh;
 		align-items: center;
