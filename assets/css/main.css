@@ -528,6 +528,9 @@ div#ventanaPOP {
 	.bold{
 		font-weight: 900;
 	}
+	h2{
+		font-size: 180%;
+	}
 
 
 	.contenido {
@@ -644,6 +647,63 @@ div#ventanaPOP {
 							width: auto;
 							height: 128%;
 						}
+
+		#simple {
+			padding-top: 82px;
+		}
+			#simple .boxWrap {
+				padding-left: calc(34px + 4vw);
+			}
+				#simple .capsula {
+					flex-direction: row;
+					grid-gap: 48px;
+				}
+					#simple .capsula > div {
+						flex: 1 1 50%;
+					}
+					#simple .capsula > .col1 {
+						width: 35%;
+						max-width: 35%;
+					}
+						#simple .capsula > .col1 h2 {
+							margin-bottom: 34px;
+						}
+					#simple .capsula > .col2 {
+						width: 65%;
+						max-width: 65%;
+						display: flex;
+						flex-direction: column;
+						grid-gap: 32px;
+					}
+						#simple .capsula > .col2 .tarjeta {
+							width: 100%;
+							position: relative;
+							background-color: var(--colorPrincipal);
+							padding: 13px 32px;
+							display: flex;
+							grid-gap: 46px;
+							justify-content: space-between;
+   							align-items: center;
+							border-radius: 24px;
+						}
+							#simple .capsula > .col2 .tarjeta .valor {
+								flex: 0 0 auto;
+								width: 80px;
+								aspect-ratio: 1;
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+								font-family: 'Playfair Display';
+								font-weight: 900;
+								font-size: 310%;
+								text-align: center;
+							}
+								#simple .capsula > .col2 .tarjeta .valor span {
+									font-size: 38%;
+									font-family: 'Mulish';
+									font-weight: 400;
+								}
 
 
 
@@ -875,11 +935,14 @@ div#ventanaPOP {
 		z-index: -1;
 	}
 	#caminoCorrecto #cajaFuerte p {
-		margin-top: -70px;
+		margin-top: -48px;
 	}
 	#caminoCorrecto .capsula > p:last-child {
 		width: 74%;
 		margin-top: 36px;
+	}
+	#caminoCorrecto .capsula .space {
+		width: 70%;
 	}
 
 	#vendeMas .capsula .boxInfo {
@@ -901,6 +964,36 @@ div#ventanaPOP {
 			#vendeMas .capsula .boxInfo .boton::after {
 				width: 52px;
 			}
+
+	#simple {
+		padding-top: 0;
+	}
+		#simple .boxWrap {
+			padding-left: 0;
+		}
+			#simple .capsula {
+				flex-direction: column;
+			}
+				#simple .capsula > div {
+					flex: 1 1 100%;
+				}
+				#simple .capsula > .col1 {
+					width: 72%;
+					max-width: 72%;
+				}
+				#simple .capsula > .col2 {
+					width: 100%;
+					max-width: 100%;
+					grid-gap: 24px;
+				}
+					#simple .capsula > .col2 .tarjeta {
+						grid-gap: 28px;
+						padding: 13px 24px;
+					}
+						#simple .capsula > .col2 .tarjeta .valor {
+							font-size: 266%;
+							width: 58px;
+						}
 }
 
 
