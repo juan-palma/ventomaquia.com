@@ -29,7 +29,7 @@ function iniciar() {
 			scrollTrigger: {
 				trigger: ".pantallaBox",
 				pin: true,
-				scrub: 1,
+				scrub: 2,
 				start: "top top",
 				end: "100% top",
 				anticipatePin:1,
@@ -42,6 +42,7 @@ function iniciar() {
 			// yPercent: "-100",
 			y: () => `+=${pantallas[0].offsetHeight*-1}`,
 			ease:"none",
+			duration:12
 		});
 		pantallasTL.add(p1Tw);
 
@@ -63,6 +64,7 @@ function iniciar() {
 				onUpdate: function() {
 					p3Frase.progress(this.progress());
 				},
+				duration:16
 			}
 		);
 		pantallasTL.add(p3TW);
@@ -115,7 +117,7 @@ function iniciar() {
 
 			const tl = gsap.timeline({
 				repeat: -1,
-				delay: -columnsLength + i * 0.2,
+				delay: -columnsLength + i * 0.4,
 			});
 
 			logos.forEach((logo) => {
@@ -134,7 +136,7 @@ function iniciar() {
 							ease: "power2.out",
 						},
 						{
-							delay: 3,
+							delay: 9,
 							y: isEven ? 0 : randomOffset,
 							x: isEven ? randomOffset : 0,
 							duration: 0.3,

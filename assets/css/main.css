@@ -508,7 +508,7 @@ div#ventanaPOP {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			padding: 0px 0px 108px;
+			padding: 0px 0px 120px;
 		}
 			.capsula {
 				width: calc(100% - (var(--margenGlobal) * 2));
@@ -560,9 +560,11 @@ div#ventanaPOP {
 				}
 
 		#vendeMas .capsula {
+			position: relative;
 			flex-direction: row;
 			flex-wrap: wrap;
 			align-items: center;
+			margin: 44px 0px;
 		}
 			#vendeMas .capsula .boxInfo {
 				width: 75%;
@@ -645,7 +647,7 @@ div#ventanaPOP {
 					}
 						#vendeMas .capsula .boxImg figure picture img {
 							width: auto;
-							height: 128%;
+							height: 148%;
 						}
 
 		#simple {
@@ -739,6 +741,15 @@ div#ventanaPOP {
 								height: 100%;
 								object-fit: contain;
 							}
+
+
+		#servicios .capsula {
+			grid-gap: 52px;
+		}
+			#servicios h2 {
+				width: 50%;
+				align-self: flex-start;
+			}
 							
 
 
@@ -962,7 +973,7 @@ div#ventanaPOP {
 	}
 	#caminoCorrecto #cajaFuerte {
 		width: 100%;
-		margin-top: -58px;
+		margin-top: -24px;
 		z-index: -1;
 	}
 	#caminoCorrecto #cajaFuerte p {
@@ -985,7 +996,7 @@ div#ventanaPOP {
 			z-index: 2;
 		}
 		#vendeMas .capsula .boxImg figure picture img {
-			width: 124%;
+			width: 154%;
 			height: auto;
 		}
 		#vendeMas .capsula .boxInfo .boton {
