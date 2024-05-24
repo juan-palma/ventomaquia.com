@@ -99,6 +99,61 @@ function iniciar() {
 	}
 
 
+
+
+
+
+	// animacion de logos de marcas
+	let columns = gsap.utils.toArray('#marcas .marca');
+	let columnsLength = 4;
+	if(columns){
+		for (let i = 0; i < columnsLength; i++) {
+			const column = columns[i];
+			const logos = column.querySelectorAll("figure");
+			const randomOffset = gsap.utils.random(["-200%", "200%"]);
+			const isEven = i % 2 === 0;
+
+			const tl = gsap.timeline({
+				repeat: -1,
+				delay: -columnsLength + i * 0.2,
+			});
+
+			logos.forEach((logo) => {
+				tl.to(logo, {
+					keyframes: [
+						{
+							y: isEven ? randomOffset : 0,
+							x: isEven ? 0 : randomOffset,
+							duration: 0.3,
+						},
+						{
+							autoAlpha: 1,
+							x: 0,
+							y: 0,
+							duration: 0.5,
+							ease: "power2.out",
+						},
+						{
+							delay: 3,
+							y: isEven ? 0 : randomOffset,
+							x: isEven ? randomOffset : 0,
+							duration: 0.3,
+							ease: "power2.in",
+						},
+					],
+				}).set(logo, {
+					autoAlpha: 0,
+				});
+			});
+		}
+	}
+
+
+
+
+
+
+
 	// codigo para actualizar animaciones GSAP.
 	function debounce(func, wait, immediate) {
 		var timeout;
