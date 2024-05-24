@@ -705,38 +705,40 @@ div#ventanaPOP {
 									font-weight: 400;
 								}
 
-
-		#gMarcas {
-			width: 90%;
-			position: relative;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			grid-gap: 24px;
+		#marcas .capsula {
+			padding: 40px 30px;
 		}
-			#gMarcas .marca {
-				width: 20%;
-				height: 2.5rem;
-				display: block;
-				overflow: hidden;
+			#gMarcas {
+				width: 90%;
 				position: relative;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				grid-gap: 24px;
 			}
-				#gMarcas .marca figure {
-					height: 100%;
-					width: 100%;
-					position: absolute;
-					visibility: hidden;
+				#gMarcas .marca {
+					width: 20%;
+					height: 3.5rem;
+					display: block;
+					overflow: hidden;
+					position: relative;
 				}
-					#gMarcas .marca figure picture {
-						width: 100%;
+					#gMarcas .marca figure {
 						height: 100%;
-						display: block;
+						width: 100%;
+						position: absolute;
+						visibility: hidden;
 					}
-						#gMarcas .marca figure picture img {
+						#gMarcas .marca figure picture {
 							width: 100%;
 							height: 100%;
-							object-fit: contain;
+							display: block;
 						}
+							#gMarcas .marca figure picture img {
+								width: 100%;
+								height: 100%;
+								object-fit: contain;
+							}
 							
 
 
