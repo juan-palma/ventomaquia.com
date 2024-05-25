@@ -981,6 +981,10 @@ div#ventanaPOP {
 						#gastaMenos .capsula .boxG .boxTarjetas .tarjeta p {
 							font-size: 80%;
 						}
+			#gastaMenos .capsula > p {
+				text-align: center;
+				width: 60%;
+			}
 			
 
 
@@ -1294,6 +1298,26 @@ div#ventanaPOP {
 	#dudas .capsula {
 		grid-gap: 32px;
 	}
+
+	#gastaMenos .capsula h2, #gastaMenos .capsula h3 {
+		width: 100%;
+	}
+	#gastaMenos .capsula .boxG .boxTarjetas {
+		flex-wrap: wrap;
+	}
+		#gastaMenos .capsula .boxG .boxTarjetas .tarjeta {
+			flex: 1 1 50%;
+			width: calc(50% - 8px);
+			max-width: calc(50% - 8px);
+			padding: 24px 16px;
+			grid-gap: 18px;
+		}
+			#gastaMenos .capsula .boxG .boxTarjetas .tarjeta p {
+				font-size: 66%;
+			}
+		#gastaMenos .capsula > p {
+			width: 76%;
+		}
 
 }
 
