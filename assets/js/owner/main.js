@@ -117,7 +117,7 @@ function iniciar() {
 
 			const tl = gsap.timeline({
 				repeat: -1,
-				delay: -columnsLength + i * 0.4,
+				delay: -columnsLength + i * 0.2,
 			});
 
 			logos.forEach((logo) => {
