@@ -31,7 +31,7 @@ function iniciar() {
 				pin: true,
 				scrub: 2,
 				start: "top top",
-				end: "100% top",
+				end: "98% top",
 				anticipatePin:1,
 				invalidateOnRefresh:true,
           		fastScrollEnd: true
@@ -42,7 +42,7 @@ function iniciar() {
 			// yPercent: "-100",
 			y: () => `+=${pantallas[0].offsetHeight*-1}`,
 			ease:"none",
-			duration:12
+			duration:20
 		});
 		pantallasTL.add(p1Tw);
 
@@ -64,7 +64,7 @@ function iniciar() {
 				onUpdate: function() {
 					p3Frase.progress(this.progress());
 				},
-				duration:16
+				duration:28
 			}
 		);
 		pantallasTL.add(p3TW);

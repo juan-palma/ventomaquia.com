@@ -977,6 +977,8 @@ div#ventanaPOP {
 						font-family: 'Playfair Display';
 						font-size: 68px;
 						color: var(--colorSecundario);
+						font-weight: 900;
+						margin-top: -18px;
 					}
 						#gastaMenos .capsula .boxG .boxTarjetas .tarjeta p {
 							font-size: 80%;
@@ -985,7 +987,64 @@ div#ventanaPOP {
 				text-align: center;
 				width: 60%;
 			}
-			
+
+		#carta .capsula {
+			grid-gap: 48px;
+		}
+			#carta h2 {
+				width: 60%;
+				text-align: center;
+			}
+			#carta .boxG {
+				width: 100%;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				grid-gap: 26px;
+			}
+				#carta .boxG .tarjeta:nth-child(1) {
+					grid-column: 2/3;
+				}
+				#carta .boxG .tarjeta:nth-child(2) {
+					grid-column: 3/4;
+					position: relative;
+				}
+					#carta .boxG .tarjeta:nth-child(2) figcaption {
+						position: absolute;
+						top: 0px;
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						padding: 50px;
+						text-align: center;
+						color: var(--colorPrincipal);
+					}
+					#carta .boxG .tarjeta:nth-child(2) .iconos {
+						width: 100%;
+						position: absolute;
+						margin-top: 26px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+						font-size: 160%;
+					}
+
+		#despegar .capsula {
+			flex-direction: row;
+			align-items: center;
+			grid-gap: 44px;
+		}
+			#despegar .capsula .col1 {
+				flex: 1 1 45%;
+			}
+			#despegar .capsula .col2 {
+				flex: 1 1 55%;
+			}
+				#despegar .capsula .col2 h2 {
+					margin-bottom: 36px;
+				}
 
 
 
@@ -1303,12 +1362,13 @@ div#ventanaPOP {
 		width: 100%;
 	}
 	#gastaMenos .capsula .boxG .boxTarjetas {
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 32px 12px;
 	}
 		#gastaMenos .capsula .boxG .boxTarjetas .tarjeta {
-			flex: 1 1 50%;
-			width: calc(50% - 8px);
-			max-width: calc(50% - 8px);
+			width: inherit;
+			max-width: inherit;
 			padding: 24px 16px;
 			grid-gap: 18px;
 		}
@@ -1317,6 +1377,24 @@ div#ventanaPOP {
 			}
 		#gastaMenos .capsula > p {
 			width: 76%;
+		}
+
+	#carta h2 {
+		width: 100%;
+	}
+		#carta .boxG {
+			grid-template-columns: 1fr;
+			grid-gap: 0px;
+		}
+			#carta .boxG .tarjeta:nth-child(1) {
+				display: none;
+			}
+
+	#despegar .capsula {
+		flex-wrap: wrap;
+	}
+		#despegar .capsula .col1, #despegar .capsula .col2 {
+			flex: 1 1 100%;
 		}
 
 }
