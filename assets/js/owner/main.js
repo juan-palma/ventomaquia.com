@@ -136,7 +136,7 @@ function iniciar() {
 							ease: "power2.out",
 						},
 						{
-							delay: 9,
+							delay: 7,
 							y: isEven ? 0 : randomOffset,
 							x: isEven ? randomOffset : 0,
 							duration: 0.3,
@@ -149,6 +149,89 @@ function iniciar() {
 			});
 		}
 	}
+
+
+
+
+
+	//Animacion de resplandor de fondo
+	// const resplandorAni = gsap.timeline({
+	// 	repeat: -1
+	// });
+
+	// resplandorAni.to('#gastaMenos > .capsula > .boxG > .resplandor', {
+		
+	// })
+
+
+	// gsap.to('#gastaMenos .capsula .boxG .resplandor', {
+	// 	duration: 1.5,
+	// 	scale: 0.8,
+	// 	repeat: -1,
+	// 	yoyo: true,
+	// 	ease: 'power1.inOut',
+	// 	delay: 6
+	// });
+
+
+	// function startAnimation() {
+	// 	gsap.to('#gastaMenos .capsula .boxG .resplandor', {
+	// 	  duration: 1.5,
+	// 	  scale: 0.8,
+	// 	  repeat: 1,
+	// 	  yoyo: true,
+	// 	  ease: 'power1.inOut',
+	// 	  repeatDelay: 2,
+	// 	  onComplete: startAnimation
+	// 	});
+	//   }
+	  
+	//   gsap.delayedCall(3, startAnimation);
+
+	function startAnimation() {
+		const tl = gsap.timeline({ onComplete: startAnimation });
+	  
+		tl.to('#gastaMenos .capsula .boxG .resplandor', {
+		  duration: 2.5,
+		  scale: 0.8,
+		  ease: 'power2.in'
+		})
+		.to('#gastaMenos .capsula .boxG .resplandor', {
+		  duration: 2.5,
+		  scale: 1,
+		  ease: 'power2.out'
+		})
+		.to({}, { duration: 8 });
+	}
+	startAnimation();
+
+
+
+
+
+
+	// Efecto botones duda gradiente
+	const btnsGradient = gsap.utils.toArray('#dudas .dudasBTN');
+	const btnGradientTLs = {};
+	
+	btnsGradient.forEach((btn, i) => {
+		btnGradientTLs[`btn${i}`] = gsap.timeline({ paused: true });
+		const tl = btnGradientTLs[`btn${i}`];
+		
+		tl.to(btn, {
+			duration: 0.5,
+			backgroundImage: 'linear-gradient(37deg, rgba(93,41,255,1) 34%, rgba(0,231,255,1) 90%)',
+			ease: 'power2.out'
+		});
+	
+		ScrollTrigger.observe({
+			target: btn, 
+			type: "pointer",
+			onHover: () => tl.play(),
+			onHoverEnd: () => tl.reverse()
+		});
+	});
+	
 
 
 

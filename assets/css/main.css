@@ -900,7 +900,92 @@ div#ventanaPOP {
 						bottom: 14px;
 						right: 9px;
 					}
-							
+					
+		#dudas .capsula {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			grid-gap: 66px;
+			padding: 0px 5vw;
+			text-align: center;
+		}
+			#dudas .capsula .col .icono {
+				font-size: 168%;
+			}
+			#dudas .capsula .col button {
+				appearance: none;
+				padding: 8px 14px;
+				background: rgb(93,41,255);
+				background: linear-gradient(37deg, rgba(93,41,255,1) 74%, rgba(0,231,255,1) 100%);
+				border: 0px none transparent;
+				border-radius: 12px;
+				margin-top: 24px;
+				cursor: pointer;
+
+				-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				-ms-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+			}
+
+		#gastaMenos .capsula h2, #gastaMenos .capsula h3 {
+			width: 50%;
+			text-align: center;
+			margin-bottom: 32px;
+		}
+		#gastaMenos .capsula h3 {
+			font-family: 'Mulish';
+			font-weight: 400;
+			font-size: 90%;
+		}
+		#gastaMenos .capsula .boxG {
+			width: 100%;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+			#gastaMenos .capsula .boxG .resplandor {
+				width: 128%;
+				height: 116%;
+				position: absolute;
+				background: radial-gradient(closest-side, rgba(0,231,255,0.279171043417367) -20%, rgba(0,0,0,0) 100%);
+			}
+			#gastaMenos .capsula .boxG .boxTarjetas {
+				width: 100%;
+				position: relative;
+				display: flex;
+				justify-content: space-between;
+				grid-gap: 20px;
+				padding: 42px 0px 62px;
+			}
+				#gastaMenos .capsula .boxG .boxTarjetas .tarjeta {
+					flex: 1 1 25%;
+					padding: 24px 38px;
+					text-align: center;
+					position: relative;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					align-items: center;
+					grid-gap: 32px;
+					border-radius: 32px;
+					background-color: #000;
+				}
+					#gastaMenos .capsula .boxG .boxTarjetas .tarjeta .numero {
+						font-family: 'Playfair Display';
+						font-size: 68px;
+						color: var(--colorSecundario);
+					}
+						#gastaMenos .capsula .boxG .boxTarjetas .tarjeta p {
+							font-size: 80%;
+						}
+			
+
+
+
+
 
 
 
@@ -1205,6 +1290,11 @@ div#ventanaPOP {
 		display: flex;
 		flex-direction: column;
 	}
+
+	#dudas .capsula {
+		grid-gap: 32px;
+	}
+
 }
 
 
