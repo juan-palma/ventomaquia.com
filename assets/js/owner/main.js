@@ -294,8 +294,9 @@ function iniciar() {
 	}
 
 	//window.addEventListener('resize', debounce(updateAnimations, 250));
-	window.addEventListener('resize', debounce(updatePantallaStyle, 250));
+	//window.addEventListener('resize', debounce(updatePantallaStyle, 250));
 	window.addEventListener('orientationchange', debounce(updateAnimations, 250));
+	window.addEventListener('orientationchange', debounce(updatePantallaStyle, 250));
 
 }
 
