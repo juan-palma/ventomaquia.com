@@ -1156,12 +1156,14 @@ div#ventanaPOP {
 						align-items: center;
 						text-align: center;
 						font-size: 160%;
+						z-index: 5;
 					}
 
 		#despegar .capsula {
 			flex-direction: row;
 			align-items: center;
 			grid-gap: 44px;
+			margin-top: 26px;
 		}
 			#despegar .capsula .col1 {
 				flex: 1 1 45%;
