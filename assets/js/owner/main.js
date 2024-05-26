@@ -100,6 +100,7 @@ function iniciar() {
 				x: "0",
 				ease:"none",
 				onUpdate: function() {
+					console.log(this.progress());
 					p3Frase.progress(this.progress());
 				},
 				duration:28
@@ -137,6 +138,10 @@ function iniciar() {
 	function updatePantallaStyle() {
 		document.getElementById('pantalla2').style.transform = `translateY(-${document.getElementById('pantalla1').offsetHeight}px)`;
 	}
+
+	//window.addEventListener('resize', debounce(updateAnimations, 250));
+	window.addEventListener('orientationchange', debounce(updateAnimations, 250));
+	window.addEventListener('resize', debounce(updatePantallaStyle, 250));
 
 
 
@@ -293,10 +298,7 @@ function iniciar() {
 		};
 	}
 
-	//window.addEventListener('resize', debounce(updateAnimations, 250));
-	//window.addEventListener('resize', debounce(updatePantallaStyle, 250));
-	window.addEventListener('orientationchange', debounce(updateAnimations, 250));
-	window.addEventListener('orientationchange', debounce(updatePantallaStyle, 250));
+	
 
 }
 
