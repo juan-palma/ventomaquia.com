@@ -122,6 +122,92 @@ p:last-of-type {
 
 
 
+/* Animacion icono redes cociales */
+.hi-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    position: relative;
+    color: #fff;
+	font-size: 54px;
+}
+
+.hi-icon:after {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	content: '';
+	-webkit-box-sizing: content-box; 
+	-moz-box-sizing: content-box; 
+	box-sizing: content-box;
+}
+
+
+/* Effect 1 */
+.hi-icon-effect-1 .hi-icon {
+	background: rgba(255,255,255,0.1);
+	-webkit-transition: background 0.2s, color 0.2s;
+	-moz-transition: background 0.2s, color 0.2s;
+	transition: background 0.2s, color 0.2s;
+}
+
+.hi-icon-effect-1 .hi-icon:after {
+	top: -7px;
+	left: -7px;
+	padding: 7px;
+	box-shadow: 0 0 0 4px var(--colorPrincipal);
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+	-webkit-transform: scale(.8);
+	-moz-transition: -moz-transform 0.2s, opacity 0.2s;
+	-moz-transform: scale(.8);
+	-ms-transform: scale(.8);
+	transition: transform 0.2s, opacity 0.2s;
+	transform: scale(.8);
+	opacity: 0;
+}
+
+/* Effect 1a */
+.hi-icon-effect-1a .hi-icon:hover {
+	background: rgba(255,255,255,1);
+	color: var(--colorPrincipal);
+}
+
+.hi-icon-effect-1a .hi-icon:hover:after {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+/* Effect 1b */
+.hi-icon-effect-1b .hi-icon:hover {
+	background: rgba(255,255,255,1);
+	color: var(--colorPrincipal);
+}
+
+.hi-icon-effect-1b .hi-icon:after {
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+.hi-icon-effect-1b .hi-icon:hover:after {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+
 
 
 
@@ -542,6 +628,25 @@ div#ventanaPOP {
 	h2{
 		font-size: 180%;
 	}
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+	}
+	a:hover{
+		color: var(--colorSecundario) !important;
+	}
+	.centavos {
+		font-size: 56%;
+		display: inline-flex;
+		vertical-align: top;
+		margin-top: 4px;
+	}
 	.circuloChico {
 		aspect-ratio: 1;
 		width: 36px;
@@ -559,6 +664,7 @@ div#ventanaPOP {
 		line-height: 0;
 		word-spacing: 0;
 		letter-spacing: 0;
+		will-change: box-shadow, opacity;
 	}
 	@keyframes pulsar2 {
 		0% {
@@ -598,9 +704,13 @@ div#ventanaPOP {
 			}
 				#caminoCorrecto #cajaFuerte figure {
 					width: 100%;
+					position: relative;
+   					z-index: 0;
 				}
 				#caminoCorrecto #cajaFuerte p {
 					margin-top: -118px;
+					position: relative;
+   					z-index: 2;
 				}
 				#caminoCorrecto .capsula .space {
 					width: 40%;
@@ -655,6 +765,7 @@ div#ventanaPOP {
 						box-shadow: 7px 8px 25px -6px rgba(0,0,0,0.83);
 						-webkit-box-shadow: 7px 8px 25px -6px rgba(0,0,0,0.83);
 						-moz-box-shadow: 7px 8px 25px -6px rgba(0,0,0,0.83);
+						will-change: background;
 					}
 						#vendeMas .capsula .boxInfo .boton::after {
 							content: "";
@@ -778,6 +889,7 @@ div#ventanaPOP {
 						width: 100%;
 						position: absolute;
 						visibility: hidden;
+						will-change: transform, opacity, visibility;
 					}
 						#gMarcas .marca figure picture {
 							width: 100%;
@@ -820,12 +932,25 @@ div#ventanaPOP {
 						left: 0px;
 						z-index: 0;
 					}
-						#servicios .capsula .reticula .tarjeta .fondo figure picture img {
-							object-fit: cover;
-							object-position: center;
-							position: absolute;
-							right: -36%;
+						#servicios .capsula .reticula .tarjeta .fondo figure{
+							-webkit-transition: all 0.3s ease-in-out;
+							-moz-transition: all 0.3s ease-in-out;
+							-o-transition: all 0.3s ease-in-out;
+							-ms-transition: all 0.3s ease-in-out;
+							transition: all 0.3s ease-in-out;
+							transform: scale(1);
+
+							will-change: transform;
 						}
+						#servicios .capsula .reticula .tarjeta:hover .fondo figure{
+							transform: scale(1.2);
+						}
+							#servicios .capsula .reticula .tarjeta .fondo figure picture img {
+								object-fit: cover;
+								object-position: center;
+								position: absolute;
+								right: -36%;
+							}
 					#servicios .capsula .reticula .tarjeta .box {
 						height: 100%;
 						display: grid;
@@ -904,7 +1029,7 @@ div#ventanaPOP {
 		#dudas .capsula {
 			flex-direction: row;
 			justify-content: center;
-			align-items: center;
+			align-items: baseline;
 			grid-gap: 66px;
 			padding: 0px 5vw;
 			text-align: center;
@@ -921,6 +1046,7 @@ div#ventanaPOP {
 				border-radius: 12px;
 				margin-top: 24px;
 				cursor: pointer;
+				will-change: background, opacity;
 
 				-webkit-transition: all 0.3s ease-in-out;
 				-moz-transition: all 0.3s ease-in-out;
@@ -950,7 +1076,8 @@ div#ventanaPOP {
 				width: 128%;
 				height: 116%;
 				position: absolute;
-				background: radial-gradient(closest-side, rgba(0,231,255,0.279171043417367) -20%, rgba(0,0,0,0) 100%);
+				background: radial-gradient(closest-side, rgba(0,231,255,0.4) -20%, rgba(0,0,0,0) 100%);
+				will-change: transform;
 			}
 			#gastaMenos .capsula .boxG .boxTarjetas {
 				width: 100%;
@@ -1039,12 +1166,122 @@ div#ventanaPOP {
 			#despegar .capsula .col1 {
 				flex: 1 1 45%;
 			}
+				@keyframes hover {
+					0% {
+					transform: translateX(0px) translateY(-6px) scale(1);
+					}
+					100% {
+					transform: translateX(32px) translateY(-24px) scale(1.1);
+					}
+				}
+				#despegar .capsula .col1 figure {
+					transform: translateX(0px) translateY(-6px) scale(1);
+					will-change: transform;
+					animation: hover 4s infinite ease-in-out alternate;
+				}
 			#despegar .capsula .col2 {
 				flex: 1 1 55%;
+				position: relative;
+    			z-index: 0;
 			}
 				#despegar .capsula .col2 h2 {
 					margin-bottom: 36px;
+					position: relative;
+    				z-index: 2;
 				}
+
+		#porCierto .capsula {
+			grid-gap: 20px;
+		}
+			#porCierto p {
+				margin: 0;
+				text-align: center;
+			}
+			#porCierto p.textT3 {
+				font-size: 240%;
+				font-weight: 900;
+				color: var(--colorPrincipal);
+				line-height: 1;
+			}
+
+
+	footer {
+		width: 100%;
+		overflow: hidden;
+	}
+		footer .boxWrap {
+			padding: calc(111px + 2vh) 0px 54px;
+		}
+			footer .fondo {
+				width: 70%;
+				position: absolute;
+				display: flex;
+				z-index: 0;
+			}
+			footer .capsula .boxG {
+				position: relative;
+				width: 100%;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				grid-gap: 60px;
+			}
+				footer .capsula .boxG .col {
+					display: grid;
+					grid-template-rows: auto;
+					grid-gap: 26px;
+					align-items: flex-start;
+					align-content: flex-start;
+				}
+					footer .capsula .boxG .col .titulo {
+						font-size: 130%;
+					}
+					footer .capsula .boxG .col:nth-child(1) .titulo, footer .capsula .boxG .col:nth-child(2) .titulo {
+						border-bottom: 2px solid;
+						padding-bottom: 10px;
+					}
+					footer .capsula .boxG .col ul {
+						display: flex;
+						flex-direction: column;
+						grid-gap: 24px;
+					}
+						footer .capsula .boxG .col ul li {
+							cursor: pointer;
+
+							-webkit-transition: all 0.3s ease-in-out;
+							-moz-transition: all 0.3s ease-in-out;
+							-o-transition: all 0.3s ease-in-out;
+							-ms-transition: all 0.3s ease-in-out;
+							transition: all 0.3s ease-in-out;
+						}
+						footer .capsula .boxG .col ul li:hover{
+							color: var(--colorSecundario);
+						}
+						footer .capsula .boxG .logo > div {
+							font-size: clamp(1px, (7vw / 4.5) + 0.1em, 25px);
+						}
+
+			footer .capsula .legales {
+				width: 100%;
+				text-align: center;
+				margin-top: 44px;
+				padding-top: 32px;
+				border-top: 2px solid;
+				position: relative;
+			}
+				footer .capsula .legales a {
+					text-decoration: none;
+					color: var(--colorPrincipal);
+				}
+				.redesMain {
+					display: flex;
+					grid-gap: 36px;
+				}
+					.redesMain .svg-inline--fa {
+						height: .8em;
+					}
+					#footerIconoCorreo .svg-inline--fa {
+						height: 0.6em;
+					}
 
 
 
@@ -1199,8 +1436,22 @@ div#ventanaPOP {
 /* ==========================================================================
 	Media Queries
 ========================================================================== */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1090px) {
+	#servicios .capsula .reticula {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+	}
+		#servicios .capsula .reticula .tarjeta:nth-child(3) {
+			grid-column: 1/4;
+			grid-row: 3/4;
+		}
 
+	footer .capsula .boxG {
+		grid-template-columns: 1fr 1fr;
+	}
+		footer .capsula .boxG .logo > div {
+			font-size: clamp(1px, (12vw / 2) + 0.1em, 64px);
+		}
 }
 
 
@@ -1225,7 +1476,7 @@ div#ventanaPOP {
 /* ==========================================================================
 	Media Queries
 ========================================================================== */
-@media only screen and (max-width: 846px) {
+@media only screen and (max-width: 866px) {
 	:root{
 		--margenGlobal: 8vw;
 	}
@@ -1397,6 +1648,28 @@ div#ventanaPOP {
 			flex: 1 1 100%;
 		}
 
+	footer .boxWrap {
+		padding: calc(64px + 2vh) 0px 54px;
+	}
+		footer .fondo {
+			width: 100%;
+			top: 0px;
+		}
+			footer .fondo figure picture {
+				display: flex;
+				justify-content: center;
+			}
+				footer .fondo figure picture img {
+					width: 138%;
+					height: 138%;
+				}
+		footer .capsula .boxG {
+			grid-template-columns: 1fr;
+		}
+		footer .capsula .boxG .logo > div {
+			font-size: clamp(1px, (12vw / 1) + 0.1em, 64px);
+		}
+
 }
 
 
@@ -1457,8 +1730,10 @@ div#ventanaPOP {
 /* ==========================================================================
 	Media Queries
 ========================================================================== */
-@media only screen and (max-width: 480px) {
-	
+@media only screen and (max-width: 430px) {
+	#servicios .capsula .reticula .tarjeta .box h3 {
+		font-size: clamp(15px, 8vw, 22px);
+	}
 }
 
 
@@ -1473,8 +1748,64 @@ div#ventanaPOP {
 /* ==========================================================================
 	Media Queries
 ========================================================================== */
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 319px) {
+	#vendeMas .capsula .boxInfo .boton {
+		width: 100%;
+		padding: 9px 17px;
+	}
+		#vendeMas .capsula .boxInfo .boton:after {
+			display: none;
+		}
+
+	#simple .capsula > .col1 {
+		width: 100%;
+		max-width: 100%;
+	}
+	#simple .capsula > .col2 .tarjeta {
+		flex-direction: column;
+	}
+		#simple .capsula > .col2 .info {
+			text-align: center;
+		}
+
+	#gMarcas {
+		width: 100%;
+	}
+		#gMarcas .marca {
+			flex: 1 1 100%;
+			width: 100%;
+			max-width: 100%;
+		}
+
+	#servicios .capsula .reticula .tarjeta .fondo figure picture img {
+		right: inherit;
+	}
+	#servicios .capsula .reticula .tarjeta:nth-child(1) .box p, #servicios .capsula .reticula .tarjeta:nth-child(5) .box p {
+		width: 100%;
+	}
+	#servicios .capsula .reticula .tarjeta:nth-child(1) .box .boxBoton, #servicios .capsula .reticula .tarjeta:nth-child(5) .box .boxBoton {
+		position: relative;
+		bottom: inherit;
+		right: inherit;
+		margin-top: 24px;
+	}
+	#servicios .capsula .reticula .tarjeta:nth-child(1) .box h3, #servicios .capsula .reticula .tarjeta:nth-child(5) .box h3 {
+		width: 100%;
+	}
 	
+
+	#dudas .capsula {
+		flex-direction: column;
+	}
+	#gastaMenos .capsula .boxG .boxTarjetas {
+		grid-template-columns: 1fr;
+	}
+
+	.redesMain {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
 }
 
 

@@ -9,6 +9,42 @@ const el = idagl.elementos;
 
 
 function iniciar() {
+	//Animaciones GSAP
+	gsap.registerPlugin(ScrollTrigger);
+	gsap.registerPlugin(ScrollToPlugin)
+
+
+
+
+
+	// Animaicion para los enlaces scrollin to del sitio
+	const menuLinksScrollingTo = gsap.utils.toArray(".scrollingTo");
+	if(menuLinksScrollingTo){
+		menuLinksScrollingTo.forEach(link => {
+			link.addEventListener('click', e => {
+				e.preventDefault();
+				
+				let target;
+				if (link.tagName === 'BUTTON') {
+					target = document.querySelector(link.dataset.href);
+				} else if (link.tagName === 'A') {
+					target = document.querySelector(link.getAttribute('href'));
+				}				
+	
+				if(target) {
+					gsap.to(window, {
+						duration: 2,
+						scrollTo: { y: target, offsetY: 50 },
+						ease: 'power3.inOut'
+					});
+				}
+			});
+		});
+	}
+
+	
+
+
 
 	//activar estilos o efectos para mobile css
 	//habilitar funciones para moviles:
@@ -19,9 +55,11 @@ function iniciar() {
 	}
 
 
-	//Animaciones GSAP
-	gsap.registerPlugin(ScrollTrigger);
+	
 
+
+
+	// animacion de desplazamiento de pantallas iniciales
 	let pantallas, pantallasTL, p1Tw, p3TW, p3Frase;
 	function animaciones() {
 		pantallas = gsap.utils.toArray(".pantallas");
@@ -69,7 +107,7 @@ function iniciar() {
 		);
 		pantallasTL.add(p3TW);
 
-		pantallasTL.to({}, { duration: .25 });
+		pantallasTL.to({}, { duration: 26 });
 	}
 	animaciones();
 
@@ -201,7 +239,7 @@ function iniciar() {
 		  scale: 1,
 		  ease: 'power2.out'
 		})
-		.to({}, { duration: 8 });
+		.to({}, { duration: 6 });
 	}
 	startAnimation();
 
@@ -266,14 +304,17 @@ function iniciar() {
 
 
 
-//codigo para avtivar el correo
-const codigo = "";
-function openMailer(element) {
-	const aMyUTF8Output = base64DecToArr(codigo);
-	const mail = UTF8ArrToStr(aMyUTF8Output);
-	element.setAttribute("href", mail);
-	element.setAttribute("onclick", "");
-};
+
+
+
+
+
+function openMailer(event) {
+	event.preventDefault();
+
+	var url = encodeURIComponent(destinatario = atob("aG9sYUB2ZW50b21hcXVpYS5jb20="));
+	window.location.href = "mailto:" + url;
+}
 
 
 
@@ -281,21 +322,28 @@ function openMailer(element) {
 
 
 
-// window.addEventListener('orientationchange', debounce(function() {
-
-// }, 250));
 
 
 // iniciar la solicitud de los modulos y la ejecucion inicial del sistema.
 //importamos los archivos y librerias necesarios
 requirejs.config({
 	baseUrl: "assets/js/owner",
-	paths: { a: "../animaciones", l: "../librerias", n: "/node_modules", "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.10.4/dist/gsap.min", "ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.10.4/dist/ScrollTrigger.min"},
+	paths: {
+		a: "../animaciones",
+		l: "../librerias",
+		n: "/node_modules",
+		"gsap": "https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min",
+		"ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/ScrollTrigger.min",
+		"ScrollToPlugin": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollToPlugin.min"
+	},
 	shim: {
         'ScrollTrigger': {
+            deps: ['gsap']
+        },
+		'ScrollToPlugin': {
             deps: ['gsap']
         }
     }
 });
-requirejs(["l/modernizr", "l/precarga", "validaciones", "alertas", "peticiones", "l/brands.min", "l/solid.min", "l/fontawesome", "l/js_base64", "gsap", "ScrollTrigger"], iniciar);
+requirejs(["l/modernizr", "l/precarga", "validaciones", "alertas", "peticiones", "l/brands.min", "l/solid.min", "l/fontawesome", "gsap", "ScrollTrigger", "ScrollToPlugin"], iniciar);
 
