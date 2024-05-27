@@ -518,7 +518,7 @@ div#ventanaPOP {
 				position: fixed;
 				top: 0px;
 				right: -80vw;
-				background-color: var(--colorSecundario);
+				background-color: #00e7ffee;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
