@@ -51,6 +51,7 @@ function iniciar() {
 	if ((el.mobile = /Mobile/i.test(navigator.userAgent))) {
 		if ((el.touch = Modernizr.touchevents)) {
 			document.getElementById("pantalla1").getElementsByTagName('button')[0].classList.add("mobileAnimado");
+			document.querySelectorAll(".circuloChico").forEach((b) => b.classList.add("mobileAnimado"));
 		}
 	}
 
