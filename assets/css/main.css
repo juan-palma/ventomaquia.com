@@ -1677,6 +1677,7 @@ div#ventanaPOP {
 	}
 		#carta .boxG {
 			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
 			grid-gap: 0px;
 		}
 			#carta .boxG .tarjeta:nth-child(1) {
