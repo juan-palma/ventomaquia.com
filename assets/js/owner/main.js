@@ -14,6 +14,12 @@ function iniciar() {
 	gsap.registerPlugin(ScrollToPlugin)
 
 
+	//Funciones para habilitar el menu mobile
+	function btnMobileActive(e) {
+		this.classList.toggle('activo');
+	}
+	const btnMobile = document.getElementById('menuBoxMobile');
+	btnMobile.addEventListener('click', btnMobileActive);
 
 
 
