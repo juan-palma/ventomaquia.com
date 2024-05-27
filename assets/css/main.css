@@ -418,6 +418,77 @@ div#ventanaPOP {
 
 
 
+
+
+
+
+	nav {
+		width: 100%;
+		position: fixed;
+		top: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 8999;
+		background-color: #00000066;
+	}
+		nav .boxWrap {
+			padding: 16px var(--margenGlobal);
+			width: 100%;
+			max-width: 100%;
+		}
+			nav .boxWrap .capsula {
+				height: 100%;
+				flex-direction: row;
+				justify-content: space-between;
+				grid-gap: 38px;
+			}
+				nav .boxWrap .capsula > div {
+					flex-grow: 1;
+					flex-shrink: 1;
+				}
+				#logotipo {
+					flex-basis: inherit;
+					flex-grow: 0;
+					width: 162px;
+				}
+				#redesG {
+					flex-basis: fit-content;
+					flex-grow: 0;
+				}
+					nav .hi-icon {
+						width: 54px;
+						height: auto;
+						aspect-ratio: 1;
+					}
+						nav .redesMain .svg-inline--fa {
+							height: 0.7em;
+						}
+				#navs {
+					display: flex;
+					justify-content: flex-end;
+					align-items: center;
+				}
+					#navs .nav ul {
+						display: flex;
+						grid-gap: 28px;
+					}
+					#navs .nav ul li{
+						cursor: pointer;
+
+						-webkit-transition: all 0.3s ease-in-out;
+						-moz-transition: all 0.3s ease-in-out;
+						-o-transition: all 0.3s ease-in-out;
+						-ms-transition: all 0.3s ease-in-out;
+						transition: all 0.3s ease-in-out;
+					}
+					#navs .nav ul li:hover{
+						color: var(--colorSecundario);
+					}
+
+
+
+
 	#pantallaBox{
 		width: 100vw;
 	}
@@ -1737,8 +1808,6 @@ div#ventanaPOP {
 		height: 0px !important;
 		overflow: hidden !important;
 	}
-
-	
 }
 
 

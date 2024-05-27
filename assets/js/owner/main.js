@@ -105,67 +105,6 @@ function iniciar() {
 		});
 	}
 	pantallasAniFunc();
-	
-
-
-
-
-
-
-
-	// animacion de desplazamiento de pantallas iniciales
-	// let pantallas, pantallasTL, p1Tw, p3TW, p3Frase;
-	// function animaciones() {
-	// 	pantallas = gsap.utils.toArray(".pantallas");
-	// 	pantallasTL = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: ".pantallaBox",
-	// 			pin: true,
-	// 			scrub: 2,
-	// 			start: "top top",
-	// 			end: "98% top",
-	// 			anticipatePin:1,
-	// 			invalidateOnRefresh:true,
-    //       		fastScrollEnd: true
-	// 		}
-	// 	});
-
-	// 	p1Tw = gsap.to(pantallas[0], { 
-	// 		// yPercent: "-100",
-	// 		y: () => `+=${pantallas[0].offsetHeight*-1}`,
-	// 		ease:"none",
-	// 		duration:20
-	// 	});
-	// 	pantallasTL.add(p1Tw);
-
-	// 	pantallas[1].style.transform = `translateY(-${pantallas[0].offsetHeight}px)`;
-
-	// 	p3Frase = gsap.to("#pantalla3 .frase", {x:"0vw", ease:"none", paused:true});
-	// 	p3TW = gsap.fromTo(
-	// 		pantallas[2],
-	// 		{
-	// 			// yPercent: "-200",
-	// 			// xPercent: "100",
-	// 			// y: () => `${ (pantallas[1].offsetHeight + pantallas[0].offsetHeight) * -1 }`,
-	// 			y: () => `${ (pantallas[0].offsetHeight) * -1 }`,
-	// 			x: () => `${pantallas[2].offsetWidth}`,
-	// 		},
-	// 		{
-	// 			x: "0",
-	// 			ease:"none",
-	// 			onUpdate: function() {
-	// 				console.log(this.progress());
-	// 				p3Frase.progress(this.progress());
-	// 			},
-	// 			duration:28
-	// 		}
-	// 	);
-	// 	pantallasTL.add(p3TW);
-
-	// 	pantallasTL.to({}, { duration: 26 });
-	// }
-	// animaciones();
-
 
 	function updateAnimations() {
 		// // Asegúrate de que las animaciones y ScrollTriggers existan antes de intentar matarlas
@@ -183,7 +122,6 @@ function iniciar() {
 		// Refrescar ScrollTriggers para asegurarse de que todo esté sincronizado
 		ScrollTrigger.sort();
 		ScrollTrigger.refresh();
-		
 	}
 
 	function updatePantallaStyle() {
@@ -249,39 +187,7 @@ function iniciar() {
 
 
 
-	//Animacion de resplandor de fondo
-	// const resplandorAni = gsap.timeline({
-	// 	repeat: -1
-	// });
 
-	// resplandorAni.to('#gastaMenos > .capsula > .boxG > .resplandor', {
-		
-	// })
-
-
-	// gsap.to('#gastaMenos .capsula .boxG .resplandor', {
-	// 	duration: 1.5,
-	// 	scale: 0.8,
-	// 	repeat: -1,
-	// 	yoyo: true,
-	// 	ease: 'power1.inOut',
-	// 	delay: 6
-	// });
-
-
-	// function startAnimation() {
-	// 	gsap.to('#gastaMenos .capsula .boxG .resplandor', {
-	// 	  duration: 1.5,
-	// 	  scale: 0.8,
-	// 	  repeat: 1,
-	// 	  yoyo: true,
-	// 	  ease: 'power1.inOut',
-	// 	  repeatDelay: 2,
-	// 	  onComplete: startAnimation
-	// 	});
-	//   }
-	  
-	//   gsap.delayedCall(3, startAnimation);
 
 	function startAnimation() {
 		const tl = gsap.timeline({ onComplete: startAnimation });
@@ -363,7 +269,7 @@ function iniciar() {
 
 
 
-
+//Colocacion de correo con cierto nivel de seguridad
 function openMailer(event) {
 	event.preventDefault();
 
