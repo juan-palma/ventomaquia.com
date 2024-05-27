@@ -56,92 +56,142 @@ function iniciar() {
 
 
 	
+	function pantallasAniFunc(){
+		let pantallasTL = gsap.timeline({});
+		pantallasTL.to("#pantalla1", {
+			y: () => `+=${document.getElementById("pantalla1").offsetHeight*-1}`,
+			ease:"none",
+			duration: 2
+		});
+		
+		pantallasTL.to("#pantalla2", {
+			ease:"none",
+			duration:4
+		}, "<");
+
+		let pantalla3TL = gsap.timeline({});
+
+			pantalla3TL.to("#pantalla3", {
+				x: () => `+=${document.getElementById("pantalla3").offsetWidth*-1}`,
+				ease:"none",
+				duration: 2
+			});
+			pantalla3TL.to("#pantalla3 .frase", {
+				x: () => `+=${document.getElementById("pantalla3").offsetWidth}`,
+				ease:"none",
+				duration: 2
+			}, "<");
+
+		pantallasTL.add(pantalla3TL, "-=2");
+
+		pantallasTL.to({}, {
+			duration: 1
+		});
+
+
+		let pantallaBox = document.getElementById("pantallaBox");
+		ScrollTrigger.create({
+			animation: pantallasTL,
+			trigger: pantallaBox,
+			pin:true,
+			anticipatePin:1,
+			scrub:2,
+			start:"top top",
+			end: () => document.getElementById("pantallaBox").offsetHeight,
+			invalidateOnRefresh: true,
+			// markers:true
+		});
+	}
+	pantallasAniFunc();
+	
+
+
+
+
 
 
 
 	// animacion de desplazamiento de pantallas iniciales
-	let pantallas, pantallasTL, p1Tw, p3TW, p3Frase;
-	function animaciones() {
-		pantallas = gsap.utils.toArray(".pantallas");
-		pantallasTL = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".pantallaBox",
-				pin: true,
-				scrub: 2,
-				start: "top top",
-				end: "98% top",
-				anticipatePin:1,
-				invalidateOnRefresh:true,
-          		fastScrollEnd: true
-			}
-		});
+	// let pantallas, pantallasTL, p1Tw, p3TW, p3Frase;
+	// function animaciones() {
+	// 	pantallas = gsap.utils.toArray(".pantallas");
+	// 	pantallasTL = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			trigger: ".pantallaBox",
+	// 			pin: true,
+	// 			scrub: 2,
+	// 			start: "top top",
+	// 			end: "98% top",
+	// 			anticipatePin:1,
+	// 			invalidateOnRefresh:true,
+    //       		fastScrollEnd: true
+	// 		}
+	// 	});
 
-		p1Tw = gsap.to(pantallas[0], { 
-			// yPercent: "-100",
-			y: () => `+=${pantallas[0].offsetHeight*-1}`,
-			ease:"none",
-			duration:20
-		});
-		pantallasTL.add(p1Tw);
+	// 	p1Tw = gsap.to(pantallas[0], { 
+	// 		// yPercent: "-100",
+	// 		y: () => `+=${pantallas[0].offsetHeight*-1}`,
+	// 		ease:"none",
+	// 		duration:20
+	// 	});
+	// 	pantallasTL.add(p1Tw);
 
-		pantallas[1].style.transform = `translateY(-${pantallas[0].offsetHeight}px)`;
+	// 	pantallas[1].style.transform = `translateY(-${pantallas[0].offsetHeight}px)`;
 
-		p3Frase = gsap.to("#pantalla3 .frase", {x:"0vw", ease:"none", paused:true});
-		p3TW = gsap.fromTo(
-			pantallas[2],
-			{
-				// yPercent: "-200",
-				// xPercent: "100",
-				// y: () => `${ (pantallas[1].offsetHeight + pantallas[0].offsetHeight) * -1 }`,
-				y: () => `${ (pantallas[0].offsetHeight) * -1 }`,
-				x: () => `${pantallas[2].offsetWidth}`,
-			},
-			{
-				x: "0",
-				ease:"none",
-				onUpdate: function() {
-					console.log(this.progress());
-					p3Frase.progress(this.progress());
-				},
-				duration:28
-			}
-		);
-		pantallasTL.add(p3TW);
+	// 	p3Frase = gsap.to("#pantalla3 .frase", {x:"0vw", ease:"none", paused:true});
+	// 	p3TW = gsap.fromTo(
+	// 		pantallas[2],
+	// 		{
+	// 			// yPercent: "-200",
+	// 			// xPercent: "100",
+	// 			// y: () => `${ (pantallas[1].offsetHeight + pantallas[0].offsetHeight) * -1 }`,
+	// 			y: () => `${ (pantallas[0].offsetHeight) * -1 }`,
+	// 			x: () => `${pantallas[2].offsetWidth}`,
+	// 		},
+	// 		{
+	// 			x: "0",
+	// 			ease:"none",
+	// 			onUpdate: function() {
+	// 				console.log(this.progress());
+	// 				p3Frase.progress(this.progress());
+	// 			},
+	// 			duration:28
+	// 		}
+	// 	);
+	// 	pantallasTL.add(p3TW);
 
-		pantallasTL.to({}, { duration: 26 });
-	}
-	animaciones();
+	// 	pantallasTL.to({}, { duration: 26 });
+	// }
+	// animaciones();
+
 
 	function updateAnimations() {
-		// Asegúrate de que las animaciones y ScrollTriggers existan antes de intentar matarlas
-
+		// // Asegúrate de que las animaciones y ScrollTriggers existan antes de intentar matarlas
+		// if (pantalla3TL) {
+		// 	pantalla3TL.kill();
+		// }
 		// if (pantallasTL) {
 		// 	pantallasTL.kill();
 		// }
-		// if (fraseP3) {
-		// 	fraseP3.kill();
-		// }
-		// if (pantallasTL.scrollTrigger) {
-		// 	pantallasTL.scrollTrigger.kill(true);
-		// }
+		// ScrollTrigger.getAll().forEach(st => {console.log('señal en el array'); st.kill()});
 
-		//ScrollTrigger.getAll().forEach(st => {console.log('señal en el array'); st.kill()});
-				
-		// Reiniciar animaciones
-		//animaciones();
+		// //Reiniciar animaciones
+		// pantallasAniFunc();
 	
 		// Refrescar ScrollTriggers para asegurarse de que todo esté sincronizado
 		ScrollTrigger.sort();
 		ScrollTrigger.refresh();
+		
 	}
 
 	function updatePantallaStyle() {
-		document.getElementById('pantalla2').style.transform = `translateY(-${document.getElementById('pantalla1').offsetHeight}px)`;
+		//document.getElementById('pantalla2').style.transform = `translateY(-${document.getElementById('pantalla1').offsetHeight}px)`;
 	}
 
 	//window.addEventListener('resize', debounce(updateAnimations, 250));
 	window.addEventListener('orientationchange', debounce(updateAnimations, 250));
-	window.addEventListener('resize', debounce(updatePantallaStyle, 250));
+	//window.addEventListener('resize', debounce(updateAnimations, 250));
+	// window.addEventListener('resize', debounce(updatePantallaStyle, 250));
 
 
 
