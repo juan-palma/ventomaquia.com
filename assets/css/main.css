@@ -1595,7 +1595,7 @@ div#ventanaPOP {
 	}
 
 	#pantalla1 .boxWrap {
-		padding: 44px 0px;
+		padding: calc(44px + 48px) 0px 44px
 	}
 	#pantalla1 .boxInfo {
 		grid-gap: 3dvh;
