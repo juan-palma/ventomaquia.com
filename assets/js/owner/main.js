@@ -99,6 +99,7 @@ function iniciar() {
 			start:"top top",
 			end: () => document.getElementById("pantallaBox").offsetHeight,
 			invalidateOnRefresh: true,
+			fastScrollEnd: true
 			// markers:true
 		});
 	}

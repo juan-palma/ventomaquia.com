@@ -588,7 +588,7 @@ div#ventanaPOP {
 	#pantalla1{
 		width:100%;
 		position: relative;
-		z-index:2;
+		z-index:3;
 	}
 	#pantalla2{
 		position:absolute;
@@ -598,7 +598,7 @@ div#ventanaPOP {
 	#pantalla3Box{
 		position:absolute;
 		top:0px;
-		z-index:3;
+		z-index:2;
 	}
 		#pantalla3{
 			/* transform: translateX(100%); */
