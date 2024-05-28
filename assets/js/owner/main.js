@@ -72,12 +72,12 @@ function iniciar() {
 		});
 		
 		pantallasTL.to("#pantalla2", {
+			backgroundColor: "#100035",
 			ease:"none",
 			duration:4
-		}, "<");
+		}, 1.5);
 
 		let pantalla3TL = gsap.timeline({});
-
 			pantalla3TL.to("#pantalla3", {
 				x: () => `+=${document.getElementById("pantalla3").offsetWidth*-1}`,
 				ease:"none",
@@ -89,7 +89,7 @@ function iniciar() {
 				duration: 2
 			}, "<");
 
-		pantallasTL.add(pantalla3TL, "-=2");
+		pantallasTL.add(pantalla3TL, "-=3");
 
 		pantallasTL.to({}, {
 			duration: 1
