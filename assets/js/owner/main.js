@@ -249,27 +249,43 @@ function iniciar() {
 	//Animacion de gito de tarjeta
 	let cards = gsap.utils.toArray('.cardAniG .cardCapsul');
 	cards.forEach(c => {
-		let animateCard = gsap.timeline({paused:true});
-		animateCard.to(".cardAniG .cardAni", {
+		// let animateCard = gsap.timeline({paused:true});
+		// animateCard.to(".cardAniG .cardAni", {
+		// 	rotationY:"180deg",
+		// 	duration:1,
+		// 	ease: "back.out"
+		// });
+
+		// ScrollTrigger.observe({
+		// 	target: c,
+		// 	type: "touch, pointer",
+		// 	onClick:() => {
+		// 		if (animateCard.reversed()) {
+		// 			animateCard.play();
+		// 		} else {
+		// 			animateCard.reverse();
+		// 		}
+		// 	  },
+		// 	onHover: () => animateCard.play(),
+		// 	onHoverEnd: () => animateCard.reverse(),
+		// 	// onPress: () => animateCard.play(),
+		// 	// onRelease: () => animateCard.reverse()
+		// });
+
+
+		const cardAni = c.querySelector(".cardAni");
+		console.log(cardAni);
+		gsap.to(cardAni, {
+			scrollTrigger:{
+				trigger:cardAni,
+				start: "center 58%",
+				end: "bottom bottom",
+				toggleActions:"restart none reverse none",
+				markers:true
+			},
 			rotationY:"180deg",
 			duration:1,
 			ease: "back.out"
-		});
-
-		ScrollTrigger.observe({
-			target: c,
-			type: "touch, pointer",
-			onClick:() => {
-				if (animateCard.reversed()) {
-					animateCard.play();
-				} else {
-					animateCard.reverse();
-				}
-			  },
-			onHover: () => animateCard.play(),
-			onHoverEnd: () => animateCard.reverse(),
-			// onPress: () => animateCard.play(),
-			// onRelease: () => animateCard.reverse()
 		});
 	});
 	
