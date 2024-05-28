@@ -431,7 +431,7 @@ div#ventanaPOP {
 		justify-content: center;
 		align-items: center;
 		z-index: 8999;
-		background-color: #00000066;
+		background-color: #000000cc;
 	}
 		nav .boxWrap {
 			padding: 16px var(--margenGlobal);
@@ -459,12 +459,12 @@ div#ventanaPOP {
 					flex-grow: 0;
 				}
 					nav .hi-icon {
-						width: 54px;
+						width: 82px;
 						height: auto;
 						aspect-ratio: 1;
 					}
 						nav .redesMain .svg-inline--fa {
-							height: 0.7em;
+							height: 1em;
 						}
 				#navs {
 					display: flex;
@@ -519,7 +519,7 @@ div#ventanaPOP {
 				position: fixed;
 				top: 0px;
 				right: -80vw;
-				background-color: #00e7ffee;
+				background-color: var(--colorPrincipal);
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -540,17 +540,14 @@ div#ventanaPOP {
 			}
 				div#menuMobileBox li {
 					width: auto;
-					font-weight: 600;
-					font-size: clamp(22px, 6vw, 54px);
+					font-weight: 900;
+					font-size: clamp(22px, 7vw, 54px);
 					padding: 8px 4px 8px 24px;
 					text-align: right;
-
 					-webkit-transition: all 0.35s, -webkit-transform 0.35s;
 					transition: all 0.35s, transform 0.35s;
 				}
-				div#menuMobileBox li:hover{
-
-				}
+				
 			div#menuMobileBtn {
 				position: relative;
 				z-index: 8000;

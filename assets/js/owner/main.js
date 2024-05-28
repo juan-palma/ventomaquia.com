@@ -278,10 +278,10 @@ function iniciar() {
 		gsap.to(cardAni, {
 			scrollTrigger:{
 				trigger:cardAni,
-				start: "center 58%",
+				start: "center 65%",
 				end: "bottom bottom",
 				toggleActions:"restart none reverse none",
-				markers:true
+				// markers:true
 			},
 			rotationY:"180deg",
 			duration:1,
