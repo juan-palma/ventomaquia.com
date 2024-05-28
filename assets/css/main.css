@@ -542,8 +542,9 @@ div#ventanaPOP {
 					width: auto;
 					font-weight: 900;
 					font-size: clamp(22px, 7vw, 54px);
-					padding: 8px 4px 8px 24px;
 					text-align: right;
+					color: white;
+					padding: 8px 4px 8px 24px;
 					-webkit-transition: all 0.35s, -webkit-transform 0.35s;
 					transition: all 0.35s, transform 0.35s;
 				}
@@ -574,7 +575,7 @@ div#ventanaPOP {
 					position: absolute;
 				}
 				#menuMobileBox .hi-icon-effect-1 .hi-icon {
-					background: white;
+					
 				}
 
 
