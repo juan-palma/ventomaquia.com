@@ -222,8 +222,9 @@ function iniciar() {
 	const btnGradientTLs = {};
 	
 	btnsGradient.forEach((btn, i) => {
-		btnGradientTLs[`btn${i}`] = gsap.timeline({ paused: true });
-		const tl = btnGradientTLs[`btn${i}`];
+		let tl = btnGradientTLs[`btn${i}`];
+		tl = gsap.timeline({ paused: true });
+		
 		
 		tl.to(btn, {
 			duration: 0.5,
@@ -236,6 +237,39 @@ function iniciar() {
 			type: "pointer",
 			onHover: () => tl.play(),
 			onHoverEnd: () => tl.reverse()
+		});
+	});
+
+
+
+
+
+
+
+	//Animacion de gito de tarjeta
+	let cards = gsap.utils.toArray('.cardAniG .cardCapsul');
+	cards.forEach(c => {
+		let animateCard = gsap.timeline({paused:true});
+		animateCard.to(".cardAniG .cardAni", {
+			rotationY:"180deg",
+			duration:1,
+			ease: "back.out"
+		});
+
+		ScrollTrigger.observe({
+			target: c,
+			onClick:() => {
+				if (animateCard.reversed()) {
+					animateCard.play();
+				} else {
+					animateCard.reverse();
+				}
+			  },
+			//type: "touch, pointer",
+			// onHover: () => animateCard.play(),
+			// onHoverEnd: () => animateCard.reverse(),
+			// onPress: () => animateCard.play(),
+			// onRelease: () => animateCard.reverse()
 		});
 	});
 	
