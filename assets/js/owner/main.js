@@ -258,6 +258,7 @@ function iniciar() {
 
 		ScrollTrigger.observe({
 			target: c,
+			type: "touch, pointer",
 			onClick:() => {
 				if (animateCard.reversed()) {
 					animateCard.play();
@@ -265,9 +266,8 @@ function iniciar() {
 					animateCard.reverse();
 				}
 			  },
-			//type: "touch, pointer",
-			// onHover: () => animateCard.play(),
-			// onHoverEnd: () => animateCard.reverse(),
+			onHover: () => animateCard.play(),
+			onHoverEnd: () => animateCard.reverse(),
 			// onPress: () => animateCard.play(),
 			// onRelease: () => animateCard.reverse()
 		});
