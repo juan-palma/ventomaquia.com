@@ -13,6 +13,26 @@ function iniciar() {
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.registerPlugin(ScrollToPlugin)
 
+	// codigo para actualizar animaciones GSAP.
+	function debounce(func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this, args = arguments;
+			var later = function() {
+				timeout = null;
+				if (!immediate) func.apply(context, args);
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) func.apply(context, args);
+		};
+	}
+
+
+
+
+
 
 	//Funciones para habilitar el menu mobile
 	function btnMobileActive(e) {
@@ -20,6 +40,10 @@ function iniciar() {
 	}
 	const btnMobile = document.getElementById('menuBoxMobile');
 	btnMobile.addEventListener('click', btnMobileActive);
+
+
+
+
 
 
 
@@ -274,7 +298,6 @@ function iniciar() {
 
 
 		const cardAni = c.querySelector(".cardAni");
-		console.log(cardAni);
 		gsap.to(cardAni, {
 			scrollTrigger:{
 				trigger:cardAni,
@@ -288,31 +311,96 @@ function iniciar() {
 			ease: "back.out"
 		});
 	});
-	
 
 
 
 
 
 
+	// animacion basica de entrada fade
+	let basicAniFade = gsap.utils.toArray('.idaAniFade');
+	basicAniFade.forEach((f) => {
+		const direccion = f.dataset.direccion && f.dataset.direccion !== "" ? f.dataset.direccion : "izquierda";
+		const duracion = f.dataset.duracion && f.dataset.duracion !== "" ? f.dataset.duracion : 0.65;
+		const distancia = f.dataset.distancia && f.dataset.distancia !== "" ? f.dataset.distancia : 68;
+		const retrasoGrupo = f.dataset.retrasoGrupo && f.dataset.retrasoGrupo !== "" ? f.dataset.retrasoGrupo : 0.15;
+		const retraso = f.dataset.retraso && f.dataset.retraso !== "" ? f.dataset.retraso : 0;
 
-	// codigo para actualizar animaciones GSAP.
-	function debounce(func, wait, immediate) {
-		var timeout;
-		return function() {
-			var context = this, args = arguments;
-			var later = function() {
-				timeout = null;
-				if (!immediate) func.apply(context, args);
-			};
-			var callNow = immediate && !timeout;
-			clearTimeout(timeout);
-			timeout = setTimeout(later, wait);
-			if (callNow) func.apply(context, args);
+		let propiedad, polaridad, efecto = "to", opacidad = 0;
+		switch (direccion) {
+			case "derecha":
+			case "izquierda":
+				propiedad = "x";
+				polaridad = direccion == "derecha" ? 1 : -1;
+			break;
+
+			case "arriba":
+			case "abajo":
+				propiedad = "y";
+				polaridad = direccion == "arriba" ? -1 : 1;
+			break;
+		}
+		let valor = distancia * polaridad;
+
+		let objeto = f;
+		if(f.classList.contains("idaAniFadeGrupo")){
+			objeto = f.querySelectorAll("." + f.dataset.grupo);
 		};
-	}
 
-	
+		// if(f.dataset.sentido && f.dataset.sentido == "invertir"){
+		// 	efecto = "to";
+		// 	opacidad = 1;
+		// 	valor = 0;
+		// }
+		
+		gsap.set(objeto, {
+			[propiedad]: valor,
+			autoAlpha: 0
+		});
+		// if(!f.dataset.sentido && f.dataset.sentido !== "invertir"){
+		// 	gsap.set(objeto, {
+		// 		[propiedad]: valor,
+		// 		autoAlpha: 0
+		// 	});
+		// }
+		gsap[efecto](objeto, {
+			scrollTrigger:{
+				trigger:objeto,
+				start: "center 85%",
+				end: "center bottom",
+				toggleActions:"restart none reverse none",
+				invalidateOnRefresh: true,
+				fastScrollEnd: true
+			},
+			duration:duracion,
+			ease: "power3.ease.inOut",
+			[propiedad]: 0,
+			autoAlpha: 1,
+			delay:retraso,
+			stagger:retrasoGrupo
+		});
+
+	});
+	gsap.to("#pantalla1 .intro", {
+		duration:0.65,
+		ease: "power3.ease.inOut",
+		y: 0,
+		autoAlpha: 1
+	});
+
+
+
+
+	//codigo para mostrar el sitio despues de que esta cargado
+	const loadingBox = document.getElementById("loadingBox");
+	if(loadingBox){
+		gsap.to(loadingBox, {
+			duration: 0.3,
+			opacity: 0,
+			display: "none"
+		});
+		document.body.style.overflow = "auto";
+	}
 
 }
 

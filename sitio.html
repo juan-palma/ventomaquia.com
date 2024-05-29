@@ -71,12 +71,14 @@
 			<div class="boxWrap">
 				<div class="capsula">
 					<div id="logotipo">
-						<figure>
-							<picture>
-								<source srcset="./assets/img/ventomaquia-logo.svg">
-								<img src="./assets/img/ventomaquia-logo.svg" alt="Ventomaquia Logotipo" width="120">
-							</picture>
-						</figure>
+						<a href="./" target="_parent">
+							<figure>
+								<picture>
+									<source srcset="./assets/img/ventomaquia-logo.svg">
+									<img src="./assets/img/ventomaquia-logo.svg" alt="Ventomaquia Logotipo" width="120">
+								</picture>
+							</figure>
+						</a>
 					</div>
 					<div id="navs">
 						<ul id="menuBox" class="onlyDesktop">
@@ -134,24 +136,27 @@
 		<div id="pantallaG">
 			<div id="pantallaBox">
 				<div id="pantalla1" class="pantallas">
-					<picture class="fondo">
-						<img src="./assets/img/home-banner-fondo.jpg" alt="">
-					</picture>
+					<figure class="fondo">
+						<picture>
+							<source srcset="./assets/img/home-banner-fondo.jpg">
+							<img src="./assets/img/home-banner-fondo.jpg" alt="Fondo mascada de samurai">
+						</picture>
+					</figure>
 					<div class="boxWrap">
 						<div class="capsula">
 							<div class="boxInfo">
-								<div class="intro">
+								<div class="intro" data-direccion="abajo" data-retraso="0.2" data-sentido="invertir">
 									<h1>En <span class="noRomperTexto">Ventomaquia</span> hacemos 3 cosas:</h1>
 									<div class="lista">
 										<ul>
-											<li>Hacerte ganar más dinero 💪</li>
-											<li>Destacarte de tu competencia 😃</li>
-											<li>Hacer que todos conozcan tu negocio 📔</li>
+											<li>Hacerte ganar más dinero 💰</li>
+											<li>Destacarte de tu competencia 😎</li>
+											<li>Hacer que todos conozcan tu negocio 📣</li>
 										</ul>
 									</div>
 									<button class="scrollingTo animar" data-href="#servicios">+</button>
 								</div>
-								<div class="graficas">
+								<div class="graficas idaAniFade idaAniFadeGrupo" data-grupo="grafica"  data-sentido="invertir">
 									<div class="col3 grafica">
 										<div class="titulo">17.9%</div>
 										<p>Aumento de ventas de comercio electrónico impulsadas por redes sociales en el 2023</p>
@@ -200,7 +205,7 @@
 					<div class="capsula">
 						<p class="textoT2">Pues estás en el camino correcto para hacerlo posible</p>
 						<div id="cajaFuerte">
-							<figure>
+							<figure class="idaAniFade" data-direccion="abajo">
 								<picture>
 									<source srcset="./assets/img/cajafuerte.webp">
 									<img src="./assets/img/cajafuerte.webp" alt="Caja Fuerte">
@@ -244,11 +249,13 @@
 							<p>
 								Ese es nuestro compromiso.
 							</p>
-							<div class="boton">
-								Agenda una cita para visitarte
-							</div>
+							<a href="https://wa.me/+5213317140020" target="_blank">
+								<div class="boton">
+									Agenda una cita para visitarte
+								</div>
+							</a>
 						</div>
-						<div class="boxImg">
+						<div class="boxImg idaAniFade" data-direccion="derecha">
 							<figure>
 								<picture>
 									<source srcset="./assets/img/busto.webp">
@@ -263,7 +270,7 @@
 			<article class="boxSeccion" id="simple">
 				<div class="boxWrap">
 					<div class="capsula">
-						<div class="col1">
+						<div class="col1 idaAniFade">
 							<h2>
 								<span class="colorS">¿Así de<br>simple?</span><br>
 								Pues sí.
@@ -276,7 +283,7 @@
 								Si a esto le añadimos nuestras constantes capacitaciones y actualizaciones, el resultado es una empresa que te resuelve.
 							</p>
 						</div>
-						<div class="col2">
+						<div class="col2 idaAniFade" data-direccion="derecha">
 							<div class="tarjeta">
 								<div class="valor">
 									+8
@@ -405,7 +412,7 @@
 							Estos son los servicios con los que <span class="colorS">llevaremos tu negocio al siguiente nivel</span>
 						</h2>
 						<div class="reticula">
-							<div class="tarjeta">
+							<div class="tarjeta idaAniFade" data-direccion="arriba">
 								<div class="fondo">
 									<figure>
 										<picture>
@@ -429,7 +436,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="tarjeta">
+							<div class="tarjeta idaAniFade" data-direccion="abajo">
 								<div class="box">
 									<h4>
 										Diseñados exclusivamente para tu negocio.
@@ -439,7 +446,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="tarjeta">
+							<div class="tarjeta idaAniFade" data-direccion="derecha">
 								<div class="fondo">
 									<figure>
 										<picture>
@@ -461,7 +468,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="tarjeta">
+							<div class="tarjeta idaAniFade" data-direccion="derecha">
 								<div class="box">
 									<h4>
 										Contamos con una increíble habilidad.
@@ -471,7 +478,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="tarjeta">
+							<div class="tarjeta idaAniFade" data-direccion="abajo">
 								<div class="fondo">
 									<figure>
 										<picture>
@@ -506,7 +513,7 @@
 								¿Lo que hacemos te parece tan increíble que tienes preguntas?
 							</p>
 							<p class="icono">
-								🟢
+								🤔
 							</p>
 							<button class="dudasBTN">Revisa aquí si alguien tuvo las mismas dudas</button>
 						</div>
@@ -515,9 +522,9 @@
 								Te convencemos, pero quieres saber si además de profesionales, somos buena onda.
 							</p>
 							<p class="icono">
-								😃
+								😎
 							</p>
-							<button class="dudasBTN">Mándanos un mensaje y acordemos una cita.</button>
+							<a href="https://wa.me/+5213317140020" target="_blank"><button class="dudasBTN">Mándanos un mensaje y acordemos una cita.</button></a>
 						</div>
 					</div>
 				</div>
@@ -534,7 +541,7 @@
 						</h3>
 						<div class="boxG">
 							<div class="resplandor"></div>
-							<div class="boxTarjetas">
+							<div class="boxTarjetas idaAniFade idaAniFadeGrupo" data-direccion="abajo" data-grupo="numero">
 								<div class="tarjeta">
 									<div class="numero">1</div>
 									<p>
@@ -608,7 +615,7 @@
 										</figure>
 										
 										<div class="iconos">
-											<p>🤟🏾😝🤟🏾</p>
+											<p>🤯😱🤯</p>
 										</div>
 									</div>
 								</div>
@@ -629,17 +636,17 @@
 								</picture>
 							</figure>
 						</div>
-						<div class="col2">
-							<h2>
+						<div class="col2 idaAniFade idaAniFadeGrupo" data-grupo="ani" data-direccion="derecha">
+							<h2 class="ani">
 								<span class="colorS">¡Prepárate para despegar!</span><br>
 								Y desatemos el potencial
 								de tu marca.
 							</h2>
-							<p>
+							<p class="ani">
 								Haz de <span class="bold">Ventomaquia</span> tu aliado.<br>
 								Con estrategias personalizadas, innovación constante y un toque de genialidad, aseguramos que tu negocio llegue al siguiente nivel.
 							</p>
-							<p>
+							<p class="ani">
 								Recuerda que <span class="colorS">el que no se actualiza se queda atrás</span>, así que toma la decisión 😃
 							</p>
 						</div>
@@ -763,5 +770,8 @@
 				</div>
 			</div>
 		</footer>
+
+
+		<div id="loadingBox"><img src="./assets/img/ajax.webp" alt="circulo de carga"></div>
 	</body>
 </html>
