@@ -533,7 +533,8 @@ body{
 				cursor: pointer;
 				transition: all 200ms ease-in-out;
 			}
-			#menuBox li:hover{
+			#menuBox li:hover,
+			#menuBox li.activo{
 				color: var(--colorSecundario);
 			}
 				#menuBox li button {
@@ -576,11 +577,12 @@ body{
 								border-radius: 6px;
 								white-space: nowrap;
 							}
-							#menuBox .submenu1Box li:hover{
+							#menuBox .submenu1Box li:hover,
+							#menuBox .submenu1Box li.activo{
 								background-color: var(--colorPrincipal);
 							}
 							#menuBox .submenu1Box li:hover,
-							#menuBox .submenu1Box a li:hover {
+							#menuBox .submenu1Box li.activo {
 								color: #fff !important;
 							}
 
