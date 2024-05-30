@@ -597,7 +597,7 @@ body{
 				align-content: flex-end;
 				flex-wrap: wrap;
 				padding: 8vw;
-				grid-gap: 32px;
+				grid-gap: 20px;
 				color: black;
 
 				-webkit-transition: right 0.35s, -webkit-transform 0.35s;
@@ -648,6 +648,18 @@ body{
 				#menuMobileBox .hi-icon-effect-1 .hi-icon {
 					
 				}
+					#menuMobileBox li > ul {
+						display: flex;
+						flex-direction: column;
+						padding: 8px;
+						grid-gap: 10px;
+						list-style: outside;
+						list-style-position: inside;
+						direction: rtl;
+					}
+						#menuMobileBox li > ul > a li {
+							font-weight: 200;
+						}
 
 
 
