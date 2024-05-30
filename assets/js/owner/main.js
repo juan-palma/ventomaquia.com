@@ -52,7 +52,6 @@ function iniciar() {
 		submenus.forEach(s => {
 			const medidas = s.getBoundingClientRect();
 			s.medidas = medidas;
-			console.log(s.medidas);
 			s.style.display = 'none';
 		});
 
@@ -237,8 +236,9 @@ function iniciar() {
 	let columns = gsap.utils.toArray('#marcas .marca');
 	let columnsLength = 4;
 	if(columns){
-		for (let i = 0; i < columnsLength; i++) {
-			const column = columns[i];
+		// for (let i = 0; i < columnsLength; i++) {
+		columns.forEach((c, i) => {
+			const column = c;
 			const logos = column.querySelectorAll("figure");
 			const randomOffset = gsap.utils.random(["-200%", "200%"]);
 			const isEven = i % 2 === 0;
@@ -275,31 +275,42 @@ function iniciar() {
 					autoAlpha: 0,
 				});
 			});
-		}
-	}
+		});
+	};
 
 
 
 
 
 
-
-	function startAnimation() {
-		const tl = gsap.timeline({ onComplete: startAnimation });
-	  
-		tl.to('#gastaMenos .capsula .boxG .resplandor', {
-		  duration: 2.5,
-		  scale: 0.8,
-		  ease: 'power2.in'
-		})
-		.to('#gastaMenos .capsula .boxG .resplandor', {
-		  duration: 2.5,
-		  scale: 1,
-		  ease: 'power2.out'
-		})
-		.to({}, { duration: 6 });
-	}
-	startAnimation();
+	const gastaMenosResplandor = document.querySelector('#gastaMenos .capsula .boxG .resplandor');
+	if(gastaMenosResplandor){
+		let gmtTw = gsap.to(gastaMenosResplandor, {
+			scale:0.8,
+			duration:2.5,
+			ease: 'power2.out',
+			repeat:-1,
+			runBackwards:true,
+			yoyo:true
+		});
+		// function startAnimation() {
+		// 	const tl = gsap.timeline({ onComplete: startAnimation });
+		  
+		// 	tl.to('#gastaMenos .capsula .boxG .resplandor', {
+		// 	  duration: 2.5,
+		// 	  scale: 0.8,
+		// 	  ease: 'power2.in'
+		// 	})
+		// 	.to('#gastaMenos .capsula .boxG .resplandor', {
+		// 	  duration: 2.5,
+		// 	  scale: 1,
+		// 	  ease: 'power2.out'
+		// 	})
+		// 	.to({}, { duration: 6 });
+		// }
+		// startAnimation();
+	};
+	
 
 
 
@@ -497,7 +508,7 @@ function openMailer(event) {
 // iniciar la solicitud de los modulos y la ejecucion inicial del sistema.
 //importamos los archivos y librerias necesarios
 requirejs.config({
-	baseUrl: "assets/js/owner",
+	baseUrl: baseUrl,
 	paths: {
 		a: "../animaciones",
 		l: "../librerias",

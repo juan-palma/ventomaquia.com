@@ -1595,7 +1595,8 @@ body{
 								-ms-transition: all 0.3s ease-in-out;
 								transition: all 0.3s ease-in-out;
 							}
-							footer .capsula .boxG .col ul li:hover{
+							footer .capsula .boxG .col ul li:hover,
+							footer .capsula .boxG .col ul li.activo{
 								color: var(--colorSecundario);
 							}
 							footer .capsula .boxG .logo > div {
