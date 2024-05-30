@@ -42,6 +42,71 @@ function iniciar() {
 	btnMobile.addEventListener('click', btnMobileActive);
 
 
+	//Animacion y control de submenus
+	const botonMenu = document.getElementById("servicioBtn");
+	let submenus = gsap.utils.toArray(".submenu1Box a");
+	if(submenus){
+		const sumN = submenus.length;
+		let submenuAbierto = false;
+
+		submenus.forEach(s => {
+			const medidas = s.getBoundingClientRect();
+			s.medidas = medidas;
+			console.log(s.medidas);
+			s.style.display = 'none';
+		});
+
+		const timeline = gsap.timeline({ paused: true });
+		botonMenu.addEventListener("click", () => {
+			if (submenuAbierto) {
+				timeline.reverse();
+			} else {
+				submenus.forEach((elemento) => {
+				gsap.set(elemento, { rotation: 0 }); // Restablece la rotación antes de la animación
+				});
+				
+				timeline.clear(); // Limpia la línea de tiempo existente
+				
+				timeline.to(submenus, {
+					y: (index, s) => ((sumN - 1 - index) * (s.medidas.height + 8) + 24),
+					duration:0.45,
+					rotation: () => gsap.utils.random(-4, 4),
+					autoAlpha: 1,
+					display:"block",
+					ease: "power4.ease.inOut",
+					stagger:0.20
+				});
+				
+				timeline.play();
+			}
+			submenuAbierto = !submenuAbierto;
+		});
+
+
+		// timeline.to(submenus, {
+		// 	y: (index, s) => ((sumN - 1 - index) * (s.medidas.height + 8) + 24),
+		// 	duration:0.45,
+		// 	rotation: () => gsap.utils.random(-4, 4),
+		// 	autoAlpha: 1,
+		// 	display:"block",
+		// 	ease: "power4.ease.inOut",
+		// 	stagger:0.20
+		// });
+
+		// document.getElementById("servicioBtn").addEventListener("click", () => {
+		// 	if (submenuAbierto) {
+		// 		timeline.reverse();
+		// 	} else {
+		// 		submenus.forEach((elemento) => {
+		// 			gsap.set(elemento, { rotation: 0 }); // Restablece la rotación antes de la animación
+		// 		});
+		// 		timeline.play();
+		// 	}
+		// 	submenuAbierto = !submenuAbierto;
+		// });
+	}
+	
+
 
 
 
@@ -301,7 +366,7 @@ function iniciar() {
 		gsap.to(cardAni, {
 			scrollTrigger:{
 				trigger:cardAni,
-				start: "center 65%",
+				start: "center 75%",
 				end: "bottom bottom",
 				toggleActions:"restart none reverse none",
 				// markers:true
