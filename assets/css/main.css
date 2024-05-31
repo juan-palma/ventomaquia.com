@@ -818,7 +818,7 @@ body{
 				/* transform: translateX(-100vw); */
 				left: -100vw;
 				/* will-change: transform, opacity; */
-				color: var(--colorTexto2);
+				color: #fff;
 			}
 		.pantallas {
 			display: flex;
