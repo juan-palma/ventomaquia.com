@@ -1710,12 +1710,16 @@ button{
     position: absolute;
     left: -2px;
 }
-.linea {
-	width: 1px;
-	height: 120px;
-	border: 1px solid var(--colorSecundario);
-	margin: 0 auto 32px auto;
+.lineaCaja {
+    height: 120px;
+	margin-bottom: 36px;
 }
+	.linea {
+		width: 1px;
+		height: 120px;
+		border: 1px solid var(--colorSecundario);
+		margin: 0 auto 32px auto;
+	}
 
 
 
