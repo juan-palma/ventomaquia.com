@@ -1766,6 +1766,7 @@ button{
 					font-family: 'Mulish';
 					font-weight: 800;
 					margin-bottom: 12px;
+					padding-left: 24px;
 				}
 				.promos h5 {
 					font-family: 'Mulish';
@@ -1774,6 +1775,9 @@ button{
 				}
 				.promos .capsula > .box .col .box {
 					padding: 36px;
+					display: flex;
+					flex-direction: column;
+					grid-gap: 10px;
 				}
 				.promos .letraschiquitas {
 					font-size: 80%;
@@ -2053,7 +2057,52 @@ button{
 				transform: translate(60%, 8%);
 				position: absolute;
 			}
-			
+	
+#resumen2 .fondo {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+	#resumen2 .fondo img {
+		object-fit: cover;
+	}
+#resumen2 .capsula {
+	flex-direction: column;
+	align-items: center;
+    text-align: center;
+	grid-gap: 62px;
+	margin-top: 110px;
+}
+	#resumen2 .capsula h3 {
+		text-align: center;
+		font-family: 'Mulish';
+		padding: 32px 24px;
+		font-weight: 300;
+	}
+	#resumen2 .capsula .iconos {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 58px;
+		justify-content: space-between;
+		align-items: center;
+	}
+		#resumen2 .capsula .iconos .icono {
+			display: grid;
+			justify-content: center;
+			text-align: center;
+			grid-gap: 20px;
+		}
+			#resumen2 .capsula .iconos figure {
+				width: 120px;
+				margin: 0 auto;
+			}
+	#resumen2 .capsula > p {
+		width: 86%;
+		font-size: 134%;
+	}
+
+
+
 
 
 
@@ -2543,6 +2592,10 @@ button{
 		#notienes .capsula .row2 {
 			grid-template-columns: 1fr;
 		}
+
+	#resumen2 .capsula .iconos {
+		grid-template-columns: 1fr;
+	}
 
 }
 

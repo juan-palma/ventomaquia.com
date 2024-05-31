@@ -493,7 +493,6 @@ function iniciar() {
 
 
 	let lineasAnimadas = gsap.utils.toArray('.linea');
-	console.log(lineasAnimadas);
 	lineasAnimadas.forEach(l => {
 		gsap.from(l, {
 			height:0,
