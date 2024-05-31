@@ -927,6 +927,9 @@ body{
 	.bold{
 		font-weight: 900;
 	}
+	.italica{
+		font-style: italic;
+	}
 	h2{
 		font-size: 180%;
 	}
