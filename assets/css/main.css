@@ -2594,8 +2594,12 @@ button{
 		}
 
 	#resumen2 .capsula .iconos {
-		grid-template-columns: 1fr;
+		grid-gap: 38px;
+		align-items: flex-start;
 	}
+		#resumen2 .capsula .iconos figure {
+			width: 100%;
+		}
 
 }
 
