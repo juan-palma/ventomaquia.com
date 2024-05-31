@@ -162,7 +162,7 @@ function iniciar() {
 		});
 		
 		pantallasTL.to("#pantalla2", {
-			backgroundColor: "#100035",
+			// backgroundColor: "#100035",
 			ease:"none",
 			duration:4
 		}, 1.5);
@@ -444,11 +444,11 @@ function iniciar() {
 		gsap[efecto](objeto, {
 			scrollTrigger:{
 				trigger:objeto,
-				start: "center 85%",
+				start: "10% 85%",
 				end: "center bottom",
 				toggleActions:"restart none reverse none",
 				invalidateOnRefresh: true,
-				fastScrollEnd: true
+				fastScrollEnd: true,
 			},
 			duration:duracion,
 			ease: "power3.ease.inOut",
@@ -465,6 +465,54 @@ function iniciar() {
 		y: 0,
 		autoAlpha: 1
 	});
+
+
+
+
+
+
+
+
+	
+	gsap.to('#conviene .fondo figure', {
+		yPercent: -50, 
+		ease: 'none',
+		scrollTrigger: {
+			trigger: '#conviene .fondo', 
+			start: 'top bottom', 
+			end: 'bottom top', 
+			scrub: 2, 
+			anticipatePin:1,
+			invalidateOnRefresh: true,
+			fastScrollEnd: true
+		}
+	});
+
+
+
+
+
+	let lineasAnimadas = gsap.utils.toArray('.linea');
+	console.log(lineasAnimadas);
+	lineasAnimadas.forEach(l => {
+		gsap.from(l, {
+			height:0,
+			ease:"power.ease.inOut",
+			scrollTrigger: {
+				trigger: l,
+				start: 'center 70%',
+				end: 'center 70%',
+				toggleActions:"restart none reverse none",
+				fastScrollEnd: true
+			}
+		});
+	});
+	
+
+
+
+
+
 
 
 

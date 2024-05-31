@@ -1710,6 +1710,12 @@ button{
     position: absolute;
     left: -2px;
 }
+.linea {
+	width: 1px;
+	height: 120px;
+	border: 1px solid var(--colorSecundario);
+	margin: 0 auto 32px auto;
+}
 
 
 
@@ -1904,9 +1910,146 @@ button{
 					border-radius: 24px;
 				}
 
+		#conviene {
+			margin: 62px 0px;
+		}
+			#conviene .fondo {
+				width: 100%;
+				position: absolute;
+				height: 70%;
+				overflow: hidden;
+			}
+				#conviene .fondo figure{
+					height: 100vh;
+				}
+					#conviene .fondo img {
+						object-fit: cover;
+					}
+			#conviene .boxWrap {
+				padding: 0;
+			}
+				#conviene .boxWrap .info {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+					#conviene .boxWrap .info > div {
+						width: fit-content;
+						max-width: 80%;
+						background-color: var(--colorPrincipal);
+						padding: 12px 28px;
+						border-radius: 24px;
+						font-size: 140%;
+						text-align: center;
+					}
+					#conviene .boxWrap .info > figure {
+						width: 60%;
+						margin-top: 132px;
+					}
+
+		#resumen .capsula {
+			flex-direction: row;
+			grid-gap: 62px;
+			align-items: center;
+			margin-top: 110px;
+		}
+			#resumen .capsula h3 {
+				text-align: center;
+				font-family: 'Mulish';
+				padding: 32px 24px;
+			}
+			#resumen .capsula ul {
+				font-size: 86%;
+				text-align: center;
+				list-style-position: inside;
+			}
 
 
-
+	#notienes {
+		background-color: var(--colorPrincipal);
+		padding: 180px 0px 0px 0px;
+	}
+		#notienes .destello {
+			width: 200px;
+			position: absolute;
+			top: -98px;
+			z-index: 100;
+		}
+		#notienes .capsula .row {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+			#notienes .fondo {
+				position: absolute;
+			}
+				#notienes .fondo img {
+					object-fit: cover;
+				}
+			#notienes .info {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+				#notienes .row1 .info p {
+					margin-bottom: 110px;
+				}
+			#notienes .linea {
+				border: 1px solid #fff;
+			}
+		#notienes .capsula .row2 {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 28px;
+			position: relative;
+		}
+			#notienes .capsula .row2 .col {
+				display: grid;
+				grid-template-columns: 70% 30%;
+				align-items: flex-start;
+				justify-content: flex-start;
+				grid-gap: 24px;
+				padding: 24px 38px;
+				background-color: #000;
+				border-radius: 24px;
+			}
+				#notienes .capsula .row2 > .col .info {
+					grid-gap: 16px;
+					align-items: flex-start;
+				}
+					#notienes .capsula .row2 > .col .info > h3 {
+						font-family: 'Mulish';
+					}
+					#notienes .capsula .row2 > .col .info > p {
+						font-size: 86%;
+					}
+					#notienes .capsula .row2 > .col .info .precio {
+						font-size: 74%;
+					}
+						#notienes .capsula .row2 > .col .info .precio .cifra {
+							display: inline-flex;
+							border: 1px solid white;
+							padding: 5px 8px;
+							font-size: 170%;
+							font-weight: 800;
+						}
+		#notienes .capsula .row3 {
+			text-align: center;
+			justify-content: center;
+		}
+			#notienes .capsula .row3 > * {
+				position: relative;
+			}
+			#notienes .capsula .row3 .fondo {
+				width: 36%;
+				z-index: 0;
+				transform: translate(60%, 8%);
+				position: absolute;
+			}
+			
 
 
 
@@ -2369,21 +2512,27 @@ button{
 				display: flex;
 				justify-content: center;
 			}
-		#hola .capsula .box > .col2 {
-			grid-template-columns: 1fr;
-		}
-		#solo .boxG {
+	#hola .capsula .box > .col2 {
+		grid-template-columns: 1fr;
+	}
+	#solo .boxG {
+		flex-direction: column;
+	}
+		#solo .boxG > .col {
 			flex-direction: column;
 		}
-			#solo .boxG > .col {
-				flex-direction: column;
-			}
-		#elegirnos .capsula {
-			grid-template-columns: 1fr;
+	#elegirnos .capsula {
+		grid-template-columns: 1fr;
+	}
+		#elegirnos .capsula .col1 {
+			padding: 0px 24px;
 		}
-			#elegirnos .capsula .col1 {
-				padding: 0px 24px;
-			}
+
+	#conviene .boxWrap .info > figure {
+		width: 80%;
+		margin-top: 60px;
+	}
+	
 
 }
 
