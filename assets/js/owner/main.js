@@ -144,7 +144,9 @@ function iniciar() {
 	//habilitar funciones para moviles:
 	if ((el.mobile = /Mobile/i.test(navigator.userAgent))) {
 		if ((el.touch = Modernizr.touchevents)) {
-			document.getElementById("pantalla1").getElementsByTagName('button')[0].classList.add("mobileAnimado");
+			if(document.getElementById("pantalla1").getElementsByTagName('button').length > 0) {
+				document.getElementById("pantalla1").getElementsByTagName('button')[0].classList.add("mobileAnimado");
+			}
 			document.querySelectorAll(".circuloChico").forEach((b) => b.classList.add("mobileAnimado"));
 		}
 	}

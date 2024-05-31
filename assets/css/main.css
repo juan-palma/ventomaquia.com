@@ -23,9 +23,12 @@
 	--colorBackDark: #000000;
 	--colorBackColor: #393735;
 	--colorPrincipal: #4200df;
+	--colorPrincipalR: 66, 0, 223;
 	--colorSecundario: #00e7ff;
+	--colorSecundarioR: 0, 231, 255;
 	--colorTexto: #fff;
 	--colorTexto2: #5d29ff;
+	--colorTexto2R: 93, 41, 255;
 	--margenGlobal: 6vw;
 	--anchoContainer: calc(100vw - (var(--margenGlobal) * 2));
 
@@ -620,6 +623,12 @@ body{
 					padding: 8px 4px 8px 24px;
 					-webkit-transition: all 0.35s, -webkit-transform 0.35s;
 					transition: all 0.35s, transform 0.35s;
+					white-space: nowrap;
+				}
+				#menuMobileBox a:hover li,
+				#menuMobileBox a.activo li{
+					color: #000 !important;
+					font-weight: 600;
 				}
 				
 			#menuMobileBtn {
@@ -747,7 +756,7 @@ body{
 						border-radius: 50%;
 						cursor: pointer;
 						margin-bottom: 34px;
-						box-shadow: 0px 0px 0px 4px rgba(0,231,255,1);
+						box-shadow: 0px 0px 0px 4px rgba(var(--colorSecundarioR),1);
 						display: flex;
 						justify-content: center;
 						align-items: center;
@@ -757,13 +766,13 @@ body{
 					}
 					@keyframes pulsar {
 						0% {
-							box-shadow: 0px 0px 0px 4px rgba(0,231,255,1);
+							box-shadow: 0px 0px 0px 4px rgba(var(--colorSecundarioR),1);
 						}
 						50% {
-							box-shadow: 0px 0px 30px 4px rgba(0,231,255,1);
+							box-shadow: 0px 0px 30px 4px rgba(var(--colorSecundarioR),1);
 						}
 						100% {
-							box-shadow: 0px 0px 0px 4px rgba(0,231,255,1);
+							box-shadow: 0px 0px 0px 4px rgba(var(--colorSecundarioR),1);
 						}
 					}
 					#pantalla1 .intro button:hover{
@@ -953,7 +962,7 @@ body{
 		border: 0px none transparent;
 		border-radius: 50%;
 		cursor: pointer;
-		box-shadow: 0px 0px 0px 2px rgba(0,231,255,1);
+		box-shadow: 0px 0px 0px 2px rgba(var(--colorSecundarioR),1);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -964,13 +973,13 @@ body{
 	}
 	@keyframes pulsar2 {
 		0% {
-			box-shadow: 0px 0px 0px 2px rgba(0,231,255,1);
+			box-shadow: 0px 0px 0px 2px rgba(var(--colorSecundarioR),1);
 		}
 		50% {
-			box-shadow: 0px 0px 20px 2px rgba(0,231,255,1);
+			box-shadow: 0px 0px 20px 2px rgba(var(--colorSecundarioR),1);
 		}
 		100% {
-			box-shadow: 0px 0px 0px 2px rgba(0,231,255,1);
+			box-shadow: 0px 0px 0px 2px rgba(var(--colorSecundarioR),1);
 		}
 	}
 	.circuloChico:hover{
@@ -1031,20 +1040,23 @@ body{
 				flex: 1 1 75%;
 				height: auto;
 				position: relative;
-				background: rgb(66 0 223);
-				background: linear-gradient(48deg, rgba(66 0 223) -8%, rgba(0, 0, 0, 1) 80%);
+				background: var(--colorPrincipal);
+				background: linear-gradient(48deg, rgba(var(--colorPrincipalR), 1) -8%, rgba(0, 0, 0, 1) 80%);
 				border-radius: 32px;
 				padding: 32px 140px 32px 42px;
 				display: flex;
 				flex-direction: column;
 				grid-gap: 22px;
 			}
+				#vendeMas .capsula .boxInfo ul {
+					list-style: none;
+				}
 				#vendeMas .capsula .boxInfo > figure {
 					width: 18%;
 				}
 					#vendeMas .capsula .boxInfo h2 {
 						font-size: 180%;
-						background: linear-gradient(to bottom right, #FFFFFF 22%, #00E7FF 50%, #0058DC 86%);
+						background: linear-gradient(to bottom right, #FFFFFF 22%, var(--colorSecundario) 50%, var(--colorPrincipal) 86%);
 						-webkit-background-clip: text;
 						-webkit-text-fill-color: transparent;
 					}
@@ -1055,12 +1067,12 @@ body{
 					#vendeMas .capsula .boxInfo p {
 						font-weight: 900;
 					}
-					#vendeMas .capsula .boxInfo .boton {
-						width: 48%;
+					.btnArrowGradient.boton {
+						width: fit-content;
 						position: relative;
-						background: rgb(0, 231, 255);
-						background: linear-gradient(48deg, rgba(66 0 223) 5%, rgba(0,231,255,1) 100%);
-						padding: 9px 60px 9px 20px;
+						background: var(--colorPrimario);
+						background: linear-gradient(48deg, rgba(var(--colorPrincipalR), 1) 5%, rgba(var(--colorSecundarioR),1) 100%);
+						padding: 16px 60px 16px 20px;
 						border-radius: 16px;
 						text-align: right;
 						box-shadow: 7px 8px 25px -6px rgba(0,0,0,0.83);
@@ -1075,7 +1087,12 @@ body{
 						-ms-transition: all 0.3s ease-in-out;
 						transition: all 0.3s ease-in-out;
 					}
-						#vendeMas .capsula .boxInfo .boton::after {
+						.btnArrowGradient.boton > div {
+							font-weight: 900;
+							color: var(--colorSecundario);
+							font-size: 108%;
+						}
+						.btnArrowGradient.boton::after {
 							content: "";
 							position: absolute;
 							top: 0px;
@@ -1095,11 +1112,10 @@ body{
 							-ms-transition: all 0.3s ease-in-out;
 							transition: all 0.3s ease-in-out;
 						}
-					#vendeMas .capsula .boxInfo .boton:hover{
+					.btnArrowGradient.boton:hover{
 						transform: scale(1.1);
 					}
-					
-						#vendeMas .capsula .boxInfo .boton:hover::after{
+						.btnArrowGradient.boton:hover::after{
 							right: -10px;
 						}
 			#vendeMas .capsula .boxImg {
@@ -1309,7 +1325,7 @@ body{
 					grid-column: 4/5;
 					grid-row: 1/3;
 					background: #000;
-					background: linear-gradient(66deg, rgba(66 0 223) -76%, rgba(0,0,0,1) 26%);
+					background: linear-gradient(66deg, rgba(var(--colorPrincipalR), 1) -76%, rgba(0,0,0,1) 26%);
 				}
 					#servicios .capsula .reticula .tarjeta:nth-child(3) .fondo figure picture img {
 						object-position: 66%;
@@ -1328,7 +1344,7 @@ body{
 				#servicios .capsula .reticula .tarjeta:nth-child(5) {
 					grid-column: 2/4;
 					background: #000;
-					background: linear-gradient(73deg, rgba(66 0 223) -56%, rgba(0,0,0,1) 48%);
+					background: linear-gradient(73deg, rgba(var(--colorPrincipalR), 1) -56%, rgba(0,0,0,1) 48%);
 				}
 					#servicios .capsula .reticula .tarjeta:nth-child(1) .box h3,
 					#servicios .capsula .reticula .tarjeta:nth-child(5) .box h3 {
@@ -1364,8 +1380,8 @@ body{
 			#dudas .capsula .col button {
 				appearance: none;
 				padding: 8px 14px;
-				background: rgb(66 0 223);
-				background: linear-gradient(37deg, rgba(66 0 223) 74%, rgba(0,231,255,1) 100%);
+				background: var(--colorPrincipal);
+				background: linear-gradient(37deg, rgba(var(--colorPrincipalR), 1) 74%, rgba(var(--colorSecundarioR),1) 100%);
 				border: 0px none transparent;
 				border-radius: 12px;
 				margin-top: 24px;
@@ -1400,7 +1416,7 @@ body{
 				width: 128%;
 				height: 116%;
 				position: absolute;
-				background: radial-gradient(closest-side, rgba(0,231,255,0.4) -20%, rgba(0,0,0,0) 100%);
+				background: radial-gradient(closest-side, rgba(var(--colorSecundarioR),0.4) -20%, rgba(0,0,0,0) 100%);
 				will-change: transform;
 			}
 			#gastaMenos .capsula .boxG .boxTarjetas {
@@ -1625,6 +1641,275 @@ body{
 						#footerIconoCorreo .svg-inline--fa {
 							height: 0.6em;
 						}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+article ul {
+	list-style: disc;
+	list-style-type: square;
+	padding-left: 15px;
+}
+	article li {
+		margin-bottom: 6px;
+	}
+.precioBoton {
+	background-color: var(--colorPrincipal);
+	width: fit-content;
+	padding: 8px 22px;
+	font-size: 130%;
+	font-weight: 900;
+	border-radius: 24px;
+}
+.precioAnterior {
+	padding-left: 24px;
+	text-decoration: line-through;
+}
+.bodySitios h2 {
+    width: 80%;
+    text-align: center;
+    padding: 60px 0px;
+}
+button{
+	appearance: none;
+	background-color: transparent;
+	border: 0px none transparent;
+
+}
+.botonContorno {
+    width: fit-content;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 6px 29px;
+    color: var(--colorSecundario);
+    cursor: pointer;
+	background-color: #000;
+
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.botonContorno:hover{
+	background-color: rgba(var(--colorSecundarioR),0.8);
+	color: #000 !important;
+}
+.emojiList {
+    position: absolute;
+    left: -2px;
+}
+
+
+
+	/* Estilos para la pagina Sitios Web */
+	.textoServicio {
+		font-family: 'Mulish';
+		font-size: 56%;
+		font-weight: 400;
+		color: white;
+	}
+
+	.bodySitios #pantalla1 {
+		align-items: flex-start;
+	}
+		.bodySitios #pantalla1 .intro {
+			border: 0px none;
+			background-color: transparent;
+			margin-top: 8vh;
+		}
+	
+
+	
+	.promos .capsula {
+		grid-gap: 78px;
+	}
+		.promos .capsula .col {
+			position: relative;
+		}
+		.promos .capsula .col2 {
+			display: flex;
+			justify-content: center;
+		}
+			.promos .capsula > .box {
+				width: 100%;
+				display: flex;
+				grid-gap: 56px;
+			}
+				.promos h3 {
+					font-size: 320%;
+					color: var(--colorSecundario);
+					margin-bottom: 32px;
+				}
+				.promos h4 {
+					font-family: 'Mulish';
+					font-weight: 800;
+					margin-bottom: 12px;
+				}
+				.promos h5 {
+					font-family: 'Mulish';
+					font-weight: 600;
+					margin-bottom: 12px;
+				}
+				.promos .capsula > .box .col .box {
+					padding: 36px;
+				}
+				.promos .letraschiquitas {
+					font-size: 80%;
+					color: var(--colorSecundario);
+					margin-top: 26px;
+				}
+				.promos .capsula .col2 figure {
+					flex: 1 1 140%;
+					width: 140%;
+					min-width: 140%;
+					z-index: -1;
+				}
+				.promos .capsula .col2 a {
+					position: absolute;
+					bottom: 10%;
+					left: 20%;
+				}
+				
+		#hola .capsula .box > .col1 {
+			display: flex;
+			flex-direction: column;
+			grid-gap: 16px;
+		}
+		#hola .capsula .box > .col2 {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			justify-content: center;
+			align-items: center;
+			grid-gap: 32px;
+		}
+			#hola .capsula .box > .col2 > .col {
+				background-color: var(--colorSecundario);
+				aspect-ratio: 1;
+				border-radius: 24px;
+				padding: 24px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			#hola .capsula .box > .col2 > .col1 {
+				background: var(--colorPrincipal);
+				background: radial-gradient(closest-side, rgba(0, 0, 0, 1) 59%, rgba(var(--colorPrincipalR), 1) 161%);
+			}
+				#hola .capsula .box > .col1 > h3 {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: column;
+					align-content: flex-end;
+					text-align: right;
+				}
+					#hola .capsula .box > .col1 > h3 > div:first-child {
+						width: 30%;
+						position: absolute;
+						right: 0px;
+						left: auto;
+						top: -5%;
+						margin: 0 0 0 auto;
+					}
+					#hola .capsula .box > .col1 > ul {
+						list-style: none;
+						padding-left: 24px;
+					}
+				#hola .capsula .box > .col2 > .col .box {
+					padding: 0px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+				#hola .capsula .box > .col2 > .col2 {
+					color: #000;
+				}
+					#hola .capsula .box > .col2 > .col2 a {
+						position: relative;
+						bottom: inherit;
+						left: inherit;
+						margin-top: 26px;
+						color: #fff;
+					}
+
+
+		#solo .boxG {
+			width: 100%;
+			position: relative;
+			display: flex;
+			grid-gap: 56px;
+		}
+			#solo .boxG > .col {
+				position: relative;
+				display: flex;
+				align-items: flex-end;
+				grid-gap: 20px;
+				background-color: white;
+				color: #000;
+				padding: 24px 38px;
+				border-radius: 24px;
+			}
+				#solo .boxG > .col .info {
+					flex: 1 1 70%;
+					display: flex;
+					flex-direction: column;
+					grid-gap: 18px;
+				}
+					#solo .boxG > .col .info > h3, #solo .boxG > .col .info > p:last-child {
+						font-family: 'Mulish';
+						color: var(--colorPrincipal);
+					}
+				#solo .boxG > .col .img {
+					flex: 1 1 30%;
+					width: 30%;
+					min-width: 30%;
+				}
+				
+		#elegirnos .capsula {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 56px;
+		}
+			#elegirnos .capsula .col1 {
+				padding-left: 93px;
+			}
+				#elegirnos .capsula .col1 h2 {
+					width: 100%;
+					text-align: left;
+					padding: 0;
+					margin-bottom: 34px;
+					color: var(--colorSecundario);
+				}
+			#elegirnos .capsula .col2 {
+				display: flex;
+				flex-direction: column;
+				grid-gap: 28px;
+			}
+				#elegirnos .capsula .col2 .tarjeta {
+					background-color: var(--colorPrincipal);
+					padding: 20px 36px;
+					border-radius: 24px;
+				}
+
+
+
+
+
+
+
 
 
 
@@ -1940,11 +2225,11 @@ body{
 			width: 154%;
 			height: auto;
 		}
-		#vendeMas .capsula .boxInfo .boton {
+		.btnArrowGradient.boton {
 			width: 88%;
 			padding: 9px 52px 9px 17px;
 		}
-			#vendeMas .capsula .boxInfo .boton::after {
+		.btnArrowGradient.boton::after {
 				width: 52px;
 			}
 
@@ -2062,6 +2347,44 @@ body{
 			font-size: clamp(1px, (12vw / 1) + 0.1em, 64px);
 		}
 
+
+
+
+	/* servicios sitios web */
+	.bodySitios #pantalla1 {
+		align-items: center;
+	}
+	.promos .capsula > .box {
+		flex-direction: column;
+	}
+		.promos .capsula .col2 {
+			flex-direction: column;
+			align-items: center;
+		}
+			.promos .capsula .col2 a {
+				width: auto;
+				position: relative;
+				left: auto;
+				bottom: inherit;
+				display: flex;
+				justify-content: center;
+			}
+		#hola .capsula .box > .col2 {
+			grid-template-columns: 1fr;
+		}
+		#solo .boxG {
+			flex-direction: column;
+		}
+			#solo .boxG > .col {
+				flex-direction: column;
+			}
+		#elegirnos .capsula {
+			grid-template-columns: 1fr;
+		}
+			#elegirnos .capsula .col1 {
+				padding: 0px 24px;
+			}
+
 }
 
 
@@ -2139,11 +2462,11 @@ body{
 	Media Queries
 ========================================================================== */
 @media only screen and (max-width: 319px) {
-	#vendeMas .capsula .boxInfo .boton {
+	.btnArrowGradient.boton {
 		width: 100%;
 		padding: 9px 17px;
 	}
-		#vendeMas .capsula .boxInfo .boton:after {
+		.btnArrowGradient.boton:after {
 			display: none;
 		}
 
