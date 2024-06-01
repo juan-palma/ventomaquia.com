@@ -2368,6 +2368,7 @@ button{
 	#pantalla1 .boxInfo {
 		grid-gap: 3dvh;
 		align-items: center;
+		margin-bottom: 6vh;
 	}
 		#pantalla1 .fondo {
 			height: 80vh;
@@ -2556,7 +2557,7 @@ button{
 
 	/* servicios sitios web */
 	.bodySitios #pantalla1 {
-		align-items: center;
+		
 	}
 	.promos .capsula > .box {
 		flex-direction: column;
