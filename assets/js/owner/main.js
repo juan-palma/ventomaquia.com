@@ -128,7 +128,7 @@ function iniciar() {
 				if(target) {
 					gsap.to(window, {
 						duration: 2,
-						scrollTo: { y: target, offsetY: 50 },
+						scrollTo: { y: target, offsetY: 100 },
 						ease: 'power3.inOut'
 					});
 				}

@@ -1735,12 +1735,12 @@ button{
 	}
 
 	.bodySitios #pantalla1 {
-		align-items: flex-start;
+		align-items: flex-end;
 	}
 		.bodySitios #pantalla1 .intro {
 			border: 0px none;
 			background-color: transparent;
-			margin-top: 8vh;
+			margin-bottom: 3vh;
 		}
 	
 
@@ -2095,6 +2095,7 @@ button{
 	}
 		#resumen2 .capsula .iconos .icono {
 			display: grid;
+			grid-template-columns: 1fr;
 			justify-content: center;
 			text-align: center;
 			grid-gap: 20px;
