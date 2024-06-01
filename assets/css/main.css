@@ -1854,6 +1854,10 @@ button{
 				#hola .capsula .box > .col2 > .col2 {
 					color: #000;
 				}
+					#hola .capsula .box > .col2 > .col2 h4 {
+						width: 100%;
+						padding: 0;
+					}
 					#hola .capsula .box > .col2 > .col2 a {
 						position: relative;
 						bottom: inherit;
