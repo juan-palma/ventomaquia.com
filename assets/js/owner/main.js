@@ -11,7 +11,19 @@ const el = idagl.elementos;
 function iniciar() {
 	//Animaciones GSAP
 	gsap.registerPlugin(ScrollTrigger);
-	gsap.registerPlugin(ScrollToPlugin)
+	gsap.registerPlugin(ScrollToPlugin);
+
+	//Cortar java para pruebas o ajustes
+	// const loadingBox = document.getElementById("loadingBox");
+	// if(loadingBox){
+	// 	gsap.to(loadingBox, {
+	// 		duration: 0.3,
+	// 		opacity: 0,
+	// 		display: "none"
+	// 	});
+	// 	document.body.style.overflow = "auto";
+	// }
+	// return;
 
 	// codigo para actualizar animaciones GSAP.
 	function debounce(func, wait, immediate) {

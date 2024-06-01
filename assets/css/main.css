@@ -919,10 +919,13 @@ body{
 		font-size: 180%;
 	}
 	.colorP{
-		color: var(--colorTexto2);
+		color: var(--colorPrincipal);
 	}
 	.colorS{
 		color: var(--colorSecundario);
+	}
+	.colorT{
+		var(--colorTexto2)
 	}
 	.bold{
 		font-weight: 900;
@@ -993,7 +996,10 @@ body{
 		animation: pulsar2 1.8s ease-in-out 0ms infinite;
 		color: #000 !important;
 	}
-
+a.centro{
+	display: flex;
+	justify-content: center;
+}
 
 
 
@@ -1062,6 +1068,7 @@ body{
 						background: linear-gradient(to bottom right, #FFFFFF 22%, var(--colorSecundario) 50%, var(--colorPrincipal) 86%);
 						-webkit-background-clip: text;
 						-webkit-text-fill-color: transparent;
+						text-align: left;
 					}
 					#vendeMas .capsula .boxInfo h4 {
 						font-family: 'Mulish';
@@ -2119,6 +2126,206 @@ button{
 
 
 
+/* Seccion Servicios Redes Sociales */
+.bodyRedes .pantallas .frase {
+    font-size: clamp(28px, 2.8vw + 0.4rem, 122px);
+}
+#vendeMas .tituloExtra {
+    width: 80%;
+    text-align: center;
+    font-size: 215%;
+    position: relative;
+    z-index: 20;
+    margin-bottom: 86px;
+}
+
+.bodyRedes #servicios.redes .capsula .reticula {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+	.bodyRedes #servicios.redes .capsula .reticula .tarjeta:nth-child(1) {
+		grid-column: 1/3;
+	}
+	.bodyRedes #servicios.redes .capsula .reticula .tarjeta:nth-child(2) {
+		grid-column: 3/4;
+	}
+	.bodyRedes #servicios.redes .capsula .reticula .tarjeta:nth-child(3) {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+	.bodyRedes #servicios.redes .capsula .reticula .tarjeta:nth-child(4) {
+		grid-column: 2/ 3;
+		grid-row: 2 / 3;
+	}
+	.bodyRedes #servicios.redes .capsula .reticula .tarjeta:nth-child(5) {
+		grid-column: 3/ 4;
+		grid-row: 2 / 3;
+	}
+	.bodyRedes #servicios.redes .capsula .reticula .tarjeta{
+		background: var(--colorPrincipal);
+    	background: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(var(--colorPrincipalR), 1) 166%);
+	}
+		.bodyRedes #servicios.redes .capsula .reticula .tarjeta .box {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			grid-gap: 22px;
+		}
+			.bodyRedes #servicios.redes .capsula .reticula .tarjeta .box .icono {
+				height: 44px;
+			}
+			.bodyRedes #servicios.redes .capsula .reticula .tarjeta .box h3 {
+				font-family: 'Mulish';
+				font-weight: 700;
+				font-size: 110%;
+				margin-bottom: 0px;
+			}
+			.bodyRedes #servicios.redes .capsula .reticula .tarjeta .box p {
+				font-style: italic;
+				font-size: 82%;
+   				line-height: 1.2;
+			}
+
+	#servicios.nomienten h2 {
+		width: 100%;
+		text-align: left;
+		font-size: 260%;
+		margin: 200px 0px 20px;
+		padding: 0;
+	}
+	#servicios.nomienten .capsula .reticula {
+		grid-template-columns: repeat(7, auto);
+		grid-template-rows: repeat(3, auto);
+		grid-gap: 20px;
+	}
+		.bodyRedes #servicios.nomienten .capsula .reticula .tarjeta{
+			background: #fff;
+			color: #000;
+		}
+			#servicios.nomienten .capsula .reticula .tarjeta:nth-child(1) {
+				grid-column: 1/3;
+				grid-row: 1/3;
+			}
+			#servicios.nomienten .capsula .reticula .tarjeta:nth-child(2) {
+				grid-column: 3/6;
+				grid-row: 1/2;
+			}
+			#servicios.nomienten .capsula .reticula .tarjeta:nth-child(3) {
+				grid-column: 3/6;
+				grid-row: 2/3;
+			}
+			#servicios.nomienten .capsula .reticula .tarjeta:nth-child(4) {
+				grid-column: 6/8;
+				grid-row: 1/3;
+				background: linear-gradient(0deg, rgba(var(--colorPrincipalR), 1) 0%, rgb(255, 255, 255) 100%);
+			}
+			#servicios.nomienten .capsula .reticula .tarjeta:nth-child(5) {
+				grid-column: 1/4;
+				grid-row: 3/4;
+				background: linear-gradient(0deg, rgba(var(--colorPrincipalR), 1) 0%, rgb(255, 255, 255) 100%);
+			}
+			#servicios.nomienten .capsula .reticula .tarjeta:nth-child(6) {
+				grid-column: 4/5;
+				grid-row: 3/4;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			#servicios.nomienten .capsula .reticula .tarjeta:nth-child(7) {
+				grid-column: 5/8;
+				grid-row: 3/4;
+			}
+				#servicios.nomienten .capsula .reticula .tarjeta figure {
+					width: 90%;
+					margin-bottom: 24px;
+				}
+				#servicios.nomienten .capsula .reticula .tarjeta:nth-child(1) figure {
+					width: 116px;
+					margin-bottom: 24px;
+				}
+				#servicios.nomienten .capsula .reticula .tarjeta:nth-child(4) figure {
+					margin: 0 auto;
+				}
+				#servicios.nomienten .capsula .reticula .tarjeta .box .col2 figure,
+				#servicios.nomienten .capsula .reticula .tarjeta:nth-child(6) .box2 figure {
+					width: 100%;
+					margin: auto;
+				}
+				#servicios.nomienten .capsula .reticula .tarjeta h3 {
+					font-family: 'Mulish';
+					line-height: 1.1;
+					font-size: 110%;
+					font-weight: 600;
+					color: #000;
+					background: inherit;
+					-webkit-text-fill-color: inherit;
+					-webkit-background-clip: inherit;
+				}
+				#servicios.nomienten .capsula .reticula .tarjeta h4 {
+					font-family: 'Mulish';
+					line-height: 1.1;
+					font-size: 90%;
+					font-weight: 600;
+					color: var(--colorTexto2);
+					background: inherit;
+					-webkit-text-fill-color: inherit;
+					-webkit-background-clip: inherit;
+				}
+				#servicios.nomienten .capsula .reticula .tarjeta p,
+				#servicios.nomienten .capsula .reticula .tarjeta h3,
+				#servicios.nomienten .capsula .reticula .tarjeta h4 {
+					width: 100%;
+				}
+				#servicios.nomienten .capsula .reticula .tarjeta p{
+					font-size: 82%;
+    				line-height: 1.1;
+				}
+				#servicios.nomienten .capsula .reticula .tarjeta:nth-child(4) p,
+				#servicios.nomienten .capsula .reticula .tarjeta:nth-child(5) p{
+					color: #fff;
+				}
+				#servicios.nomienten .capsula .reticula .tarjeta:nth-child(4) p:last-child {
+					width: 100%;
+					text-align: center;
+					font-size: 180%;
+					font-weight: 900;
+				}
+			#servicios.nomienten .capsula .reticula .tarjeta .box2 {
+				display: flex;
+				grid-gap: 20px;
+				flex-direction: column;
+			}
+			#servicios.nomienten .capsula .reticula .tarjeta .box {
+				display: grid;
+				grid-template-columns: calc(60% - 10px) calc(40% - 10px);
+				grid-template-rows: auto;
+				max-width: 100%;
+				grid-gap: 20px !important;
+			}
+
+	#competencia {
+		font-size: 140%;
+	}
+		#competencia .capsula {
+			grid-gap: 84px;
+			text-align: center;
+		}
+			#competencia .capsula h3 {
+				font-family: 'Mulish';
+				font-weight: 700;
+			}
+			#competencia .capsula .box {
+				width: 90%;
+			}
+				#competencia .capsula .box span.seGastaron {
+					font-size: 280%;
+					font-weight: 900;
+					color: var(--colorTexto2);
+				}
+
+
+
+
+
 
 
 
@@ -2609,6 +2816,14 @@ button{
 		#resumen2 .capsula .iconos figure {
 			width: 100%;
 		}
+
+	#servicios.nomienten .capsula .reticula .tarjeta .box {
+		grid-template-columns: 1fr;
+	}
+
+	#competencia .capsula .box span.seGastaron {
+		font-size: 178%;
+	}
 
 }
 
