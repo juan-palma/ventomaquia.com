@@ -2935,6 +2935,9 @@ button{
 	#identidad .capsula .box {
 		grid-template-columns: 1fr;
 	}
+	#fuerte .capsula .col1 {
+		grid-row: 2/3;
+	}
 	#identidad .capsula .box .col2 {
 		display: flex;
 		justify-content: center;
