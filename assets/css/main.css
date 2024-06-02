@@ -2934,6 +2934,7 @@ button{
 	#branding .capsula .box,
 	#identidad .capsula .box {
 		grid-template-columns: 1fr;
+		grid-template-rows: min-content min-content;
 	}
 	#fuerte .capsula .col1 {
 		grid-row: 2/3;
