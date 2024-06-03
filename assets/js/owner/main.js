@@ -666,9 +666,13 @@ dbDudas.push({pregunta:"¿Vienen, voy, nos vemos debajo del reloj, o cómo está
 
 
 function precargaActive(){
-	const precarga = new Precarga();
-	precarga.userFunc = iniciar;
-	precarga.run();
+	window.addEventListener('load', function() {
+		// Código de la función a ejecutar después de que la página se haya cargado
+		const precarga = new Precarga();
+		precarga.userFunc = iniciar;
+		precarga.run();
+	});
+	
 };
 
 
