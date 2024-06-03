@@ -2562,6 +2562,100 @@ button{
 
 
 
+	#preguntasBoxG {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+    	padding: 28px 0px;
+	}
+		#preguntasBoxG .preguntas {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			grid-gap: 90px;
+		}
+			#preguntasBoxG .preguntas .preguntaBox {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+				#preguntasBoxG .preguntas .preguntaBox > div {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					grid-gap: 81px;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+				}
+					#preguntasBoxG .preguntas .preguntaBox > div > .col:first-child {
+						text-align: right;
+						color: var(--colorSecundario);
+					}
+						#preguntasBoxG .preguntas .preguntaBox > div > .col:first-child .circulo {
+							width: 16px;
+							height: 16px;
+							border: 2px solid #fff;
+							border-radius: 50%;
+							position: absolute;
+							right: 50%;
+							top: 50%;
+							transform: translate(50%, -50%);
+							background: #000;
+							z-index: 2;
+						}
+						#preguntasBoxG .preguntas .preguntaBox > div > .col:first-child .indicador {
+							width: 16px;
+							height: 16px;
+							border: 0px none transparent;
+							border-radius: 50%;
+							position: absolute;
+							right: 50%;
+							top: 50%;
+							transform: translate(50%, -50%);
+							background: var(--colorSecundario);
+							z-index: 2;
+						}
+					#preguntasBoxG .preguntas .preguntaBox > div > .col:last-child {
+						text-align: left;
+					}
+		#preguntasBoxG .lineaCentral {
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			top: 0px;
+			background-color: #fff;
+			display: flex;
+    		justify-content: center;
+		}
+			#preguntasBoxG .lineaCentral:before, #preguntasBoxG .lineaCentral:after {
+				content: "";
+				width: 16px;
+				height: 1px;
+				background-color: #fff;
+				position: absolute;
+				top: 0px;
+			}
+			#preguntasBoxG .lineaCentral:after{
+				top: auto;
+				bottom: 0px;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3102,6 +3196,14 @@ button{
 	}
 	#ajedrez .row2 {
 		margin-top: 82px;
+	}
+
+
+
+
+	#preguntasBoxG .preguntas .preguntaBox > div {
+		font-size: 90%;
+		grid-gap: 47px;
 	}
 
 }

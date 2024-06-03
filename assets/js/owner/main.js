@@ -12,6 +12,7 @@ function iniciar() {
 	//Animaciones GSAP
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.registerPlugin(ScrollToPlugin);
+	gsap.registerPlugin(Flip);
 
 	//Cortar java para pruebas o ajustes
 	// const loadingBox = document.getElementById("loadingBox");
@@ -521,6 +522,76 @@ function iniciar() {
 	
 
 
+	function activeFlat(e){
+		const indicador = document.querySelector("#preguntasBoxG .preguntas .indicador");
+		const padre = e.trigger.parentElement;
+		const state = Flip.getState([indicador, e.trigger]);
+
+		if(padre.children.length < 2){
+			padre.appendChild(indicador);
+			Flip.from(state, {
+				duration: 0.6,
+				// fade: true,
+				// absolute: true,
+				ease: "power1.inOut"
+			});
+		}
+	};
+
+	const preguntasBoxG = document.querySelector('#preguntasBoxG .preguntas');
+	dbDudas.forEach((p, i) => {
+		const box = document.createElement('div');
+		box.className = 'preguntaBox';
+
+			const pregunta = document.createElement('div');
+			pregunta.className = 'pregunta';
+
+				const col1 = document.createElement('div');
+				col1.className = 'col';
+				col1.innerHTML = p.pregunta;
+
+				const col2 = document.createElement('div');
+				col2.className = 'col';
+
+				const circulo = document.createElement('div');
+				circulo.className = 'circulo';
+
+			pregunta.appendChild(col1);
+			pregunta.appendChild(col2);
+			col1.appendChild(circulo);
+			if(i == 0){
+				const indicador = document.createElement('div');
+				indicador.className = 'indicador';
+				col1.appendChild(indicador);
+			}
+
+			const respuesta = document.createElement('div');
+			respuesta.className = 'respuesta';
+
+				const rcol1 = document.createElement('div');
+				rcol1.className = 'col';
+
+				const rcol2 = document.createElement('div');
+				rcol2.className = 'col';
+				rcol2.innerHTML = p.respuesta;
+			respuesta.appendChild(rcol1);
+			respuesta.appendChild(rcol2);
+		box.appendChild(pregunta);
+		box.appendChild(respuesta);
+
+		preguntasBoxG.appendChild(box);
+
+		ScrollTrigger.create({
+			trigger: circulo,
+			start:"top center",
+			end: "bottom center",
+			invalidateOnRefresh: true,
+			fastScrollEnd: true,
+			onEnter: activeFlat,
+			onEnterBack: activeFlat
+			// markers:true
+		});
+	});
 
 
 
@@ -563,6 +634,19 @@ function openMailer(event) {
 
 
 
+let dbDudas = [];
+dbDudas.push({pregunta:"¿Necesito tener redes sociales para me ayuden a aumentar mis ventas?", respuesta:"Sí, ya que forman parte de nuestro sistema comprobado para que vendas más."});
+dbDudas.push({pregunta:"Qué redes sociales “ocupo”?", respuesta:"Por lo menos Facebook. Dependiendo del giro de tu negocio, también puedes necesitar Instagram. Tenemos comprobado que la combinación de ambas es una receta segura para lograr ventas."});
+dbDudas.push({pregunta:"¿Uds. pueden ayudarme a crear mis redes sociales en caso de no tenerlas?", respuesta:"Por supuesto. Te llevaremos paso a paso en el proceso y te daremos algunos consejos para que de aquí en adelante puedas crear todas las que desees."});
+dbDudas.push({pregunta:"¿Las quesadillas deben llevar queso?", respuesta:"Nuestro abogados recomiendan no entrar en esas polémicas, por lo que nuestra respuesta es “sigue tu corazón”."});
+dbDudas.push({pregunta:"Tengo redes, pero no tengo página web. ¿Es  necesaria?", respuesta:"No. Podemos incrementar tus ventas sólo con tus redes sociales. Pero considera que contar con un sitio web le da mucha más credibilidad a cualquier negocio."});
+dbDudas.push({pregunta:"Me es difícil crear los textos y contenido para mi página de internet. ¿Uds. me ayudan con eso?", respuesta:"Claro!! Te ayudamos con imágenes, íconos y los textos más seductores para tu público."});
+dbDudas.push({pregunta:"¿El único afortunado de contar con sus servicios es Jalisco?", respuesta:"Gracias a la tecnología podemos brindar servicios a cualquier parte de la República. Si gustas que vayamos a tomar algo, nuestro equipo se encuentra en CDMX y Guadalajara ;D"});
+dbDudas.push({pregunta:"¿Vienen, voy, nos vemos debajo del reloj, o cómo está la cosa?", respuesta:"Nosotros preferimos visitarte para conocer tu negocio y verlo en acción. Mientras más nos empapemos de lo que haces, tendremos más herramientas para desarrollar una mejor estrategia. "});
+
+
+
+
 
 
 
@@ -574,18 +658,22 @@ requirejs.config({
 		a: "../animaciones",
 		l: "../librerias",
 		n: "/node_modules",
-		"gsap": "https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min",
-		"ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/ScrollTrigger.min",
-		"ScrollToPlugin": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollToPlugin.min"
+		"gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min",
+		"ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min",
+		"ScrollToPlugin": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min",
+		"Flip": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min"
 	},
 	shim: {
-        'ScrollTrigger': {
-            deps: ['gsap']
-        },
+		'ScrollTrigger': {
+			deps: ['gsap']
+		},
 		'ScrollToPlugin': {
-            deps: ['gsap']
-        }
-    }
+			deps: ['gsap']
+		}
+		,
+		'Flip': {
+			deps: ['gsap']
+		}
+	}
 });
-requirejs(["l/modernizr", "l/precarga", "validaciones", "alertas", "peticiones", "l/brands.min", "l/solid.min", "l/fontawesome", "gsap", "ScrollTrigger", "ScrollToPlugin"], iniciar);
-
+requirejs(["l/modernizr", "l/precarga", "validaciones", "alertas", "peticiones", "l/brands.min", "l/solid.min", "l/fontawesome", "gsap", "ScrollTrigger", "ScrollToPlugin", "Flip"], iniciar);
