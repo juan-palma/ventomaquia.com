@@ -669,7 +669,7 @@ body{
 						list-style-position: inside;
 						direction: rtl;
 					}
-						#menuMobileBox li > ul > a li {
+						#menuMobileBox li > ul > li a {
 							font-weight: 200;
 						}
 
@@ -1611,7 +1611,7 @@ a.centro{
 						footer .capsula .boxG .col ul {
 							display: flex;
 							flex-direction: column;
-							grid-gap: 24px;
+							grid-gap: 36px;
 						}
 							footer .capsula .boxG .col ul li {
 								cursor: pointer;
