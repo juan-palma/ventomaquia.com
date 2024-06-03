@@ -626,7 +626,8 @@ body{
 					white-space: nowrap;
 				}
 				#menuMobileBox a:hover li,
-				#menuMobileBox a.activo li{
+				#menuMobileBox a.activo li, 
+				#menuMobileBox li.activo a{
 					color: #000 !important;
 					font-weight: 600;
 				}
@@ -2427,6 +2428,142 @@ button{
 
 
 
+	.textoT3 {
+		font-size: 126%;
+	}
+	.bodyVentomaquia #pantalla1 .fondo::before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #00000055;
+		z-index: 2;
+	}
+	.bodyVentomaquia #pantalla1 .boxInfo {
+		align-items: center;
+	}
+		.bodyVentomaquia #pantalla1 .boxInfo .intro {
+			border: 0px none transparent;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			width: 86%;
+			background-color: transparent;
+		}
+			.bodyVentomaquia #pantalla1 .boxInfo .intro h1 {
+				color: #fff;
+				font-family: 'Mulish';
+				font-weight: 800;
+				text-align: left;
+				width: min-content;
+				font-size: clamp(14px, 3.2vw + 0.4rem, 118px);
+			}
+				.bodyVentomaquia #pantalla1 .boxInfo .intro h1 .lamarca {
+					font-family: 'Playfair Display';
+					font-size: 252%;
+				}
+
+	#medios .capsula {
+		display: grid;
+		grid-template-columns: 9fr 15fr;
+		grid-gap: 36px;
+	}
+
+	#digitales .capsula {
+		display: grid;
+		grid-template-columns: 15fr 9fr;
+		grid-gap: 36px;
+	}
+		#digitales .capsula .col1 {
+			display: flex;
+			justify-content: center;
+		}
+			#digitales .capsula .col1 figure {
+				width: 120%;
+				min-width: 120%;
+			}
+		#digitales .capsula .col2 {
+			position: relative;
+		}
+	#tiempo .capsula {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto auto;
+		grid-gap: 28px;
+		width: 60%;
+	}
+		#tiempo .capsula .tarjeta {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto;
+			justify-content: center;
+			text-align: center;
+			grid-gap: 14px;
+			background-color: var(--colorPrincipal);
+			padding: 24px 36px;
+    		border-radius: 24px;
+		}
+		#tiempo .capsula .tarjeta:last-child {
+			grid-column: 1/3;
+			display: flex;
+			align-items: center;
+			grid-gap: 40px;
+		}
+			#tiempo .capsula .tarjeta .valor {
+				font-size: 342%;
+				font-family: 'Playfair Display';
+				font-weight: 900;
+				line-height: 1;
+			}
+				#tiempo .capsula .tarjeta .valor span {
+					font-family: 'Mulish';
+					font-weight: 400;
+					font-size: 52%;
+				}
+			#tiempo .capsula .tarjeta .info {
+				text-align: left;
+			}
+	#ajedrez .row1 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+		#ajedrez .row1 > div:last-child {
+			position: absolute;
+			width: 58%;
+			text-align: center;
+			font-size: 134%;
+		}
+	#ajedrez .row2 {
+		display: flex;
+		justify-content: center;
+		margin-top: -162px;
+		position: relative;
+		z-index: 6;
+	}
+		#ajedrez .row2 .textoT3 {
+			width: 80%;
+			text-align: center;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ID.A libre - estilos para el footer de la empresa */
@@ -2946,6 +3083,26 @@ button{
 		#identidad .capsula .box .col2 figure {
 			width: 60%;
 		}
+
+
+
+
+	#medios .capsula,
+	#digitales .capsula {
+		grid-template-columns: 1fr;
+	}
+	#tiempo .capsula {
+		display: flex;
+		width: calc(100% - (var(--margenGlobal)* 2));
+		font-size: 80%;
+	}
+
+	#ajedrez .row1 > div:last-child {
+		font-size: clamp(14px, 2.2vw + 0.4rem, 118px);
+	}
+	#ajedrez .row2 {
+		margin-top: 82px;
+	}
 
 }
 
