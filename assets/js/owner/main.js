@@ -161,13 +161,14 @@ function iniciar() {
 	//habilitar funciones para moviles:
 	if ((el.mobile = /Mobile/i.test(navigator.userAgent))) {
 		if ((el.touch = Modernizr.touchevents)) {
-			if(document.getElementById("pantalla1").getElementsByTagName('button').length > 0) {
-				document.getElementById("pantalla1").getElementsByTagName('button')[0].classList.add("mobileAnimado");
-			}
-			document.querySelectorAll(".circuloChico").forEach((b) => b.classList.add("mobileAnimado"));
+			if(document.getElementById("pantalla1")){
+				if(document.getElementById("pantalla1").getElementsByTagName('button').length > 0) {
+					document.getElementById("pantalla1").getElementsByTagName('button')[0].classList.add("mobileAnimado");
+				}
+				document.querySelectorAll(".circuloChico").forEach((b) => b.classList.add("mobileAnimado"));
+			};
 		}
 	}
-
 
 	
 	function pantallasAniFunc(){
@@ -478,12 +479,16 @@ function iniciar() {
 		});
 
 	});
-	gsap.to("#pantalla1 .intro", {
-		duration:0.65,
-		ease: "power3.ease.inOut",
-		y: 0,
-		autoAlpha: 1
-	});
+
+	if(document.querySelector("#pantalla1 .intro")){
+		gsap.to("#pantalla1 .intro", {
+			duration:0.65,
+			ease: "power3.ease.inOut",
+			y: 0,
+			autoAlpha: 1
+		});
+	}
+
 
 
 
@@ -549,7 +554,6 @@ function iniciar() {
 	const preguntasBoxG = document.querySelector('#preguntasBoxG .preguntas');
 	if(preguntasBoxG){
 		dbDudas.forEach((p, i) => {
-			console.log('señal');
 			const box = document.createElement('div');
 			box.className = 'preguntaBox';
 	
