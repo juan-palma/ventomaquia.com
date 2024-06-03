@@ -664,17 +664,27 @@ dbDudas.push({pregunta:"¿Vienen, voy, nos vemos debajo del reloj, o cómo está
 
 
 
-
-function precargaActive(){
-	window.addEventListener('load', function() {
-		// Código de la función a ejecutar después de que la página se haya cargado
+let idaDomLoaded = false;
+let idaRequireLoaded = false;
+function allLoaded() {
+	if(idaRequireLoaded && idaDomLoaded){
 		const precarga = new Precarga();
 		precarga.userFunc = iniciar;
 		precarga.run();
-	});
-	
-};
+	}
+}
 
+
+
+
+function precargaActive(){
+	idaRequireLoaded = true;
+	allLoaded();
+};
+window.addEventListener('load', function() {
+	idaDomLoaded = true;
+	allLoaded();
+});
 
 
 
