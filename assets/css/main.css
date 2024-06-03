@@ -2967,6 +2967,10 @@ button{
 		justify-content: flex-end;
 	}
 
+	#pantalla1{
+		max-height: 600vw;
+	}
+
 	#pantalla1 .boxWrap {
 		padding: calc(44px + 48px) 0px 44px
 	}
