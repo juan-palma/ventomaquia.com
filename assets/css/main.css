@@ -3146,10 +3146,10 @@ button{
 				display: flex;
 				justify-content: center;
 			}
-				footer .fondo figure picture img {
+				/* footer .fondo figure picture img {
 					width: 138%;
 					height: 138%;
-				}
+				} */
 		footer .capsula .boxG {
 			grid-template-columns: 1fr;
 		}
