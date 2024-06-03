@@ -52,47 +52,51 @@ function iniciar() {
 		this.classList.toggle('activo');
 	}
 	const btnMobile = document.getElementById('menuBoxMobile');
-	btnMobile.addEventListener('click', btnMobileActive);
+	if(btnMobile){
+		btnMobile.addEventListener('click', btnMobileActive);
+
+		//Animacion y control de submenus
+		const botonMenu = document.getElementById("servicioBtn");
+		let submenus = gsap.utils.toArray(".submenu1Box a");
+		if(submenus){
+			const sumN = submenus.length;
+			let submenuAbierto = false;
+
+			submenus.forEach(s => {
+				const medidas = s.getBoundingClientRect();
+				s.medidas = medidas;
+				s.style.display = 'none';
+			});
+
+			const timeline = gsap.timeline({ paused: true });
+			botonMenu.addEventListener("click", () => {
+				if (submenuAbierto) {
+					timeline.reverse();
+				} else {
+					submenus.forEach((elemento) => {
+					gsap.set(elemento, { rotation: 0 }); // Restablece la rotación antes de la animación
+					});
+					
+					timeline.clear(); // Limpia la línea de tiempo existente
+					
+					timeline.to(submenus, {
+						y: (index, s) => ((sumN - 1 - index) * (s.medidas.height + 8) + 24),
+						duration:0.45,
+						rotation: () => gsap.utils.random(-4, 4),
+						autoAlpha: 1,
+						display:"block",
+						ease: "power4.ease.inOut",
+						stagger:0.20
+					});
+					
+					timeline.play();
+				}
+				submenuAbierto = !submenuAbierto;
+			});
+	}
 
 
-	//Animacion y control de submenus
-	const botonMenu = document.getElementById("servicioBtn");
-	let submenus = gsap.utils.toArray(".submenu1Box a");
-	if(submenus){
-		const sumN = submenus.length;
-		let submenuAbierto = false;
-
-		submenus.forEach(s => {
-			const medidas = s.getBoundingClientRect();
-			s.medidas = medidas;
-			s.style.display = 'none';
-		});
-
-		const timeline = gsap.timeline({ paused: true });
-		botonMenu.addEventListener("click", () => {
-			if (submenuAbierto) {
-				timeline.reverse();
-			} else {
-				submenus.forEach((elemento) => {
-				gsap.set(elemento, { rotation: 0 }); // Restablece la rotación antes de la animación
-				});
-				
-				timeline.clear(); // Limpia la línea de tiempo existente
-				
-				timeline.to(submenus, {
-					y: (index, s) => ((sumN - 1 - index) * (s.medidas.height + 8) + 24),
-					duration:0.45,
-					rotation: () => gsap.utils.random(-4, 4),
-					autoAlpha: 1,
-					display:"block",
-					ease: "power4.ease.inOut",
-					stagger:0.20
-				});
-				
-				timeline.play();
-			}
-			submenuAbierto = !submenuAbierto;
-		});
+	
 
 
 		// timeline.to(submenus, {
@@ -167,6 +171,8 @@ function iniciar() {
 
 	
 	function pantallasAniFunc(){
+		if(!document.getElementById("pantallaBox")) return;
+		
 		let pantallasTL = gsap.timeline({});
 		pantallasTL.to("#pantalla1", {
 			y: () => `+=${document.getElementById("pantalla1").offsetHeight*-1}`,
@@ -486,20 +492,22 @@ function iniciar() {
 
 
 
+	if(document.querySelector("#conviene .fondo")){
+		gsap.to('#conviene .fondo figure', {
+			yPercent: -50, 
+			ease: 'none',
+			scrollTrigger: {
+				trigger: '#conviene .fondo', 
+				start: 'top bottom', 
+				end: 'bottom top', 
+				scrub: 2, 
+				anticipatePin:1,
+				invalidateOnRefresh: true,
+				fastScrollEnd: true
+			}
+		});
+	};
 	
-	gsap.to('#conviene .fondo figure', {
-		yPercent: -50, 
-		ease: 'none',
-		scrollTrigger: {
-			trigger: '#conviene .fondo', 
-			start: 'top bottom', 
-			end: 'bottom top', 
-			scrub: 2, 
-			anticipatePin:1,
-			invalidateOnRefresh: true,
-			fastScrollEnd: true
-		}
-	});
 
 
 
@@ -539,59 +547,63 @@ function iniciar() {
 	};
 
 	const preguntasBoxG = document.querySelector('#preguntasBoxG .preguntas');
-	dbDudas.forEach((p, i) => {
-		const box = document.createElement('div');
-		box.className = 'preguntaBox';
-
-			const pregunta = document.createElement('div');
-			pregunta.className = 'pregunta';
-
-				const col1 = document.createElement('div');
-				col1.className = 'col';
-				col1.innerHTML = p.pregunta;
-
-				const col2 = document.createElement('div');
-				col2.className = 'col';
-
-				const circulo = document.createElement('div');
-				circulo.className = 'circulo';
-
-			pregunta.appendChild(col1);
-			pregunta.appendChild(col2);
-			col1.appendChild(circulo);
-			if(i == 0){
-				const indicador = document.createElement('div');
-				indicador.className = 'indicador';
-				col1.appendChild(indicador);
-			}
-
-			const respuesta = document.createElement('div');
-			respuesta.className = 'respuesta';
-
-				const rcol1 = document.createElement('div');
-				rcol1.className = 'col';
-
-				const rcol2 = document.createElement('div');
-				rcol2.className = 'col';
-				rcol2.innerHTML = p.respuesta;
-			respuesta.appendChild(rcol1);
-			respuesta.appendChild(rcol2);
-		box.appendChild(pregunta);
-		box.appendChild(respuesta);
-
-		preguntasBoxG.appendChild(box);
-
-		ScrollTrigger.create({
-			trigger: circulo,
-			start:"bottom 70%",
-			end: "bottom 70%",
-			invalidateOnRefresh: true,
-			fastScrollEnd: true,
-			onEnter: activeFlat,
-			onEnterBack: activeFlat
-			// markers:true
+	if(preguntasBoxG){
+		dbDudas.forEach((p, i) => {
+			console.log('señal');
+			const box = document.createElement('div');
+			box.className = 'preguntaBox';
+	
+				const pregunta = document.createElement('div');
+				pregunta.className = 'pregunta';
+	
+					const col1 = document.createElement('div');
+					col1.className = 'col';
+					col1.innerHTML = p.pregunta;
+	
+					const col2 = document.createElement('div');
+					col2.className = 'col';
+	
+					const circulo = document.createElement('div');
+					circulo.className = 'circulo';
+	
+				pregunta.appendChild(col1);
+				pregunta.appendChild(col2);
+				col1.appendChild(circulo);
+				if(i == 0){
+					const indicador = document.createElement('div');
+					indicador.className = 'indicador';
+					col1.appendChild(indicador);
+				}
+	
+				const respuesta = document.createElement('div');
+				respuesta.className = 'respuesta';
+	
+					const rcol1 = document.createElement('div');
+					rcol1.className = 'col';
+	
+					const rcol2 = document.createElement('div');
+					rcol2.className = 'col';
+					rcol2.innerHTML = p.respuesta;
+				respuesta.appendChild(rcol1);
+				respuesta.appendChild(rcol2);
+			box.appendChild(pregunta);
+			box.appendChild(respuesta);
+	
+			preguntasBoxG.appendChild(box);
+	
+			ScrollTrigger.create({
+				trigger: circulo,
+				start:"bottom 70%",
+				end: "bottom 70%",
+				invalidateOnRefresh: true,
+				fastScrollEnd: true,
+				onEnter: activeFlat,
+				onEnterBack: activeFlat
+				// markers:true
+			});
 		});
-	});
+	};
+	
 
 
 
