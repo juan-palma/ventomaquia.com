@@ -665,6 +665,17 @@ dbDudas.push({pregunta:"¿Vienen, voy, nos vemos debajo del reloj, o cómo está
 
 
 
+function precargaActive(){
+	const precarga = new Precarga();
+	precarga.userFunc = iniciar;
+	precarga.run();
+};
+
+
+
+
+
+
 
 // iniciar la solicitud de los modulos y la ejecucion inicial del sistema.
 //importamos los archivos y librerias necesarios
@@ -692,4 +703,4 @@ requirejs.config({
 		}
 	}
 });
-requirejs(["l/modernizr", "l/precarga", "validaciones", "alertas", "peticiones", "l/brands.min", "l/solid.min", "l/fontawesome", "gsap", "ScrollTrigger", "ScrollToPlugin", "Flip"], iniciar);
+requirejs(["l/modernizr", "l/precarga", "validaciones", "alertas", "peticiones", "l/brands.min", "l/solid.min", "l/fontawesome", "gsap", "ScrollTrigger", "ScrollToPlugin", "Flip"], precargaActive);
