@@ -583,8 +583,8 @@ function iniciar() {
 
 		ScrollTrigger.create({
 			trigger: circulo,
-			start:"top center",
-			end: "bottom center",
+			start:"bottom 70%",
+			end: "bottom 70%",
 			invalidateOnRefresh: true,
 			fastScrollEnd: true,
 			onEnter: activeFlat,
