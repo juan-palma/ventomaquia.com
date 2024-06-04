@@ -624,8 +624,12 @@ function iniciar() {
 			display: "none"
 		});
 		document.body.style.overflow = "auto";
-		document.getElementById("pantallaG").style.opacity = "1";
-		document.querySelector("nav").style.opacity = "1";
+		if(globalSeccion == "politicas"){
+			document.querySelector(".contenido").style.opacity = "1";
+		} else{
+			document.getElementById("pantallaG").style.opacity = "1";
+			document.querySelector("nav").style.opacity = "1";
+		}
 	}
 
 }
