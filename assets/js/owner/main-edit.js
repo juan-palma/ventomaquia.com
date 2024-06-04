@@ -8,7 +8,7 @@ const el = idagl.elementos;
 
 
 
-function iniciar() {
+async function iniciar() {
 	//Animaciones GSAP
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.registerPlugin(ScrollToPlugin);
