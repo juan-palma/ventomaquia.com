@@ -678,7 +678,7 @@ async function allLoaded() {
 			const precarga = new Precarga();
 			precarga.userFunc = iniciar;
 			precarga.run();
-		}, 800)
+		}, 500)
 	};
 }
 
