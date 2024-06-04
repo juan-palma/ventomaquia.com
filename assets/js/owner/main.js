@@ -668,9 +668,9 @@ let idaDomLoaded = false;
 let idaRequireLoaded = false;
 function allLoaded() {
 	if(idaRequireLoaded && idaDomLoaded){
-		const precarga = new Precarga();
-		precarga.userFunc = iniciar;
-		precarga.run();
+		// const precarga = new Precarga();
+		// precarga.userFunc = iniciar;
+		// precarga.run();
 	}
 }
 
