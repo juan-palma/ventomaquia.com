@@ -29,8 +29,8 @@
 		<meta name="rating" content="General" />
 		
 		
-		<link rel="stylesheet" href="../assets/css/reset-sanatize-normalize-boilerplate-min.css" as="style" />
-		<link rel="stylesheet" id="cssMain" href="../assets/css/main.css" as="style" />
+		<link rel="preload" href="../assets/css/reset-sanatize-normalize-boilerplate-min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+		<link rel="preload" id="cssMain" href="../assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 		<!--[if lte IE 8]> <link rel="stylesheet" href="assets/css/resetIE.css" /> <![endif]-->
 		
 		<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -61,6 +61,38 @@
 		<meta name="twitter:description" content="Brindamos el servicio de community manager para hacer que tus redes sociales trabajen para ti." />
 		<meta name="twitter:image:src" content="https://ventomaquia.com/assets/img/redes_web_img_redes.jpg" />
 		<meta name="twitter:domain" content="ventomaquia.com/" />
+
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				background-color: #000;
+				overflow: hidden;
+			}
+			nav {
+				position: fixed;
+				opacity: 0;
+			}
+			#pantallaG{
+				opacity: 0;
+			}
+			#pantalla1 {
+				min-height: 100vh;
+				background-color: black;
+			}
+			#loadingBox{
+				width: 100%;
+				height: 100vh;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				z-index: 99999;
+			}
+		</style>
 		
 		<meta name="author" content="Juan Palma - ID.A libre">
 		<link type="text/plain" rel="author" href="humans.txt" />
@@ -76,8 +108,8 @@
 						<a href="../" target="_parent">
 							<figure>
 								<picture>
-									<source srcset="../assets/img/ventomaquia-logo.svg">
-									<img src="../assets/img/ventomaquia-logo.svg" alt="Ventomaquia Logotipo" width="120">
+									<source preload-srcset="../assets/img/ventomaquia-logo.svg">
+									<img preload-src="../assets/img/ventomaquia-logo.svg" alt="Ventomaquia Logotipo" width="120">
 								</picture>
 							</figure>
 						</a>
@@ -168,8 +200,8 @@
 				<div id="pantalla1" class="pantallas">
 					<figure class="fondo">
 						<picture>
-							<source srcset="./img/sitios-banner-fondo.webp">
-							<img src="./img/sitios-banner-fondo.webp" alt="Fondo damicela mezclando musica">
+							<source preload-srcset="./img/sitios-banner-fondo.webp">
+							<img preload-src="./img/sitios-banner-fondo.webp" alt="Fondo damicela mezclando musica">
 						</picture>
 					</figure>
 					<div class="boxWrap">
@@ -225,8 +257,8 @@
 								<div class="fondo">
 									<figure>
 										<picture>
-											<source srcset="../assets/img/celular.webp">
-											<img src="../assets/img/celular.webp" alt="fondo de celular">
+											<source preload-srcset="../assets/img/celular.webp">
+											<img preload-src="../assets/img/celular.webp" alt="fondo de celular">
 										</picture>
 									</figure>
 								</div>
@@ -242,8 +274,8 @@
 									<div class="icono">
 										<figure>
 											<picture>
-												<source srcset="./img/redes-icono-grafica.webp">
-												<img src="./img/redes-icono-grafica.webp" alt="fondo de celular">
+												<source preload-srcset="./img/redes-icono-grafica.webp">
+												<img preload-src="./img/redes-icono-grafica.webp" alt="fondo de celular">
 											</picture>
 										</figure>
 									</div>
@@ -260,8 +292,8 @@
 									<div class="icono">
 										<figure>
 											<picture>
-												<source srcset="./img/redes-icono-chat.webp">
-												<img src="./img/redes-icono-chat.webp" alt="fondo de celular">
+												<source preload-srcset="./img/redes-icono-chat.webp">
+												<img preload-src="./img/redes-icono-chat.webp" alt="fondo de celular">
 											</picture>
 										</figure>
 									</div>
@@ -278,8 +310,8 @@
 									<div class="icono">
 										<figure>
 											<picture>
-												<source srcset="./img/redes-icono-tiro.webp">
-												<img src="./img/redes-icono-tiro.webp" alt="fondo de celular">
+												<source preload-srcset="./img/redes-icono-tiro.webp">
+												<img preload-src="./img/redes-icono-tiro.webp" alt="fondo de celular">
 											</picture>
 										</figure>
 									</div>
@@ -296,8 +328,8 @@
 									<div class="icono">
 										<figure>
 											<picture>
-												<source srcset="./img/redes-icono-calendario.webp">
-												<img src="./img/redes-icono-calendario.webp" alt="fondo de celular">
+												<source preload-srcset="./img/redes-icono-calendario.webp">
+												<img preload-src="./img/redes-icono-calendario.webp" alt="fondo de celular">
 											</picture>
 										</figure>
 									</div>
@@ -321,8 +353,8 @@
 						<div class="boxInfo">
 							<figure>
 								<picture>
-									<source srcset="../assets/img/destello.svg">
-									<img src="../assets/img/destello.svg" alt="Destello del logo Ventomaquia" width="40">
+									<source preload-srcset="../assets/img/destello.svg">
+									<img preload-src="../assets/img/destello.svg" alt="Destello del logo Ventomaquia" width="40">
 								</picture>
 							</figure>
 
@@ -340,8 +372,8 @@
 						<div class="boxImg idaAniFade" data-direccion="derecha">
 							<figure>
 								<picture>
-									<source srcset="../assets/img/busto.webp">
-									<img src="../assets/img/busto.webp" alt="Busco cool con lentes ventomaquia">
+									<source preload-srcset="../assets/img/busto.webp">
+									<img preload-src="../assets/img/busto.webp" alt="Busco cool con lentes ventomaquia">
 								</picture>
 							</figure>
 						</div>
@@ -365,8 +397,8 @@
 								<div class="box2">
 									<figure>
 										<picture>
-											<source srcset="./img/isotipo.webp">
-											<img src="./img/isotipo.webp" alt="Isotipo Ventomaquia destello">
+											<source preload-srcset="./img/isotipo.webp">
+											<img preload-src="./img/isotipo.webp" alt="Isotipo Ventomaquia destello">
 										</picture>
 									</figure>
 									<h3>
@@ -389,8 +421,8 @@
 										</h4>
 										<figure>
 											<picture>
-												<source srcset="./img/hubspot.webp">
-												<img src="./img/hubspot.webp" alt="Logo Hubspot">
+												<source preload-srcset="./img/hubspot.webp">
+												<img preload-src="./img/hubspot.webp" alt="Logo Hubspot">
 											</picture>
 										</figure>
 										<p>
@@ -400,8 +432,8 @@
 									<div class="col col2">
 										<figure>
 											<picture>
-												<source srcset="./img/grafica24.webp">
-												<img src="./img/grafica24.webp" alt="Grafica 24%">
+												<source preload-srcset="./img/grafica24.webp">
+												<img preload-src="./img/grafica24.webp" alt="Grafica 24%">
 											</picture>
 										</figure>
 									</div>
@@ -421,8 +453,8 @@
 									<div class="col col2">
 										<figure>
 											<picture>
-												<source srcset="./img/57.webp">
-												<img src="./img/57.webp" alt="Grafica 57%">
+												<source preload-srcset="./img/57.webp">
+												<img preload-src="./img/57.webp" alt="Grafica 57%">
 											</picture>
 										</figure>
 									</div>
@@ -436,8 +468,8 @@
 									</h4>
 									<figure>
 										<picture>
-											<source srcset="./img/sprout.webp">
-											<img src="./img/sprout.webp" alt="Logo Sprout social">
+											<source preload-srcset="./img/sprout.webp">
+											<img preload-src="./img/sprout.webp" alt="Logo Sprout social">
 										</picture>
 									</figure>
 									<p>
@@ -445,8 +477,8 @@
 									</p>
 									<figure>
 										<picture>
-											<source srcset="./img/grafica-circular.webp">
-											<img src="./img/grafica-circular.webp" alt="Grafica circular">
+											<source preload-srcset="./img/grafica-circular.webp">
+											<img preload-src="./img/grafica-circular.webp" alt="Grafica circular">
 										</picture>
 									</figure>
 									<p>
@@ -463,8 +495,8 @@
 										</h4>
 										<figure>
 											<picture>
-												<source srcset="./img/shopify.webp">
-												<img src="./img/shopify.webp" alt="Logo Shopify">
+												<source preload-srcset="./img/shopify.webp">
+												<img preload-src="./img/shopify.webp" alt="Logo Shopify">
 											</picture>
 										</figure>
 										<p>
@@ -474,8 +506,8 @@
 									<div class="col col2">
 										<figure>
 											<picture>
-												<source srcset="./img/85.webp">
-												<img src="./img/85.webp" alt="Grafica 85%">
+												<source preload-srcset="./img/85.webp">
+												<img preload-src="./img/85.webp" alt="Grafica 85%">
 											</picture>
 										</figure>
 									</div>
@@ -485,8 +517,8 @@
 								<div class="box2">
 									<figure>
 										<picture>
-											<source srcset="./img/iconos-redes.webp">
-											<img src="./img/iconos-redes.webp" alt="Logo eMarket">
+											<source preload-srcset="./img/iconos-redes.webp">
+											<img preload-src="./img/iconos-redes.webp" alt="Logo eMarket">
 										</picture>
 									</figure>
 								</div>
@@ -500,8 +532,8 @@
 										</h4>
 										<figure>
 											<picture>
-												<source srcset="./img/emarketer.webp">
-												<img src="./img/emarketer.webp" alt="Logo eMarket">
+												<source preload-srcset="./img/emarketer.webp">
+												<img preload-src="./img/emarketer.webp" alt="Logo eMarket">
 											</picture>
 										</figure>
 										<p>
@@ -511,8 +543,8 @@
 									<div class="col col2">
 										<figure>
 											<picture>
-												<source srcset="./img/estadistica.webp">
-												<img src="./img/estadistica.webp" alt="Grafica 17%">
+												<source preload-srcset="./img/estadistica.webp">
+												<img preload-src="./img/estadistica.webp" alt="Grafica 17%">
 											</picture>
 										</figure>
 									</div>
@@ -566,8 +598,8 @@
 					<div class="fondo">
 						<figure>
 							<picture>
-								<source srcset="../assets/img/cerebro.webp">
-								<img src="../assets/img/cerebro.webp" alt="Globo cepeling">
+								<source preload-srcset="../assets/img/cerebro.webp">
+								<img preload-src="../assets/img/cerebro.webp" alt="Globo cepeling">
 							</picture>
 						</figure>
 					</div>
@@ -635,8 +667,8 @@
 								<div class="logo">
 									<figure>
 										<picture>
-											<source srcset="../assets/img/footer-logo-ventomaquia.svg">
-											<img src="../assets/img/footer-logo-ventomaquia.svg" alt="Logo Ventomaquia Footer">
+											<source preload-srcset="../assets/img/footer-logo-ventomaquia.svg">
+											<img preload-src="../assets/img/footer-logo-ventomaquia.svg" alt="Logo Ventomaquia Footer">
 										</picture>
 									</figure>
 									<div>
@@ -666,10 +698,10 @@
 						<a href="https://idalibre.com" rel="sponsored" target="_blank" title="ID.A libre - Sitio WEB">
 							<figure id="idalibreLogo">
 								<picture>
-									<source srcset="../assets/img/idalibre-logo-stiker.svg" type="image/svg+xml">
-									<source srcset="../assets/img/idalibre-logo-stiker.webp" type="image/webp">
-									<source srcset="../assets/img/idalibre-logo-stiker.png" type="image/png">
-									<img src="../assets/img/idalibre-logo-stiker.png" alt="Logotipo ID.A libre">
+									<source preload-srcset="../assets/img/idalibre-logo-stiker.svg" type="image/svg+xml">
+									<source preload-srcset="../assets/img/idalibre-logo-stiker.webp" type="image/webp">
+									<source preload-srcset="../assets/img/idalibre-logo-stiker.png" type="image/png">
+									<img preload-src="../assets/img/idalibre-logo-stiker.png" alt="Logotipo ID.A libre">
 								</picture>
 							</figure>
 							<p>Powered by</p>
@@ -680,6 +712,6 @@
 		</footer>
 
 
-		<div id="loadingBox"><img src="../assets/img/ajax.webp" alt="circulo de carga"></div>
+		<div id="loadingBox"><img src="../assets/img/ajax.webp" alt="circulo de carga" width="40" height="40"></div>
 	</body>
 </html>

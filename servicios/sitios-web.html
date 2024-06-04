@@ -29,8 +29,8 @@
 		<meta name="rating" content="General" />
 		
 		
-		<link rel="stylesheet" href="../assets/css/reset-sanatize-normalize-boilerplate-min.css" as="style" />
-		<link rel="stylesheet" id="cssMain" href="../assets/css/main.css" as="style" />
+		<link rel="preload" href="../assets/css/reset-sanatize-normalize-boilerplate-min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+		<link rel="preload" id="cssMain" href="../assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 		<!--[if lte IE 8]> <link rel="stylesheet" href="assets/css/resetIE.css" /> <![endif]-->
 		
 		<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -61,6 +61,38 @@
 		<meta name="twitter:description" content="Un sitio web bien hecho te hará destacar de tu competencia... te hará vender más que tu competencia." />
 		<meta name="twitter:image:src" content="https://ventomaquia.com/assets/img/redes_web_img_sitios.jpg" />
 		<meta name="twitter:domain" content="ventomaquia.com/" />
+
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				background-color: #000;
+				overflow: hidden;
+			}
+			nav {
+				position: fixed;
+				opacity: 0;
+			}
+			#pantallaG{
+				opacity: 0;
+			}
+			#pantalla1 {
+				min-height: 100vh;
+				background-color: black;
+			}
+			#loadingBox{
+				width: 100%;
+				height: 100vh;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				z-index: 99999;
+			}
+		</style>
 		
 		<meta name="author" content="Juan Palma - ID.A libre">
 		<link type="text/plain" rel="author" href="humans.txt" />
@@ -76,8 +108,8 @@
 						<a href="../" target="_parent">
 							<figure>
 								<picture>
-									<source srcset="../assets/img/ventomaquia-logo.svg">
-									<img src="../assets/img/ventomaquia-logo.svg" alt="Ventomaquia Logotipo" width="120">
+									<source preload-srcset="../assets/img/ventomaquia-logo.svg">
+									<img preload-src="../assets/img/ventomaquia-logo.svg" alt="Ventomaquia Logotipo" width="120">
 								</picture>
 							</figure>
 						</a>
@@ -166,8 +198,8 @@
 				<div id="pantalla1" class="pantallas">
 					<figure class="fondo">
 						<picture>
-							<source srcset="./img/sitios-banner-fondo.webp">
-							<img src="./img/sitios-banner-fondo.webp" alt="Fondo damicela mezclando musica">
+							<source preload-srcset="./img/sitios-banner-fondo.webp">
+							<img preload-src="./img/sitios-banner-fondo.webp" alt="Fondo damicela mezclando musica">
 						</picture>
 					</figure>
 					<div class="boxWrap">
@@ -243,8 +275,8 @@
 							<div class="col col2">
 								<figure>
 									<picture class="idaAniFade" data-direccion="derecha">
-										<source srcset="./img/sitios-esencial-lap.webp">
-										<img src="./img/sitios-esencial-lap.webp" alt="Laptop sitios Esencial">
+										<source preload-srcset="./img/sitios-esencial-lap.webp">
+										<img preload-src="./img/sitios-esencial-lap.webp" alt="Laptop sitios Esencial">
 									</picture>
 								</figure>
 								<a href="../dudas-frecuentes.html">
@@ -271,9 +303,9 @@
 							<div class="col col1">
 								<dvi>Promo</dvi>
 								<h3>
-									<div class="idaAniFade" data-direccion="arriba"><img src="./img/destello.svg" alt="Destello Hola mundo"></div>
+									<div class="idaAniFade" data-direccion="arriba"><img preload-src="./img/destello.svg" alt="Destello Hola mundo"></div>
 									HolaMundo
-									<div class="idaAniFade" data-direccion="arriba"><img src="./img/trazo-pincel.svg" alt="Trazo pincel Hola mundo"></div>
+									<div class="idaAniFade" data-direccion="arriba"><img preload-src="./img/trazo-pincel.svg" alt="Trazo pincel Hola mundo"></div>
 								</h3>
 								<h5>Tienes los mismos beneficios del paquete <span class="bold">ESENCIAL</span> y además incluye::</h5>
 								<ul>
@@ -322,8 +354,8 @@
 							<div class="col col2">
 								<figure>
 									<picture class="idaAniFade">
-										<source srcset="./img/sitios-avanza.webp">
-										<img src="./img/sitios-avanza.webp" alt="Laptop sitios Avanza">
+										<source preload-srcset="./img/sitios-avanza.webp">
+										<img preload-src="./img/sitios-avanza.webp" alt="Laptop sitios Avanza">
 									</picture>
 								</figure>
 								<a href="../dudas-frecuentes.html">
@@ -383,8 +415,8 @@
 								<div class="img">
 									<figure>
 										<picture>
-											<source srcset="./img/icono-picture.webp">
-											<img src="./img/icono-picture.webp" alt="Icono pintura">
+											<source preload-srcset="./img/icono-picture.webp">
+											<img preload-src="./img/icono-picture.webp" alt="Icono pintura">
 										</picture>
 									</figure>
 								</div>
@@ -403,8 +435,8 @@
 								<div class="img">
 									<figure>
 										<picture>
-											<source srcset="./img/icono-lapiz.webp">
-											<img src="./img/icono-lapiz.webp" alt="Icono pintura">
+											<source preload-srcset="./img/icono-lapiz.webp">
+											<img preload-src="./img/icono-lapiz.webp" alt="Icono pintura">
 										</picture>
 									</figure>
 								</div>
@@ -451,8 +483,8 @@
 							<div class="col col2">
 								<figure>
 									<picture class="idaAniFade" data-direccion="derecha">
-										<source srcset="./img/sitios-negocio.webp">
-										<img src="./img/sitios-negocio.webp" alt="Laptop sitios Negocio">
+										<source preload-srcset="./img/sitios-negocio.webp">
+										<img preload-src="./img/sitios-negocio.webp" alt="Laptop sitios Negocio">
 									</picture>
 								</figure>
 								<a href="../dudas-frecuentes.html">
@@ -498,8 +530,8 @@
 				<div class="fondo">
 					<figure>
 						<picture>
-							<source srcset="./img/promo-conviene-fondo.webp">
-							<img src="./img/promo-conviene-fondo.webp" alt="Adonis tecnologica">
+							<source preload-srcset="./img/promo-conviene-fondo.webp">
+							<img preload-src="./img/promo-conviene-fondo.webp" alt="Adonis tecnologica">
 						</picture>
 					</figure>
 				</div>
@@ -509,8 +541,8 @@
 							<div>¿Cómo sé cuál es la promo que me conviene?</div>
 							<figure>
 								<picture class="idaAniFade" data-direccion="abajo">
-									<source srcset="./img/adonis-lap.webp">
-									<img src="./img/adonis-lap.webp" alt="Adonis tecnologica">
+									<source preload-srcset="./img/adonis-lap.webp">
+									<img preload-src="./img/adonis-lap.webp" alt="Adonis tecnologica">
 								</picture>
 							</figure>
 						</div>
@@ -524,8 +556,8 @@
 						<div class="col col1">
 							<figure>
 								<picture class="idaAniFade">
-									<source srcset="./img/sitios-foto-esencial.webp">
-									<img src="./img/sitios-foto-esencial.webp" alt="foto paquete esencial">
+									<source preload-srcset="./img/sitios-foto-esencial.webp">
+									<img preload-src="./img/sitios-foto-esencial.webp" alt="foto paquete esencial">
 								</picture>
 							</figure>
 							<h3>
@@ -547,8 +579,8 @@
 						<div class="col col2">
 							<figure>
 								<picture class="idaAniFade">
-									<source srcset="./img/sitios-foto-negocio.webp">
-									<img src="./img/sitios-foto-negocio.webp" alt="foto paquete esencial">
+									<source preload-srcset="./img/sitios-foto-negocio.webp">
+									<img preload-src="./img/sitios-foto-negocio.webp" alt="foto paquete esencial">
 								</picture>
 							</figure>
 							<h3>
@@ -571,8 +603,8 @@
 						<div class="col col3">
 							<figure>
 								<picture class="idaAniFade">
-									<source srcset="./img/sitios-foto-avanza.webp">
-									<img src="./img/sitios-foto-avanza.webp" alt="foto paquete esencial">
+									<source preload-srcset="./img/sitios-foto-avanza.webp">
+									<img preload-src="./img/sitios-foto-avanza.webp" alt="foto paquete esencial">
 								</picture>
 							</figure>
 							<h3>
@@ -599,8 +631,8 @@
 				<div class="destello">
 					<figure>
 						<picture class="idaAniFade" data-direccion="abajo">
-							<source srcset="./img/brillo-circulo.webp">
-							<img src="./img/brillo-circulo.webp" alt="icono de brillo Ventomaquia">
+							<source preload-srcset="./img/brillo-circulo.webp">
+							<img preload-src="./img/brillo-circulo.webp" alt="icono de brillo Ventomaquia">
 						</picture>
 					</figure>
 				</div>
@@ -610,8 +642,8 @@
 							<div class="fondo">
 								<figure>
 									<picture>
-										<source srcset="./img/sitios-fondo-sin-nombre.webp">
-										<img src="./img/sitios-fondo-sin-nombre.webp" alt="Fondo seccion sin nombre de dominio">
+										<source preload-srcset="./img/sitios-fondo-sin-nombre.webp">
+										<img preload-src="./img/sitios-fondo-sin-nombre.webp" alt="Fondo seccion sin nombre de dominio">
 									</picture>
 								</figure>
 							</div>
@@ -640,8 +672,8 @@
 								<div class="icono">
 									<figure>
 										<picture>
-											<source srcset="./img/icono-lupa.webp">
-											<img src="./img/icono-lupa.webp" alt="Icono lupa">
+											<source preload-srcset="./img/icono-lupa.webp">
+											<img preload-src="./img/icono-lupa.webp" alt="Icono lupa">
 										</picture>
 									</figure>
 								</div>
@@ -661,8 +693,8 @@
 								<div class="icono">
 									<figure>
 										<picture>
-											<source srcset="./img/icono-mundo.webp">
-											<img src="./img/icono-mundo.webp" alt="Icono lupa">
+											<source preload-srcset="./img/icono-mundo.webp">
+											<img preload-src="./img/icono-mundo.webp" alt="Icono lupa">
 										</picture>
 									</figure>
 								</div>
@@ -678,8 +710,8 @@
 								<div class="icono">
 									<figure>
 										<picture>
-											<source srcset="./img/icono-tiro.webp">
-											<img src="./img/icono-tiro.webp" alt="Icono lupa">
+											<source preload-srcset="./img/icono-tiro.webp">
+											<img preload-src="./img/icono-tiro.webp" alt="Icono lupa">
 										</picture>
 									</figure>
 								</div>
@@ -689,8 +721,8 @@
 							<div class="fondo">
 								<figure>
 									<picture>
-										<source srcset="./img/interrogacion.webp">
-										<img src="./img/interrogacion.webp" alt="Icono de interrogacion">
+										<source preload-srcset="./img/interrogacion.webp">
+										<img preload-src="./img/interrogacion.webp" alt="Icono de interrogacion">
 									</picture>
 								</figure>
 							</div>
@@ -720,8 +752,8 @@
 				<div class="fondo">
 					<figure>
 						<picture>
-							<source srcset="./img/sitios-fondo-elementos.webp">
-							<img src="./img/sitios-fondo-elementos.webp" alt="Fondo elementos de un sitio">
+							<source preload-srcset="./img/sitios-fondo-elementos.webp">
+							<img preload-src="./img/sitios-fondo-elementos.webp" alt="Fondo elementos de un sitio">
 						</picture>
 					</figure>
 				</div>
@@ -732,8 +764,8 @@
 							<div class="icono">
 								<figure>
 									<picture>
-										<source srcset="./img/icono-geo.svg">
-										<img src="./img/icono-geo.svg" alt="Icono geolocalizacion">
+										<source preload-srcset="./img/icono-geo.svg">
+										<img preload-src="./img/icono-geo.svg" alt="Icono geolocalizacion">
 									</picture>
 								</figure>
 								<p>Nombre de dominio</p>
@@ -741,8 +773,8 @@
 							<div class="icono">
 								<figure>
 									<picture>
-										<source srcset="./img/icono-mundo2.svg">
-										<img src="./img/icono-mundo2.svg" alt="Icono mundo">
+										<source preload-srcset="./img/icono-mundo2.svg">
+										<img preload-src="./img/icono-mundo2.svg" alt="Icono mundo">
 									</picture>
 								</figure>
 								<p>Hosting</p>
@@ -750,8 +782,8 @@
 							<div class="icono">
 								<figure>
 									<picture>
-										<source srcset="./img/icono-view.svg">
-										<img src="./img/icono-view.svg" alt="Icono Ventana WEB">
+										<source preload-srcset="./img/icono-view.svg">
+										<img preload-src="./img/icono-view.svg" alt="Icono Ventana WEB">
 									</picture>
 								</figure>
 								<p>Sitio web</p>
@@ -774,8 +806,8 @@
 					<div class="fondo">
 						<figure>
 							<picture>
-								<source srcset="../assets/img/cerebro.webp">
-								<img src="../assets/img/cerebro.webp" alt="Globo cepeling">
+								<source preload-srcset="../assets/img/cerebro.webp">
+								<img preload-src="../assets/img/cerebro.webp" alt="Globo cepeling">
 							</picture>
 						</figure>
 					</div>
@@ -843,8 +875,8 @@
 								<div class="logo">
 									<figure>
 										<picture>
-											<source srcset="../assets/img/footer-logo-ventomaquia.svg">
-											<img src="../assets/img/footer-logo-ventomaquia.svg" alt="Logo Ventomaquia Footer">
+											<source preload-srcset="../assets/img/footer-logo-ventomaquia.svg">
+											<img preload-src="../assets/img/footer-logo-ventomaquia.svg" alt="Logo Ventomaquia Footer">
 										</picture>
 									</figure>
 									<div>
@@ -874,10 +906,10 @@
 						<a href="https://idalibre.com" rel="sponsored" target="_blank" title="ID.A libre - Sitio WEB">
 							<figure id="idalibreLogo">
 								<picture>
-									<source srcset="../assets/img/idalibre-logo-stiker.svg" type="image/svg+xml">
-									<source srcset="../assets/img/idalibre-logo-stiker.webp" type="image/webp">
-									<source srcset="../assets/img/idalibre-logo-stiker.png" type="image/png">
-									<img src="../assets/img/idalibre-logo-stiker.png" alt="Logotipo ID.A libre">
+									<source preload-srcset="../assets/img/idalibre-logo-stiker.svg" type="image/svg+xml">
+									<source preload-srcset="../assets/img/idalibre-logo-stiker.webp" type="image/webp">
+									<source preload-srcset="../assets/img/idalibre-logo-stiker.png" type="image/png">
+									<img preload-src="../assets/img/idalibre-logo-stiker.png" alt="Logotipo ID.A libre">
 								</picture>
 							</figure>
 							<p>Powered by</p>
@@ -888,6 +920,6 @@
 		</footer>
 
 
-		<div id="loadingBox"><img src="../assets/img/ajax.webp" alt="circulo de carga"></div>
+		<div id="loadingBox"><img src="../assets/img/ajax.webp" alt="circulo de carga" width="40" height="40"></div>
 	</body>
 </html>

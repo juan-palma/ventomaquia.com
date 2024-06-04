@@ -29,8 +29,8 @@
 		<meta name="rating" content="General" />
 		
 		
-		<link rel="stylesheet" href="assets/css/reset-sanatize-normalize-boilerplate-min.css" as="style" />
-		<link rel="stylesheet" id="cssMain" href="assets/css/main.css" as="style" />
+		<link rel="preload" href="assets/css/reset-sanatize-normalize-boilerplate-min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+		<link rel="preload" id="cssMain" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 		<!--[if lte IE 8]> <link rel="stylesheet" href="assets/css/resetIE.css" /> <![endif]-->
 		
 		<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -61,6 +61,38 @@
 		<meta name="twitter:description" content="En la batalla del marketing digital, llevaremos tu negocio a su potencial con estrategias personalizadas, innovación y un toque de genialidad." />
 		<meta name="twitter:image:src" content="https://ventomaquia.com/assets/img/redes_web_img_ventomaquia.jpg" />
 		<meta name="twitter:domain" content="ventomaquia.com/" />
+
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				background-color: #000;
+				overflow: hidden;
+			}
+			nav {
+				position: fixed;
+				opacity: 0;
+			}
+			#pantallaG{
+				opacity: 0;
+			}
+			#pantalla1 {
+				min-height: 100vh;
+				background-color: black;
+			}
+			#loadingBox{
+				width: 100%;
+				height: 100vh;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				z-index: 99999;
+			}
+		</style>
 		
 		<meta name="author" content="Juan Palma - ID.A libre">
 		<link type="text/plain" rel="author" href="humans.txt" />
@@ -76,8 +108,8 @@
 						<a href="./" target="_parent">
 							<figure>
 								<picture>
-									<source srcset="./assets/img/ventomaquia-logo.svg">
-									<img src="./assets/img/ventomaquia-logo.svg" alt="Ventomaquia Logotipo" width="120">
+									<source preload-srcset="./assets/img/ventomaquia-logo.svg">
+									<img preload-src="./assets/img/ventomaquia-logo.svg" alt="Ventomaquia Logotipo" width="120">
 								</picture>
 							</figure>
 						</a>
@@ -166,8 +198,8 @@
 				<div id="pantalla1" class="pantallas">
 					<figure class="fondo">
 						<picture>
-							<source srcset="./assets/img/fondo-la-ventomaquia.webp">
-							<img src="./assets/img/fondo-la-ventomaquia.webp" alt="Fondo La Ventomaquia">
+							<source preload-srcset="./assets/img/fondo-la-ventomaquia.webp">
+							<img preload-src="./assets/img/fondo-la-ventomaquia.webp" alt="Fondo La Ventomaquia">
 						</picture>
 					</figure>
 					<div class="boxWrap">
@@ -226,8 +258,8 @@
 						<div class="col col2">
 							<figure>
 								<picture class="idaAniFade">
-									<source srcset="./assets/img/dispositivos-corazones.webp">
-									<img src="./assets/img/dispositivos-corazones.webp" alt="Dispositivos digitales render">
+									<source preload-srcset="./assets/img/dispositivos-corazones.webp">
+									<img preload-src="./assets/img/dispositivos-corazones.webp" alt="Dispositivos digitales render">
 								</picture>
 							</figure>
 						</div>
@@ -241,8 +273,8 @@
 						<div class="col col1">
 							<figure>
 								<picture class="idaAniFade">
-									<source srcset="./assets/img/busco-informatico.webp">
-									<img src="./assets/img/busco-informatico.webp" alt="Busto digital">
+									<source preload-srcset="./assets/img/busco-informatico.webp">
+									<img preload-src="./assets/img/busco-informatico.webp" alt="Busto digital">
 								</picture>
 							</figure>
 						</div>
@@ -296,80 +328,80 @@
 							<div class="marca">
 								<figure>
 									<picture>
-										<source srcset="./assets/img/marca-invex.webp">
-										<img src="./assets/img/marca-invex.webp" alt="Logo de la marca INVEX">
+										<source preload-srcset="./assets/img/marca-invex.webp">
+										<img preload-src="./assets/img/marca-invex.webp" alt="Logo de la marca INVEX">
 									</picture>
 								</figure>
 								<figure>
 									<picture>
-										<source srcset="./assets/img/marca-hbo.webp">
-										<img src="./assets/img/marca-hbo.webp" alt="Logo de la marca HBO">
+										<source preload-srcset="./assets/img/marca-hbo.webp">
+										<img preload-src="./assets/img/marca-hbo.webp" alt="Logo de la marca HBO">
 									</picture>
 								</figure>
 								<figure>
 									<picture>
-										<source srcset="./assets/img/marca-vips.webp">
-										<img src="./assets/img/marca-vips.webp" alt="Logo de la marca VIPS">
-									</picture>
-								</figure>
-							</div>
-							<div class="marca">
-								<figure>
-									<picture>
-										<source srcset="./assets/img/marca-volaris.webp">
-										<img src="./assets/img/marca-volaris.webp" alt="Logo de la marca VOLARIS">
-									</picture>
-								</figure>
-								<figure>
-									<picture>
-										<source srcset="./assets/img/marca-axtel.webp">
-										<img src="./assets/img/marca-axtel.webp" alt="Logo de la marca VOLARIS">
-									</picture>
-								</figure>
-								<figure>
-									<picture>
-										<source srcset="./assets/img/marca-cablemas.webp">
-										<img src="./assets/img/marca-cablemas.webp" alt="Logo de la marca VOLARIS">
+										<source preload-srcset="./assets/img/marca-vips.webp">
+										<img preload-src="./assets/img/marca-vips.webp" alt="Logo de la marca VIPS">
 									</picture>
 								</figure>
 							</div>
 							<div class="marca">
 								<figure>
 									<picture>
-										<source srcset="./assets/img/marca-ciao.webp">
-										<img src="./assets/img/marca-ciao.webp" alt="Logo de la marca VOLARIS">
+										<source preload-srcset="./assets/img/marca-volaris.webp">
+										<img preload-src="./assets/img/marca-volaris.webp" alt="Logo de la marca VOLARIS">
 									</picture>
 								</figure>
 								<figure>
 									<picture>
-										<source srcset="./assets/img/marca-interjet.webp">
-										<img src="./assets/img/marca-interjet.webp" alt="Logo de la marca VOLARIS">
+										<source preload-srcset="./assets/img/marca-axtel.webp">
+										<img preload-src="./assets/img/marca-axtel.webp" alt="Logo de la marca VOLARIS">
 									</picture>
 								</figure>
 								<figure>
 									<picture>
-										<source srcset="./assets/img/marca-jumex.webp">
-										<img src="./assets/img/marca-jumex.webp" alt="Logo de la marca VOLARIS">
+										<source preload-srcset="./assets/img/marca-cablemas.webp">
+										<img preload-src="./assets/img/marca-cablemas.webp" alt="Logo de la marca VOLARIS">
 									</picture>
 								</figure>
 							</div>
 							<div class="marca">
 								<figure>
 									<picture>
-										<source srcset="./assets/img/marca-oxxo.webp">
-										<img src="./assets/img/marca-oxxo.webp" alt="Logo de la marca VOLARIS">
+										<source preload-srcset="./assets/img/marca-ciao.webp">
+										<img preload-src="./assets/img/marca-ciao.webp" alt="Logo de la marca VOLARIS">
 									</picture>
 								</figure>
 								<figure>
 									<picture>
-										<source srcset="./assets/img/marca-posadas.webp">
-										<img src="./assets/img/marca-posadas.webp" alt="Logo de la marca VOLARIS">
+										<source preload-srcset="./assets/img/marca-interjet.webp">
+										<img preload-src="./assets/img/marca-interjet.webp" alt="Logo de la marca VOLARIS">
 									</picture>
 								</figure>
 								<figure>
 									<picture>
-										<source srcset="./assets/img/marca-raices.webp">
-										<img src="./assets/img/marca-raices.webp" alt="Logo de la marca VOLARIS">
+										<source preload-srcset="./assets/img/marca-jumex.webp">
+										<img preload-src="./assets/img/marca-jumex.webp" alt="Logo de la marca VOLARIS">
+									</picture>
+								</figure>
+							</div>
+							<div class="marca">
+								<figure>
+									<picture>
+										<source preload-srcset="./assets/img/marca-oxxo.webp">
+										<img preload-src="./assets/img/marca-oxxo.webp" alt="Logo de la marca VOLARIS">
+									</picture>
+								</figure>
+								<figure>
+									<picture>
+										<source preload-srcset="./assets/img/marca-posadas.webp">
+										<img preload-src="./assets/img/marca-posadas.webp" alt="Logo de la marca VOLARIS">
+									</picture>
+								</figure>
+								<figure>
+									<picture>
+										<source preload-srcset="./assets/img/marca-raices.webp">
+										<img preload-src="./assets/img/marca-raices.webp" alt="Logo de la marca VOLARIS">
 									</picture>
 								</figure>
 							</div>
@@ -385,8 +417,8 @@
 							<div class="fondo">
 								<figure>
 									<picture>
-										<source srcset="./assets/img/ajedrez.webp">
-										<img src="./assets/img/ajedrez.webp" alt="Logo de la marca VOLARIS">
+										<source preload-srcset="./assets/img/ajedrez.webp">
+										<img preload-src="./assets/img/ajedrez.webp" alt="Logo de la marca VOLARIS">
 									</picture>
 								</figure>
 							</div>
@@ -415,8 +447,8 @@
 					<div class="fondo">
 						<figure>
 							<picture>
-								<source srcset="./assets/img/cerebro.webp">
-								<img src="./assets/img/cerebro.webp" alt="Globo cepeling">
+								<source preload-srcset="./assets/img/cerebro.webp">
+								<img preload-src="./assets/img/cerebro.webp" alt="Globo cepeling">
 							</picture>
 						</figure>
 					</div>
@@ -484,8 +516,8 @@
 								<div class="logo">
 									<figure>
 										<picture>
-											<source srcset="./assets/img/footer-logo-ventomaquia.svg">
-											<img src="./assets/img/footer-logo-ventomaquia.svg" alt="Logo Ventomaquia Footer">
+											<source preload-srcset="./assets/img/footer-logo-ventomaquia.svg">
+											<img preload-src="./assets/img/footer-logo-ventomaquia.svg" alt="Logo Ventomaquia Footer">
 										</picture>
 									</figure>
 									<div>
@@ -515,10 +547,10 @@
 						<a href="https://idalibre.com" rel="sponsored" target="_blank" title="ID.A libre - Sitio WEB">
 							<figure id="idalibreLogo">
 								<picture>
-									<source srcset="./assets/img/idalibre-logo-stiker.svg" type="image/svg+xml">
-									<source srcset="./assets/img/idalibre-logo-stiker.webp" type="image/webp">
-									<source srcset="./assets/img/idalibre-logo-stiker.png" type="image/png">
-									<img src="./assets/img/idalibre-logo-stiker.png" alt="Logotipo ID.A libre">
+									<source preload-srcset="./assets/img/idalibre-logo-stiker.svg" type="image/svg+xml">
+									<source preload-srcset="./assets/img/idalibre-logo-stiker.webp" type="image/webp">
+									<source preload-srcset="./assets/img/idalibre-logo-stiker.png" type="image/png">
+									<img preload-src="./assets/img/idalibre-logo-stiker.png" alt="Logotipo ID.A libre">
 								</picture>
 							</figure>
 							<p>Powered by</p>
@@ -529,6 +561,6 @@
 		</footer>
 
 
-		<div id="loadingBox"><img src="./assets/img/ajax.webp" alt="circulo de carga"></div>
+		<div id="loadingBox"><img src="./assets/img/ajax.webp" alt="circulo de carga" width="40" height="40"></div>
 	</body>
 </html>
