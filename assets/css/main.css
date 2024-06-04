@@ -1650,7 +1650,7 @@ a.centro{
 				}
 					footer .capsula .legales a {
 						text-decoration: none;
-						color: var(--colorTexto2);
+						color: #c5c5c5;
 					}
 					.redesMain {
 						display: flex;
