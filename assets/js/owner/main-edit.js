@@ -725,4 +725,4 @@ requirejs.config({
 		}
 	}
 });
-requirejs(["l/modernizr", "l/precarga", "validaciones", "alertas", "peticiones", "l/brands.min", "l/solid.min", "l/fontawesome", "gsap", "ScrollTrigger", "ScrollToPlugin", "Flip"], precargaActive);
+requirejs(["l/modernizr", "l/precarga", "l/brands.min", "l/solid.min", "l/fontawesome", "gsap", "ScrollTrigger", "ScrollToPlugin", "Flip"], precargaActive);
