@@ -663,14 +663,16 @@ dbDudas.push({pregunta:"¿Vienen, voy, nos vemos debajo del reloj, o cómo está
 
 
 
-
+let primerRetardo;
 let idaDomLoaded = false;
 let idaRequireLoaded = false;
-function allLoaded() {
+async function allLoaded() {
 	if(idaRequireLoaded && idaDomLoaded){
-		// const precarga = new Precarga();
-		// precarga.userFunc = iniciar;
-		// precarga.run();
+		primerRetardo = setTimeout(() => {
+			const precarga = new Precarga();
+			precarga.userFunc = iniciar;
+			precarga.run();
+		}, 100)
 	}
 }
 
