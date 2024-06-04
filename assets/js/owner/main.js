@@ -624,6 +624,8 @@ function iniciar() {
 			display: "none"
 		});
 		document.body.style.overflow = "auto";
+		document.getElementById("pantallaG").style.opacity = "1";
+		document.querySelector("nav").style.opacity = "1";
 	}
 
 }
@@ -672,8 +674,8 @@ async function allLoaded() {
 			const precarga = new Precarga();
 			precarga.userFunc = iniciar;
 			precarga.run();
-		}, 3000)
-	}
+		}, 1500)
+	};
 }
 
 
