@@ -702,6 +702,16 @@ body{
     			left: 0px;
     			z-index: 0;
 			}
+				figure.fondo:after {
+					content: "";
+					width: 100%;
+					height: 100%;
+					top: 0px;
+					left: 0px;
+					position: absolute;
+					z-index: 1;
+					background-color: #00000055;
+				}
 				#pantalla1 .fondo img {
 					width: 100%;
 					height: 100%;
