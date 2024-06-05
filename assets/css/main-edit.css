@@ -350,6 +350,14 @@ div#ventanaPOP {
 body{
 	overflow: hidden;
 }
+main {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #loadingBox{
 	width: 100%;
 	height: 100vh;
@@ -678,9 +686,13 @@ body{
 
 	#pantallaBox{
 		width: 100vw;
+		min-width: 100%;
+		max-width: 100%;
 	}
 		#pantalla1, #pantalla2, #pantalla3 {
 			width: 100%;
+			min-width: 100%;
+			max-width: 100%;
 			min-height: 100lvh;
 			position: relative;
 			/* will-change: transform, opacity; */
