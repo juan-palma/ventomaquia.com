@@ -1760,9 +1760,10 @@ button{
 	/* Estilos para la pagina Sitios Web */
 	.textoServicio {
 		font-family: 'Mulish';
-		font-size: 56%;
+		font-size: 38%;
 		font-weight: 400;
 		color: white;
+		font-weight: 100;
 	}
 
 	.bodySitios #pantalla1 {
