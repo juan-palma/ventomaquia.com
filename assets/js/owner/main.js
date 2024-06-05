@@ -398,7 +398,7 @@ async function precargaRun(){
 			precarga.userFunc = iniciar;
 			precarga.run();
 			r('la precarga de imagenes esta en curso...');
-		}, 3000);
+		}, retrasoPregargaImg);
 	});
 };
 //Secciono de funciones:
@@ -722,7 +722,7 @@ function controlador(){
 	
 	iniciador();
 };
-
+const retrasoPregargaImg = 1000;
 
 
 
