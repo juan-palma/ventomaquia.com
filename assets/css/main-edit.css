@@ -2744,6 +2744,18 @@ button{
 
 
 
+/* Ajustes a la info de pantalla 1 de todos los servicios*/
+.bodyServicios #pantalla1 .intro {
+    width: 90%;
+    margin-bottom: 12vh;
+}
+	.bodyServicios #pantalla1 .intro h1 {
+		font-size: clamp(14px, 5.2vw + 0.4rem, 118px);
+		margin: 0;
+	}
+
+
+
 
 
 
