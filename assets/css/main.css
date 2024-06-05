@@ -753,7 +753,7 @@ main {
 					border: 2px solid var(--colorPrincipal);
 					border-radius: 32px;
 					color: white;
-					background-color: rgba(0, 0, 0, 0.35);
+					background-color: rgba(0, 0, 0, 0.4);
 					transform: translate(0px, 68px);
 					opacity: 0;
 				}
