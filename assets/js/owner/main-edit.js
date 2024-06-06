@@ -40,38 +40,6 @@ async function iniciar() {
 
 
 
-	
-	
-
-	function updateAnimations() {
-		// // Asegúrate de que las animaciones y ScrollTriggers existan antes de intentar matarlas
-		// if (pantalla3TL) {
-		// 	pantalla3TL.kill();
-		// }
-		// if (pantallasTL) {
-		// 	pantallasTL.kill();
-		// }
-		// ScrollTrigger.getAll().forEach(st => {console.log('señal en el array'); st.kill()});
-
-		// //Reiniciar animaciones
-		// pantallasAniFunc();
-	
-		// Refrescar ScrollTriggers para asegurarse de que todo esté sincronizado
-		ScrollTrigger.sort();
-		ScrollTrigger.refresh();
-	}
-
-	function updatePantallaStyle() {
-		//document.getElementById('pantalla2').style.transform = `translateY(-${document.getElementById('pantalla1').offsetHeight}px)`;
-	}
-
-	//window.addEventListener('resize', debounce(updateAnimations, 250));
-	//window.addEventListener('orientationchange', debounce(updateAnimations, 250));
-	//window.addEventListener('resize', debounce(updateAnimations, 250));
-	// window.addEventListener('resize', debounce(updatePantallaStyle, 250));
-
-
-
 
 
 
@@ -374,7 +342,7 @@ let dbDudas = [];
 dbDudas.push({pregunta:"¿Necesito tener redes sociales para me ayuden a aumentar mis ventas?", respuesta:"Sí, ya que forman parte de nuestro sistema comprobado para que vendas más."});
 dbDudas.push({pregunta:"Qué redes sociales “ocupo”?", respuesta:"Por lo menos Facebook. Dependiendo del giro de tu negocio, también puedes necesitar Instagram. Tenemos comprobado que la combinación de ambas es una receta segura para lograr ventas."});
 dbDudas.push({pregunta:"¿Uds. pueden ayudarme a crear mis redes sociales en caso de no tenerlas?", respuesta:"Por supuesto. Te llevaremos paso a paso en el proceso y te daremos algunos consejos para que de aquí en adelante puedas crear todas las que desees."});
-dbDudas.push({pregunta:"¿Las quesadillas deben llevar queso?", respuesta:"Nuestro abogados recomiendan no entrar en esas polémicas, por lo que nuestra respuesta es “sigue tu corazón”."});
+dbDudas.push({pregunta:"¿Las quesadillas deben llevar queso?", respuesta:"Nuestros abogados recomiendan no entrar en esas polémicas, por lo que nuestra respuesta es “sigue tu corazón”."});
 dbDudas.push({pregunta:"Tengo redes, pero no tengo página web. ¿Es  necesaria?", respuesta:"No. Podemos incrementar tus ventas sólo con tus redes sociales. Pero considera que contar con un sitio web le da mucha más credibilidad a cualquier negocio."});
 dbDudas.push({pregunta:"Me es difícil crear los textos y contenido para mi página de internet. ¿Uds. me ayudan con eso?", respuesta:"Claro!! Te ayudamos con imágenes, íconos y los textos más seductores para tu público."});
 dbDudas.push({pregunta:"¿El único afortunado de contar con sus servicios es Jalisco?", respuesta:"Gracias a la tecnología podemos brindar servicios a cualquier parte de la República. Si gustas que vayamos a tomar algo, nuestro equipo se encuentra en CDMX y Guadalajara ;D"});
@@ -575,6 +543,24 @@ async function pantalla1Ani(){
 	}
 }
 
+
+function updateAnimations() {
+	// // Asegúrate de que las animaciones y ScrollTriggers existan antes de intentar matarlas
+	// if (pantalla3TL) {
+	// 	pantalla3TL.kill();
+	// }
+	// if (pantallasTL) {
+	// 	pantallasTL.kill();
+	// }
+	// ScrollTrigger.getAll().forEach(st => {console.log('señal en el array'); st.kill()});
+
+	// //Reiniciar animaciones
+	// pantallasAniFunc();
+
+	// Refrescar ScrollTriggers para asegurarse de que todo esté sincronizado
+	ScrollTrigger.sort();
+	ScrollTrigger.refresh();
+}
 async function pantallasAni(){
 	if(!document.getElementById("pantallaBox")) return "No se encuentra una estructura html valida para las pantallas";
 	
@@ -623,6 +609,12 @@ async function pantallasAni(){
 		fastScrollEnd: true
 		// markers:true
 	});
+
+	
+	//window.addEventListener('resize', debounce(updateAnimations, 250));
+	window.addEventListener('orientationchange', debounce(updateAnimations, 250));
+	//window.addEventListener('resize', debounce(updateAnimations, 250));
+	// window.addEventListener('resize', debounce(updatePantallaStyle, 250));
 
 	return "se ejecuto codigo de animacion de pantallas";
 }
@@ -719,7 +711,6 @@ Funcion donde se controla el sitio serb general con  otros eventos de carga o de
 function controlador(){
 	// Registrar plugins de GSAP
 	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Flip);
-	
 	iniciador();
 };
 const retrasoPrecargaImg = 1600;

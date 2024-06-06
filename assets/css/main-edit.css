@@ -608,10 +608,11 @@ main {
 				flex-direction: column;
 				justify-content: center;
 				align-content: flex-end;
-				flex-wrap: wrap;
 				padding: 8vw;
 				grid-gap: 20px;
 				color: black;
+				overflow: hidden;
+				overflow-y: scroll;
 
 				-webkit-transition: right 0.35s, -webkit-transform 0.35s;
 				transition: right 0.35s, transform 0.35s;
@@ -752,7 +753,7 @@ main {
 					border: 2px solid var(--colorPrincipal);
 					border-radius: 32px;
 					color: white;
-					background-color: rgba(0, 0, 0, 0.6);
+					background-color: rgba(0, 0, 0, 0.4);
 					transform: translate(0px, 68px);
 					opacity: 0;
 				}
@@ -1759,9 +1760,10 @@ button{
 	/* Estilos para la pagina Sitios Web */
 	.textoServicio {
 		font-family: 'Mulish';
-		font-size: 56%;
+		font-size: 38%;
 		font-weight: 400;
 		color: white;
+		font-weight: 100;
 	}
 
 	.bodySitios #pantalla1 {
@@ -2876,7 +2878,7 @@ button{
 		width: 0px !important;
 		height: 0px !important;
 		overflow: hidden !important;
-	}	
+	}
 }
 /* ==========================================================================
 	Estilos para un especto acostado pero en dispositivos medianos
@@ -2899,8 +2901,14 @@ button{
 /* ==========================================================================
 	Estilos para un espect acostado pero en dispositivos muy chicos
 ========================================================================== */
-@media screen and (orientation:landscape) and (max-height: 460px){
+@media screen and (orientation:landscape) and (max-height: 669px){
+	#menuMobileBox {
+		justify-content: flex-start;
 
+	}
+		#menuMobileBox li {
+			font-size: clamp(18px, 1vw, 25px);
+		}
 }
 
 
