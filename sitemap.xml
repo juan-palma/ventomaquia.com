@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://ventomaquia.com/</loc>
+  <lastmod>2024-06-08T05:51:24+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ventomaquia.com/la-ventomaquia.html</loc>
+  <lastmod>2024-06-08T05:51:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ventomaquia.com/servicios/branding.html</loc>
+  <lastmod>2024-06-08T05:51:24+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://ventomaquia.com/servicios/redes-sociales.html</loc>
+  <lastmod>2024-06-08T05:51:24+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://ventomaquia.com/servicios/sitios-web.html</loc>
+  <lastmod>2024-06-08T05:51:24+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://ventomaquia.com/dudas-frecuentes.html</loc>
+  <lastmod>2024-06-08T05:51:24+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://ventomaquia.com/politicas-privacidad.html</loc>
+  <lastmod>2024-06-08T05:51:24+00:00</lastmod>
+  <priority>0.50</priority>
+</url>
+
+
+</urlset>
