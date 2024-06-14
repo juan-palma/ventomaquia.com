@@ -5,6 +5,7 @@
 # to the main server config file (usually called `httpd.conf`), you should add
 # this logic there: http://httpd.apache.org/docs/current/howto/htaccess.html.
 
+
 # ##############################################################################
 # # CROSS-ORIGIN RESOURCE SHARING (CORS)                                       #
 # ##############################################################################
@@ -18,7 +19,7 @@
 # http://enable-cors.org/
 
 # <IfModule mod_headers.c>
-#    Header set Access-Control-Allow-Origin "*"
+#    Header set Access-Control-Allow-Origin "https://ventomaquia.com"
 # </IfModule>
 
 #<IfModule mod_headers.c>
@@ -27,6 +28,16 @@
 #    Header add Access-Control-Allow-Headers "accept, origin, x-requested-with, x-request, content-type"
 #    Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS, XMODIFY"
 #</IfModule>
+<IfModule mod_headers.c>
+    SetEnvIf Origin "^http(s)?://(.+\.)?ventomaquia\.com$" CORS_ALLOW_ORIGIN=$0
+    SetEnvIf Origin "^http(s)?://(.+\.)?idalibre\.com$" CORS_ALLOW_ORIGIN=$0
+    
+    Header set Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
+    Header set Access-Control-Allow-Credentials true
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+</IfModule>
+
 
 # ------------------------------------------------------------------------------
 # | CORS-enabled images                                                        |
@@ -575,6 +586,9 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # | Remove extension .html from url direcciont                                                    |
 # ------------------------------------------------------------------------------
 
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [L]
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
