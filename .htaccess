@@ -574,8 +574,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # ------------------------------------------------------------------------------
 # | Remove extension .html from url direcciont                                                    |
 # ------------------------------------------------------------------------------
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.*)$ $1.html [L]
-</IfModule>
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
