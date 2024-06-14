@@ -637,9 +637,9 @@ main {
 				#menuMobileBox a:hover li,
 				#menuMobileBox a.activo li, 
 				#menuMobileBox li.activo a{
-					color: #000 !important;
-					font-weight: 600;
-				}
+					font-weight: 900;
+					color: var(--colorSecundario) !important;
+						}
 				
 			#menuMobileBtn {
 				position: relative;

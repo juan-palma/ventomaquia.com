@@ -382,7 +382,7 @@ async function toolsPimeraCarga(){
 
 		//Animacion y control de submenus
 		const botonMenu = document.getElementById("servicioBtn");
-		let submenus = gsap.utils.toArray(".submenu1Box a");
+		let submenus = gsap.utils.toArray(".submenu1Box > li");
 		if(submenus){
 			const sumN = submenus.length;
 			let submenuAbierto = false;
