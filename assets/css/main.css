@@ -2151,17 +2151,195 @@ button{
 
 
 /* Seccion Servicios Redes Sociales */
+#activar .capsula > p:nth-child(1) {
+    font-family: 'Playfair Display';
+    font-size: clamp(22px, 2vw + 0.2em, 68px);
+    color: var(--colorSecundario);
+    text-align: center;
+    font-weight: 700;
+}
+	#activar .capsula > ul {
+		display: flex;
+		flex-direction: column;
+		font-size: clamp(22px, 1.4vw + 0.2em, 68px);
+	}
+#necesitas .fondo {
+    position: absolute;
+    width: 100%;
+	height: 100%;
+    z-index: -1;
+}
+	#necesitas .fondo figure {
+		width: 60%;
+		height: 100%;
+		position: relative;
+		right: 0px;
+		left: 43%;
+	}
+#necesitas .box {
+	display: grid;
+	grid-template-columns: 6fr 4fr;
+}
+	#necesitas .boxTarjeta {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		grid-gap: 28px;
+		padding: 32px 0px;
+	}
+		#necesitas .boxTarjeta .tarjeta {
+			width: 100%;
+			position: relative;
+			background-color: white;
+			border-radius: 24px;
+			padding: 28px 34px;
+			display: grid;
+			grid-template-columns: 4fr 6fr;
+			grid-gap: 24px;
+			color: var(--colorPrincipal);
+		}
+		#necesitas .boxTarjeta .tarjeta:nth-child(2) {
+			background-color: var(--colorSecundario);
+		}
+		#necesitas .boxTarjeta .tarjeta:nth-child(3) {
+			background-color: var(--colorPrincipal);
+			color: white;
+		}
+			#necesitas .boxTarjeta .tarjeta .col {
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+				#necesitas .boxTarjeta .tarjeta .col1 {
+					font-family: 'Playfair Display';
+					font-size: clamp(14px, 1vw + 1rem, 48px);
+					line-height: 1;
+				}
+					#necesitas .boxTarjeta .tarjeta .col1 > span {
+						font-size: clamp(14px, 6.1vw + 1rem, 188px);
+						margin-top: -48px;
+						margin-bottom: 24px;
+						font-weight: 800;
+					}
+				#necesitas .boxTarjeta .tarjeta .col2 {
+					font-size: clamp(14px, 1vw + 0.8rem, 48px);
+					display: grid;
+					justify-content: center;
+					align-items: center;
+					grid-gap: 10px;
+					font-weight: 700;
+					line-height: 1;
+				}
+					#necesitas .boxTarjeta .tarjeta .col2 > p {
+						margin: 0;
+						text-align: center;
+					}
+					#necesitas .boxTarjeta .tarjeta .col2 > p.tachado {
+						text-decoration: line-through;
+					}
+					#necesitas .boxTarjeta .tarjeta .col2 > p.pildora {
+						background-color: var(--colorPrincipal);
+						color: white;
+						font-weight: 800;
+						font-size: clamp(14px, 2vw + 1rem, 52px);
+						padding: 6px 0px;
+						border-radius: 40px;
+					}
+					#necesitas .boxTarjeta .tarjeta:nth-child(3) .col2 > p.pildora{
+						background-color: white;
+						color: var(--colorPrincipal);
+					}
+					#necesitas .boxTarjeta .tarjeta .col2 > p .menos {
+						font-weight: 300;
+						font-size: clamp(14px, 0.8vw + 0.4rem, 52px);
+					}
+	#necesitas .box .col1 ul {
+		font-size: 140%;
+	}
+		span.incluyeTitulo {
+			display: inline-flex;
+			margin-bottom: 16px;
+			font-size: 144%;
+		}
+	#necesitas .box .col2 {
+		justify-content: center;
+		align-items: flex-end;
+	}
+		#necesitas .box a {
+			position: relative;
+			bottom: inherit;
+			left: inherit;
+		}
+		p.apartado {
+			font-size: clamp(14px, 1vw + 0.4em, 26px);
+			color: var(--colorSecundario);
+			margin-bottom: 52px;
+		}
+		#necesitas .box .col2 span.colorS {
+			font-size: 130%;
+			font-weight: 700;
+		}
+
 .bodyRedes .pantallas .frase {
     font-size: clamp(28px, 2.8vw + 0.4rem, 122px);
 }
-#vendeMas .tituloExtra {
-    width: 80%;
-    text-align: center;
-    font-size: 215%;
+#vendeMas2 .capsula .limite {
+    width: 100%;
     position: relative;
-    z-index: 20;
-    margin-bottom: 86px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 44px 0px;
 }
+	#vendeMas2 .tituloExtra {
+		width: 80%;
+		text-align: center;
+		font-size: 215%;
+		position: relative;
+		z-index: 20;
+		margin-bottom: 86px;
+	}
+#vendeMa2 .capsula .boxInfo {
+	width: 75%;
+	max-width: 75%;
+	flex: 1 1 75%;
+	height: auto;
+	position: relative;
+	padding: 32px 140px 32px 42px;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 22px;
+}
+	#vendeMas2 .capsula .boxInfo {
+		width: 75%;
+		max-width: 75%;
+		flex: 1 1 75%;
+		height: auto;
+		position: relative;
+		padding: 32px 140px 32px 42px;
+		display: flex;
+		flex-direction: column;
+		grid-gap: 22px;
+		font-size: 150%;
+	}
+		#vendeMas2 .capsula .boxInfo > h3 {
+			font-size: clamp(22px, 3vw + 0.2em, 88px);
+			color: var(--colorSecundario);
+		}
+	#vendeMas2 .capsula .boxImg {
+		width: 56%;
+		max-width: 56%;
+		flex: 1 1 56%;
+		position: absolute;
+		right: -8%;
+		height: 164%;
+		max-height: 164%;
+		display: flex;
+		align-items: center;
+	}
 
 .bodyRedes #servicios.redes .capsula .reticula {
     grid-template-columns: 1fr 1fr 1fr;
@@ -3322,6 +3500,30 @@ button{
 		font-size: 90%;
 		grid-gap: 47px;
 	}
+
+	#necesitas .fondo figure picture img {
+		object-position: top;
+	}
+	#necesitas .box {
+		grid-template-rows: auto auto;
+		grid-template-columns: 1fr;
+	}
+		#necesitas .box > .col2 {
+			grid-column: 1/2;
+		}
+		#necesitas .boxTarjeta .tarjeta {
+			padding: 18px 24px;
+		}
+			#necesitas .boxTarjeta .tarjeta .col1 > span {
+				margin-top: -20px;
+				font-size: clamp(22px, 13.1vw + 1rem, 188px);
+			}
+			#necesitas .boxTarjeta .tarjeta .col2 {
+				font-size: clamp(14px, 3vw + 0.8rem, 48px);
+			}
+			#necesitas .boxTarjeta .tarjeta .col2 > p.pildora {
+				font-size: clamp(14px, 3vw + 1rem, 52px);
+			}
 
 }
 
