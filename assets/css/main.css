@@ -1996,21 +1996,31 @@ button{
 					}
 
 		#resumen .capsula {
-			flex-direction: row;
+			display: grid;
+			grid-template-areas: "esencial negocio avanza";
 			grid-gap: 62px;
 			align-items: center;
 			margin-top: 110px;
 		}
-			#resumen .capsula h3 {
-				text-align: center;
-				font-family: 'Mulish';
-				padding: 32px 24px;
+			#resumen .capsula .col1 {
+				grid-area: esencial;
 			}
-			#resumen .capsula ul {
-				font-size: 86%;
-				text-align: center;
-				list-style-position: inside;
+			#resumen .capsula .col2 {
+				grid-area: negocio;
 			}
+			#resumen .capsula .col3 {
+				grid-area: avanza;
+			}
+				#resumen .capsula h3 {
+					text-align: center;
+					font-family: 'Mulish';
+					padding: 32px 24px;
+				}
+				#resumen .capsula ul {
+					font-size: 86%;
+					text-align: center;
+					list-style-position: inside;
+				}
 
 
 	#notienes {
@@ -3603,6 +3613,12 @@ button{
 	#extra .capsula .col1 h2 {
 		width: 100%;
 		font-size: 274%;
+	}
+
+	#resumen .capsula {
+		grid-template-areas: "esencial"
+			"avanza"
+			"negocio";
 	}
 }
 
