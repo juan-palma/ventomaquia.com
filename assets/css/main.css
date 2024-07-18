@@ -1092,6 +1092,7 @@ a.centro{
 						-webkit-background-clip: text;
 						-webkit-text-fill-color: transparent;
 						text-align: left;
+						padding: 0px;
 					}
 					#vendeMas .capsula .boxInfo h3 {
 						font-family: 'Mulish';
@@ -2281,6 +2282,76 @@ button{
 			font-size: 130%;
 			font-weight: 700;
 		}
+	#extra {
+		background-color: var(--colorPrincipal);
+		margin: 60px 0px 148px;
+		position: relative;
+	}
+	.triangulo {
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 0 100px 150px 100px;
+		border-color: transparent transparent var(--colorPrincipal) transparent;
+		transform: rotate(0deg);
+		position: absolute;
+	 }
+	 #extra .triangulo {
+		transform: translateY(-108px) scaleY(0.5);
+		top: 0px;
+	}
+		#extra .capsula {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 24px;
+			align-items: flex-end;
+		}
+			#extra .capsula .col1 {
+				font-size: 120%;
+			}
+				#extra .capsula .col1 h2 {
+					text-align: left;
+					font-size: 340%;
+					color: var(--colorSecundario);
+					line-height: 1;
+				}
+					#extra .capsula .col1 h2 span {
+						font-size: 46%;
+						color: white;
+					}
+				#extra .capsula .col1 p {
+					margin: 14px 0px;
+				}
+				#extra .capsula .col1 ul {
+					margin-bottom: 24px;
+					list-style: none;
+				}
+				#extra .capsula .col1 .pildora {
+					width: fit-content;
+					color: var(--colorPrincipal);
+					background-color: white;
+					padding: 12px 24px;
+					border-radius: 28px;
+					font-size: 150%;
+					font-weight: 800;
+					margin: 20px 0px;
+				}
+				#extra .capsula .col1 .letrasChiquitas {
+					color: var(--colorSecundario);
+					font-size: 80%;
+				}
+				#extra .capsula .col1 ul:last-child {
+					margin-top: 45px;
+					list-style: outside;
+				}
+					#extra .capsula .col1 ul:last-child li {
+						margin-bottom: 20px;
+					}
+				
+			#extra .col2 span.colorS {
+				font-size: 130%;
+				font-weight: 900;
+			}
 
 .bodyRedes .pantallas .frase {
     font-size: clamp(28px, 2.8vw + 0.4rem, 122px);
@@ -3525,6 +3596,14 @@ button{
 				font-size: clamp(14px, 3vw + 1rem, 52px);
 			}
 
+
+	#extra .capsula {
+		grid-template-columns: 1fr;
+	}
+	#extra .capsula .col1 h2 {
+		width: 100%;
+		font-size: 274%;
+	}
 }
 
 
