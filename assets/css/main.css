@@ -2266,7 +2266,7 @@ button{
 						font-size: clamp(14px, 0.8vw + 0.4rem, 52px);
 					}
 	#necesitas .box .col1 ul {
-		/*font-size: 140%;*/
+		font-size: 120%;
 	}
 		span.incluyeTitulo {
 			display: inline-flex;
