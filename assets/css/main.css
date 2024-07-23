@@ -2018,8 +2018,7 @@ button{
 				}
 				#resumen .capsula ul {
 					font-size: 86%;
-					text-align: center;
-					list-style-position: inside;
+					text-align: left;
 				}
 
 
@@ -2267,7 +2266,7 @@ button{
 						font-size: clamp(14px, 0.8vw + 0.4rem, 52px);
 					}
 	#necesitas .box .col1 ul {
-		font-size: 140%;
+		/*font-size: 140%;*/
 	}
 		span.incluyeTitulo {
 			display: inline-flex;
@@ -3470,6 +3469,9 @@ button{
 	}
 	.promos .capsula > .box {
 		flex-direction: column;
+	}
+	#avanza.promos .capsula > .box {
+		flex-direction: column-reverse;
 	}
 		.promos .capsula .col2 {
 			flex-direction: column;
