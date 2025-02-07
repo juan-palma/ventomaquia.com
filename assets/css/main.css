@@ -929,7 +929,7 @@ main {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			padding: 0px 0px 120px;
+			padding: 0px 0px 140px;
 		}
 			.capsula {
 				width: calc(100% - (var(--margenGlobal) * 2));
@@ -1041,6 +1041,7 @@ a.centro{
 		}
 			#caminoCorrecto #cajaFuerte {
 				width: 75%;
+				padding-bottom: 120px;
 			}
 				#caminoCorrecto #cajaFuerte figure {
 					width: 100%;
