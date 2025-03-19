@@ -1799,7 +1799,7 @@ button{
 				grid-gap: 56px;
 			}
 				.promos h3 {
-					font-size: 320%;
+					font-size: clamp(20px, 1.4vw + 0.2rem, 46px);
 					color: var(--colorSecundario);
 					margin-bottom: 32px;
 				}
