@@ -2260,7 +2260,7 @@ button{
 						color: white;
 						font-weight: 800;
 						font-size: clamp(14px, 2vw + 1rem, 52px);
-						padding: 6px 0px;
+						padding: 14px 22px;
 						border-radius: 40px;
 					}
 					#necesitas .boxTarjeta .tarjeta:nth-child(3) .col2 > p.pildora{
