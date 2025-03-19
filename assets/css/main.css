@@ -1799,7 +1799,7 @@ button{
 				grid-gap: 56px;
 			}
 				.promos h3 {
-					font-size: clamp(20px, 1.4vw + 0.2rem, 46px);
+					font-size: clamp(20px, 2.4vw + 0.2rem, 46px);
 					color: var(--colorSecundario);
 					margin-bottom: 32px;
 				}
@@ -1864,6 +1864,8 @@ button{
 				background: radial-gradient(closest-side, rgba(0, 0, 0, 1) 59%, rgba(var(--colorPrincipalR), 1) 161%);
 			}
 				#hola .capsula .box > .col1 > h3 {
+					position: relative;
+					width: fit-content;
 					display: flex;
 					flex-wrap: wrap;
 					flex-direction: column;
@@ -1871,11 +1873,11 @@ button{
 					text-align: right;
 				}
 					#hola .capsula .box > .col1 > h3 > div:first-child {
-						width: 30%;
+						width: 36%;
 						position: absolute;
-						right: 0px;
+						right: -8px;
 						left: auto;
-						top: -5%;
+						top: -52%;
 						margin: 0 0 0 auto;
 					}
 					#hola .capsula .box > .col1 > ul {
@@ -1910,6 +1912,9 @@ button{
 			position: relative;
 			display: flex;
 			grid-gap: 56px;
+		}
+		#solo h3 {
+			font-size: clamp(20px, 1.4vw + 0.2rem, 46px);
 		}
 			#solo .boxG > .col {
 				position: relative;
@@ -3498,6 +3503,9 @@ button{
 	}
 	#solo .boxG {
 		flex-direction: column;
+	}
+	.promos h3 {
+		font-size: clamp(20px, 10.4vw + 0.2rem, 46px);
 	}
 		#solo .boxG > .col {
 			flex-direction: column;
