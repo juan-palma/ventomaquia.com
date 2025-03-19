@@ -1404,31 +1404,36 @@ a.centro{
 		#dudas .capsula {
 			flex-direction: row;
 			justify-content: center;
-			align-items: baseline;
+			align-items: stretch;
 			grid-gap: 66px;
 			padding: 0px 5vw;
 			text-align: center;
 		}
-			#dudas .capsula .col .icono {
-				font-size: 168%;
+			#dudas .capsula > .col{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
 			}
-			#dudas .capsula .col button {
-				appearance: none;
-				padding: 8px 14px;
-				background: var(--colorPrincipal);
-				background: linear-gradient(37deg, rgba(var(--colorPrincipalR), 1) 74%, rgba(var(--colorSecundarioR),1) 100%);
-				border: 0px none transparent;
-				border-radius: 12px;
-				margin-top: 24px;
-				cursor: pointer;
-				will-change: background, opacity;
+				#dudas .capsula .col .icono {
+					font-size: 168%;
+				}
+				#dudas .capsula .col button {
+					appearance: none;
+					padding: 8px 14px;
+					background: var(--colorPrincipal);
+					background: linear-gradient(37deg, rgba(var(--colorPrincipalR), 1) 74%, rgba(var(--colorSecundarioR),1) 100%);
+					border: 0px none transparent;
+					border-radius: 12px;
+					margin-top: 24px;
+					cursor: pointer;
+					will-change: background, opacity;
 
-				-webkit-transition: all 0.3s ease-in-out;
-				-moz-transition: all 0.3s ease-in-out;
-				-o-transition: all 0.3s ease-in-out;
-				-ms-transition: all 0.3s ease-in-out;
-				transition: all 0.3s ease-in-out;
-			}
+					-webkit-transition: all 0.3s ease-in-out;
+					-moz-transition: all 0.3s ease-in-out;
+					-o-transition: all 0.3s ease-in-out;
+					-ms-transition: all 0.3s ease-in-out;
+					transition: all 0.3s ease-in-out;
+				}
 
 		#gastaMenos .capsula h2, #gastaMenos .capsula h3 {
 			width: 50%;
@@ -2315,6 +2320,8 @@ button{
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 24px;
 			align-items: flex-end;
+			white-space: nowrap;
+    		width: 100%;
 		}
 			#extra .capsula .col1 {
 				font-size: 120%;
