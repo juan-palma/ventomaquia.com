@@ -3622,7 +3622,7 @@ button{
 	}
 	#extra .capsula .col1 h2 {
 		width: 100%;
-		font-size: 274%;
+		font-size: clamp(16px, 10.8vw + 0.4rem, 250px);
 	}
 
 	#resumen .capsula {
