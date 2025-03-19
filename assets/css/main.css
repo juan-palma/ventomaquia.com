@@ -2320,8 +2320,6 @@ button{
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 24px;
 			align-items: flex-end;
-			white-space: nowrap;
-    		width: 100%;
 		}
 			#extra .capsula .col1 {
 				font-size: 120%;
@@ -2331,6 +2329,8 @@ button{
 					font-size: 340%;
 					color: var(--colorSecundario);
 					line-height: 1;
+					white-space: nowrap;
+    				width: 100%;
 				}
 					#extra .capsula .col1 h2 span {
 						font-size: 46%;
