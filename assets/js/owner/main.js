@@ -407,7 +407,7 @@ async function toolsPimeraCarga(){
 					timeline.reverse();
 				} else {
 					submenus.forEach((elemento) => {
-					gsap.set(elemento, { rotation: 0 }); // Restablece la rotación antes de la animación
+						gsap.set(elemento, { rotation: 0 }); // Restablece la rotación antes de la animación
 					});
 					
 					timeline.clear(); // Limpia la línea de tiempo existente
