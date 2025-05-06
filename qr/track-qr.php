@@ -1,5 +1,6 @@
 <?php
 // Cargar variables de entorno desde el archivo .env_qr
+//codigo para modificar
 if (file_exists(__DIR__ . '/.env_qr')) {
     $env = parse_ini_file(__DIR__ . '/.env_qr');
     $host = $env['DB_HOST'];
