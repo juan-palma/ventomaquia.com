@@ -1,6 +1,5 @@
 <?php
 // Cargar variables de entorno desde el archivo .env_qr
-//codigo para modificar
 if (file_exists(__DIR__ . '/.env_qr')) {
     $env = parse_ini_file(__DIR__ . '/.env_qr');
     $host = $env['DB_HOST'];
@@ -71,8 +70,11 @@ if (isset($_GET['code'])) {
     }
 
     // Consultar la base de datos
-    $stmt = $pdo->prepare("SELECT * FROM qr_codes WHERE code = :code LIMIT 1");
-    $stmt->execute(['code' => $code]);
+    $stmt = $pdo->prepare("SELECT * FROM qr_codes WHERE code = :code AND status = :status LIMIT 1");
+    $stmt->execute([
+        'code' => $code,
+        'status' => 1
+    ]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($row) {
@@ -89,11 +91,11 @@ if (isset($_GET['code'])) {
             'client_id' => $client_id,
             'events' => [
                 [
-                    'name' => 'qr_scan',
+                    'name' => $row['event_name'],
                     'params' => array_merge($ga_params, [
                         'page_location' => $row['url'],
-                        'page_title' => ($row['type'] == 'local') ? 'Sitio Local' : 'Sitio Externo',
-                        'engagement_time_msec' => '1000' // Añadir tiempo de engagement
+                        'qr_code' => $code
+                        //'engagement_time_msec' => '1000' // Añadir tiempo de engagement
                     ])
                 ]
             ]
