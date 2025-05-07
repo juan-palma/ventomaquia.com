@@ -84,7 +84,6 @@ if (isset($_GET['code'])) {
         
         // Obtener client_id validado
         $client_id = get_or_create_client_id();
-        
         $ga_params = json_decode($row['ga_params'], true);
 
         $payload = [
@@ -94,14 +93,23 @@ if (isset($_GET['code'])) {
                     'name' => $row['event_name'],
                     'params' => array_merge($ga_params, [
                         'page_location' => $row['url'],
-                        'qr_code' => $code
-                        //'engagement_time_msec' => '1000' // Añadir tiempo de engagement
+                        'qr_code' => $code,
+                        'engagement_time_msec' => '1000' // Añadir tiempo de engagement
                     ])
                 ]
             ]
         ];
 
+        // Debug mode: permite marcar eventos para pruebas cuando se añade ?debug=true a la URL
+        // Estos eventos pueden filtrarse en GA4 usando el parámetro 'debug' == true
+        $debugMode = isset($_GET['debug']) && in_array(strtolower($_GET['debug']), ['1', 'true', 'yes', 'si'], true);
+        if ($debugMode) {
+            $payload['events'][0]['params']['debug'] = true;
+        }
+
+
         $endpoint = "https://www.google-analytics.com/mp/collect?measurement_id=$ga_tracking_id&api_secret=$api_secret";
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $endpoint);
@@ -109,7 +117,8 @@ if (isset($_GET['code'])) {
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json'
+            'Content-Type: application/json',
+            'User-Agent: ' . $user_agent
         ]);
 
         $response = curl_exec($ch);
