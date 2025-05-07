@@ -5,7 +5,7 @@
     RewriteCond %{REQUEST_URI} !^/qr/track-qr.php$
 
     # Redirigir todo el tráfico de /qr/{codigo} hacia track-qr.php con el parámetro 'code'
-    RewriteRule ^(.*)$ /qr/track-qr.php?code=$1 [L]
+    RewriteRule ^(.*)$ /qr/track-qr.php?code=$1 [L,QSA]
 
     # Redirigir a la página principal si alguien entra a /qr sin especificar un código
     RewriteRule ^$ / [R=301,L]
