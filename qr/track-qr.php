@@ -7,7 +7,7 @@ if (file_exists(__DIR__ . '/.env_qr')) {
     $username = $env['DB_USER'];
     $password = $env['DB_PASS'];
 } else {
-    die("Error: El archivo .env_qr no se encuentra.");
+    die("Error: El archivo env no se encuentra.");
 }
 
 try {
@@ -102,11 +102,12 @@ if (isset($_GET['code'])) {
 
         // Debug mode: permite marcar eventos para pruebas cuando se añade ?debug=true a la URL
         // Estos eventos pueden filtrarse en GA4 usando el parámetro 'debug' == true
-        $debugMode = isset($_GET['debug']) && in_array(strtolower($_GET['debug']), ['1', 'true', 'yes', 'si'], true);
+        $debugMode = isset($_GET['debug']) && in_array(strtolower($_GET['debug']), ['1', 'true', 'yes', 'si', 'on'], true);
         if ($debugMode) {
-            $payload['events'][0]['params']['debug'] = true;
+            $payload['events'][0]['params']['debug_mode'] = true;
         }
 
+        
 
         $endpoint = "https://www.google-analytics.com/mp/collect?measurement_id=$ga_tracking_id&api_secret=$api_secret";
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
