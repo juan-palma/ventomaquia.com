@@ -92,8 +92,8 @@ if (isset($_GET['code'])) {
                 [
                     'name' => $row['event_name'],
                     'params' => array_merge($ga_params, [
-                        'page_location' => $row['url'],
-                        'qr_code' => $code,
+                        'shorturl_pagina_destino' => $row['url'],
+                        'shorturl_qr_code' => $code,
                         'engagement_time_msec' => '1000' // Añadir tiempo de engagement
                     ])
                 ]
